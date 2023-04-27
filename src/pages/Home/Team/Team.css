@@ -1,0 +1,100 @@
+.main{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    flex-wrap: wrap;
+    padding: 3rem 1rem;
+    overflow: hidden;
+    gap: 3rem;
+  }
+  .team-h {
+    font-size: 42px;
+    font-family: 'Aboreto', cursive;
+    font-weight: bolder;
+    padding: 2rem 0;
+    text-align: center;
+  }
+  .profile-card{
+    position: relative;
+    width: 14rem;
+    height: 15rem;
+    background: #fff;
+    padding: 30px;
+    border-radius: 50%;
+    box-shadow: 0 0 22px #3336;
+    transition: .6s;
+    border-radius: 10px;
+  }
+  .profile-card:hover{
+  }
+  .profile-card .img{
+    position: relative;
+    transition: .6s;
+    z-index: 99;
+  }
+  .profile-card:hover .img{
+  }
+  .img img{
+    transform: translateY(-60px);
+    border-radius: 10px;
+    box-shadow: 0 0 22px #3336;
+    transition: .6s;
+  }
+  .profile-card:hover img{
+  }
+  .caption{
+    text-align: center;
+    transform: translateY(-80px);
+    opacity: 0;
+    transition: .6s;
+    opacity: 1;
+    margin-top: 2rem;
+  }
+  .profile-card:hover .caption{
+  }
+  .caption h3{
+    font-size: 21px;
+  }
+  .caption p{
+    font-size: 16px;
+    color: #0c52a1;
+    margin: 2px 0 9px 0;
+  }
+  .caption .social-links a{
+    color: #333;
+    margin-right: 8px;
+    font-size: 21px;
+    transition: .6s;
+  }
+  .social-links a:hover{
+    color: #0c52a1;
+  }
+
+  @media only screen and (max-width: 1150px) {
+    .profile-card {
+      flex-direction: column;
+    }
+  }
+  
+  /* @media only screen and (max-width: 900px) {
+    .heading {
+      font-size: 40px;
+      color: white;
+      text-align: center;
+    }
+  
+    .heading span {
+      font-size: 15px;
+    }
+  
+    .profiles {
+      margin: 20px 0;
+    }
+  
+    .profile p {
+      margin: 20px 10px 80px 10px;
+    }
+  } */
+  
+ 
