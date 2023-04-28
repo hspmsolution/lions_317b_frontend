@@ -51,92 +51,92 @@ function Navbar(props) {
   };
 
   const drawer = (
-    <Box onClick={handleDrawerToggle} sx={{ textAlign: 'center' }}>
-      <Avatar
-        alt="Remy Sharp"
-        src={"/assets/img/logo2.png"}
-        sx={{ width: 56, height: 56, margin: '5px auto' }}
-        className={classes.clubLogo}
-      />
-      <Divider variant='middle' />
-      <List>
-        {myNav.map((item, index) => (
-          <ListItem key={index} disablePadding>
-            <Button key={index} sx={{ color: '#565656' }} className={classes.drawerButton}>
-              <PopupMenu title={item.title} menuItems={item.menuItems} />
-            </Button>
-          </ListItem>
-        ))}
-      </List>
-    </Box>
+      <Box onClick={handleDrawerToggle} sx={{ textAlign: 'center' }}>
+        <Avatar
+            alt="Remy Sharp"
+            src={"/assets/img/logo2.png"}
+            sx={{ width: 56, height: 56, margin: '5px auto' }}
+            className={classes.clubLogo}
+        />
+        <Divider variant='middle' />
+        <List>
+          {myNav.map((item, index) => (
+              <ListItem key={index} disablePadding>
+                <Button key={index} sx={{ color: '#565656' }} className={classes.drawerButton}>
+                  <PopupMenu title={item.title} menuItems={item.menuItems} />
+                </Button>
+              </ListItem>
+          ))}
+        </List>
+      </Box>
   );
 
   const container = window !== undefined ? () => window().document.body : undefined;
 
   return (
-    <Box sx={{ display: 'flex', position: 'absolute' }}>
-      <CssBaseline />
-      <AppBar component="nav" className={classes.mainNav} >
-        <Toolbar>
-          <IconButton
-            color='#7c7c7c'
-            aria-label="open drawer"
-            edge="start"
-            onClick={handleDrawerToggle}
-            sx={{ mr: 2, display: { sm: 'none' } }}
+      <Box sx={{ display: 'flex' }}>
+        <CssBaseline />
+        <AppBar component="nav" className={classes.mainNav} >
+          <Toolbar>
+            <IconButton
+                color='#7c7c7c'
+                aria-label="open drawer"
+                edge="start"
+                onClick={handleDrawerToggle}
+                sx={{ mr: 2, display: { sm: 'none' } }}
+            >
+              <MenuIcon />
+            </IconButton>
+            <Typography
+                component="div"
+                sx={{ flexGrow: 1, display: { xs: 'none', sm: 'flex' }, gap: '1rem' }}
+            >
+              <Link to={'/'}>
+                <Avatar
+                    alt="Remy Sharp"
+                    src="/assets/img/logo.png"
+                    sx={{ width: 80, height: 80, padding: '5px' }}
+                />
+              </Link>
+              <Link to={'/'}>
+                <Avatar
+                    alt="Remy Sharp"
+                    src="/assets/img/logo2.png"
+                    sx={{ width: 80, height: 80, padding: '5px' }}
+                    className={classes.clubLogo}
+                />
+              </Link>
+            </Typography>
+            <Box sx={{ display: { xs: 'none', sm: 'block' } }}>
+              {myNav.map((item, index) => (
+                  <Button key={index} sx={{ color: 'red' }} className={classes.drawerButton}>
+                    <PopupMenu title={item.title} menuItems={item.menuItems} />
+                  </Button>
+              ))}
+            </Box>
+          </Toolbar>
+        </AppBar>
+        <Box component="nav">
+          <Drawer
+              container={container}
+              variant="temporary"
+              open={mobileOpen}
+              onClose={handleDrawerToggle}
+              ModalProps={{
+                keepMounted: true, // Better open performance on mobile.
+              }}
+              sx={{
+                display: { xs: 'block', sm: 'none' },
+                '& .MuiDrawer-paper': { boxSizing: 'border-box', width: drawerWidth },
+              }}
           >
-            <MenuIcon />
-          </IconButton>
-          <Typography
-            component="div"
-            sx={{ flexGrow: 1, display: { xs: 'none', sm: 'flex' }, gap: '1rem' }}
-          >
-            <Link to={'/'}>
-              <Avatar
-                alt="Remy Sharp"
-                src="/assets/img/logo.png"
-                sx={{ width: 80, height: 80, padding: '5px' }}
-              />
-            </Link>
-            <Link to={'/'}>
-              <Avatar
-                alt="Remy Sharp"
-                src="/assets/img/logo2.png"
-                sx={{ width: 80, height: 80, padding: '5px' }}
-                className={classes.clubLogo}
-              />
-            </Link>
-          </Typography>
-          <Box sx={{ display: { xs: 'none', sm: 'block' } }}>
-            {myNav.map((item, index) => (
-              <Button key={index} sx={{ color: '#fff' }} className={classes.drawerButton}>
-                <PopupMenu title={item.title} menuItems={item.menuItems} />
-              </Button>
-            ))}
-          </Box>
-        </Toolbar>
-      </AppBar>
-      <Box component="nav">
-        <Drawer
-          container={container}
-          variant="temporary"
-          open={mobileOpen}
-          onClose={handleDrawerToggle}
-          ModalProps={{
-            keepMounted: true, // Better open performance on mobile.
-          }}
-          sx={{
-            display: { xs: 'block', sm: 'none' },
-            '& .MuiDrawer-paper': { boxSizing: 'border-box', width: drawerWidth },
-          }}
-        >
-          {drawer}
-        </Drawer>
+            {drawer}
+          </Drawer>
+        </Box>
+        <Box component="main" sx={{ p: 0 }}>
+          <Toolbar />
+        </Box>
       </Box>
-      <Box component="main" sx={{ p: 0 }}>
-        <Toolbar />
-      </Box>
-    </Box>
   );
 }
 

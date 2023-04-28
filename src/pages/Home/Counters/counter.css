@@ -1,7 +1,9 @@
 .counters {
   width: 100%;
   padding: 3rem 0;
-  background: #112E57;
+  /*background: #112E57;*/
+  background: linear-gradient(180deg, hsla(0, 0%, 100%, 1) 0%, hsla(240, 100%, 31%, 1) 100%);
+  /*background: linear-gradient(180deg, hsla(0, 0%, 100%, 1) 0%, hsla(55, 84%, 66%, 1) 100%);*/
   background-size: cover;
   color: #fff;
   display: flex;
@@ -17,7 +19,7 @@
 .counters > div {
   padding: 2rem;
   border-radius: 50px;
-  background: rgba(0, 0, 0, 0.495);
+  background: rgba(0, 0, 0, 0.3);
   width: 95%;
   box-shadow: 0 4px 20px #76767689;
 }
@@ -36,8 +38,11 @@
   width: 13rem;
   height: 13rem;
   border-radius: 50%;
+  /*background: rgba(113, 113, 113, 0.386);*/
   background: rgba(113, 113, 113, 0.386);
+
   border: 0.6rem solid #dda42a;
+  /*border: 0.6rem solid #08028D;*/
   margin: 1rem auto !important;
   display: flex;
   align-items: center;
@@ -62,4 +67,29 @@
 
 .count > div > .event-count {
   font-size: 30%;
+}
+
+.counter-one .count {
+  background-color: rgba(54, 6, 47, 0.7);
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+}
+
+.counter-two .count {
+  background-color: rgba(11, 86, 179, 0.7);
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+}
+
+.counter-three .count {
+  background-color: rgba(205, 0, 2, 0.7);
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+}
+
+.counter-four .count {
+  background-color: rgba(44, 108, 3, 0.7);
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+}
+
+.counter-five .count {
+  background-color: rgba(254, 109, 3, 0.7);
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
 }
