@@ -17,6 +17,11 @@ export default makeStyles((theme) => ({
     clubLogo: {
         borderRadius: '0%'
     },
+    myNavPaper: {
+        backgroundColor: '#ffffffd6',
+        borderRadius: '2rem',
+        padding: '5px',
+    },
     drawerButton: {
         '& div': {
             display: 'flex'
