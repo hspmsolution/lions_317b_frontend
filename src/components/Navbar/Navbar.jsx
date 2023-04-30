@@ -14,13 +14,12 @@ import MenuIcon from '@mui/icons-material/Menu';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
-import { Avatar } from '@mui/material';
+import { Avatar, Paper } from '@mui/material';
 import useStyles from './Styles';
 import PopupMenu from './PopupMenu';
 import { Link } from 'react-router-dom';
 
 const drawerWidth = 240;
-const navItems = ['Home', 'About', 'Events', 'Activities', 'Membership', 'Resources', 'Login', 'My LCI'];
 
 const myNav = [
   { title: "Home" },
@@ -77,7 +76,7 @@ function Navbar(props) {
     <Box sx={{ display: 'flex', position: 'absolute' }}>
       <CssBaseline />
       <AppBar component="nav" className={classes.mainNav} >
-        <Toolbar>
+        <Toolbar sx={{ display: 'flex', justifyContent: 'space-between' }}>
           <IconButton
             color='#7c7c7c'
             aria-label="open drawer"
@@ -87,10 +86,7 @@ function Navbar(props) {
           >
             <MenuIcon />
           </IconButton>
-          <Typography
-            component="div"
-            sx={{ flexGrow: 1, display: { xs: 'none', sm: 'flex' }, gap: '1rem' }}
-          >
+          <Box sx={{ display: 'flex', gap: '1rem' }}>
             <Link to={'/'}>
               <Avatar
                 alt="Remy Sharp"
@@ -106,13 +102,17 @@ function Navbar(props) {
                 className={classes.clubLogo}
               />
             </Link>
-          </Typography>
-          <Box sx={{ display: { xs: 'none', sm: 'block' } }}>
+          </Box>
+          <Paper className={classes.myNavPaper} sx={{ display: { xs: 'none', sm: 'block' } }}>
             {myNav.map((item, index) => (
-              <Button key={index} sx={{ color: '#fff' }} className={classes.drawerButton}>
+              <Button key={index} sx={{ color: '#353535' }} className={classes.drawerButton}>
                 <PopupMenu title={item.title} menuItems={item.menuItems} />
               </Button>
             ))}
+          </Paper>
+          <Box sx={{ display: { xs: 'none', sm: 'flex', gap: '1rem' } }}>
+            <Button variant="outlined" className={classes.loginButton}>Login</Button>
+            <Button variant="outlined" className={classes.loginButton}>My LCI</Button>
           </Box>
         </Toolbar>
       </AppBar>
