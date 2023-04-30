@@ -111,8 +111,8 @@ function Navbar(props) {
             ))}
           </Paper>
           <Box sx={{ display: { xs: 'none', sm: 'flex', gap: '1rem' } }}>
-            <Button variant="outlined">Login</Button>
-            <Button variant="outlined">My LCI</Button>
+            <Button variant="outlined" className={classes.loginButton}>Login</Button>
+            <Button variant="outlined" className={classes.loginButton}>My LCI</Button>
           </Box>
         </Toolbar>
       </AppBar>

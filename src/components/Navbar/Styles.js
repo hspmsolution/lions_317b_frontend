@@ -26,5 +26,14 @@ export default makeStyles((theme) => ({
         '& div': {
             display: 'flex'
         }
-    }
+    },
+    loginButton: {
+        backgroundColor: '#fff',
+        borderRadius: '2rem',
+        border: 'none',
+        '&:hover': {
+            backgroundColor: '#fff',
+            border: 'none',
+        }
+    },
 }))
