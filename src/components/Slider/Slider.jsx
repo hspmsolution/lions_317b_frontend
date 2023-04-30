@@ -17,7 +17,7 @@ function Slider() {
         />
         <div>
           <div className="head-lions-i">LIONS CLUB INTERNATIONAL</div>
-          <div className="head-dist-num">DISTRICT 317-F</div>
+          <div className="head-dist-num">DISTRICT 317-B</div>
         </div>
       </div>
       <ImageSlider effectDelay={500} autoPlayDelay={2000}>

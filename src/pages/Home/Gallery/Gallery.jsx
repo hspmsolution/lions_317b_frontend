@@ -83,53 +83,53 @@ const Gallery = () => {
 
     return (
         <>
-            <div className="carousel-container">
-                <h1 className="carousel-heading">GALLERY</h1>
+            <div className="carouselContainer">
+                <h1 className="carouselHeading">GALLERY</h1>
                 <Slider {...settings}>
                     <div className="carousel">
-                        <div className="carousel-body">
+                        <div className="carouselBody">
                             <img src={itemData[0].src} alt=""/>
                             <h4>{itemData[0].title}</h4>
                         </div>
                     </div>
 
                     <div className="carousel">
-                        <div className="carousel-body">
+                        <div className="carouselBody">
                             <img src={itemData[1].src} alt=""/>
                             <h4>{itemData[1].title}</h4>
                         </div>
                     </div>
 
                     <div className="carousel">
-                        <div className="carousel-body">
+                        <div className="carouselBody">
                             <img src={itemData[2].src} alt=""/>
                             <h4>{itemData[2].title}</h4>
                         </div>
                     </div>
 
                     <div className="carousel">
-                        <div className="carousel-body">
+                        <div className="carouselBody">
                             <img src={itemData[3].src} alt=""/>
                             <h4>{itemData[3].title}</h4>
                         </div>
                     </div>
 
                     <div className="carousel">
-                        <div className="carousel-body">
+                        <div className="carouselBody">
                             <img src={itemData[4].src} alt=""/>
                             <h4>{itemData[4].title}</h4>
                         </div>
                     </div>
 
                     <div className="carousel">
-                        <div className="carousel-body">
+                        <div className="carouselBody">
                             <img src={itemData[5].src} alt=""/>
                             <h4>{itemData[5].title}</h4>
                         </div>
                     </div>
 
                     <div className="carousel">
-                        <div className="carousel-body">
+                        <div className="carouselBody">
                             <img src={itemData[6].src} alt=""/>
                             <h4>{itemData[6].title}</h4>
                         </div>
