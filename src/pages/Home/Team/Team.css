@@ -27,6 +27,7 @@
     border-radius: 16px;
     margin-bottom: 3px;
     display: inline-block;
+    object-fit: contain;
 }
 
 .team-card-body {
@@ -42,7 +43,7 @@
 
 /*asass*/
 
-.main {
+.teamGridContainer {
     width: 100%;
     display: flex;
     justify-content: center;
@@ -52,7 +53,6 @@
     overflow: hidden;
     gap: 3rem;
     border-radius: 1rem;
-    background-color: rgba(255, 255, 255, 0.7);
 }
 
 .team-h {
@@ -135,25 +135,3 @@
         flex-direction: column;
     }
 }
-
-/* @media only screen and (max-width: 900px) {
-  .heading {
-    font-size: 40px;
-    color: white;
-    text-align: center;
-  }
-
-  .heading span {
-    font-size: 15px;
-  }
-
-  .profiles {
-    margin: 20px 0;
-  }
-
-  .profile p {
-    margin: 20px 10px 80px 10px;
-  }
-} */
-  
- 

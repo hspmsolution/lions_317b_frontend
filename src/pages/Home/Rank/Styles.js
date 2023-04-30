@@ -27,5 +27,5 @@ export default makeStyles((theme) => ({
         wordSpacing: '1px',
         letterSpacing: '2px',
         color: '#c50000',
-    }
+    },
 }))

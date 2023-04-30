@@ -1,4 +1,4 @@
-.slideshow {
+/* .slideshow {
     margin: 0 auto;
     overflow: hidden;
     max-width: 500px;
@@ -17,7 +17,7 @@
   }
   
   /* Buttons */
-  
+  /*
   .slideshowDots {
     text-align: center;
   }
@@ -36,7 +36,7 @@
   
   .slideshowDot.active {
     background-color: #6a0dad;
-  }
+  } */
  
   .imageSlider > article {
     width: 100% !important;

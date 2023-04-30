@@ -13,10 +13,10 @@ function About() {
                 <div className="card-header"></div>
                 <div className="about-dist">
                     <img src={"/assets/img/logo2.jpg"} alt=""/>
-                    <h1 className="about-dist-h">About District 3234-D2</h1>
+                    <h1 className="about-dist-h">About District 317-B</h1>
                     <p>
-                        WELCOME TO OUR WEBSITE OF LIONS CLUB INTERNATIONAL’s DISTRICT 3234-D2.
-                        and all members of our District, 3234-D2. SOW SERVICE SEEDS with
+                        WELCOME TO OUR WEBSITE OF LIONS CLUB INTERNATIONAL’s DISTRICT 317-B.
+                        and all members of our District, 317-B. SOW SERVICE SEEDS with
                         KINDNESS IN UNITY AND DIVERSITY to Give More for Community. Your journey
                         through the web pages is made extremely simple with distinct information
                         about our organization and its administrative functioning and reporting.
