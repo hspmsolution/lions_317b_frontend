@@ -36,7 +36,7 @@ const PopupMenu = ({ title, menuItems }) => {
     return (
       <>
         {dropItems.map((item, index) => (
-            <MenuItem key={index} /* onClick={() => navigate(`/${toLower((title).replaceAll(' ', ''))}/${toLower((item).replaceAll(' ', ''))}`)} */>{item}</MenuItem>
+            <MenuItem key={index} onClick={() => navigate(`/${toLower((title).replaceAll(' ', ''))}/${toLower((item).replaceAll(' ', ''))}`)}>{item}</MenuItem>
         ))}
       </>
     )
@@ -69,9 +69,9 @@ const PopupMenu = ({ title, menuItems }) => {
             {title}<ExpandMoreIcon />
           </div>
         </HtmlTooltip>
-      ) : (<div /*onClick={() => 
+      ) : (<div onClick={() => 
         {title === "Home" ? navigate(`/`) :
-          navigate(`/${toLower((title).replaceAll(' ', ''))}`)}}*/>{title}</div>)}
+          navigate(`/${toLower((title).replaceAll(' ', ''))}`)}}>{title}</div>)}
     </>
   );
 };

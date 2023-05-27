@@ -8,16 +8,15 @@ import Drawer from '@mui/material/Drawer';
 import IconButton from '@mui/material/IconButton';
 import List from '@mui/material/List';
 import ListItem from '@mui/material/ListItem';
-import ListItemButton from '@mui/material/ListItemButton';
-import ListItemText from '@mui/material/ListItemText';
 import MenuIcon from '@mui/icons-material/Menu';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
-import { Avatar, Paper } from '@mui/material';
+import { Avatar } from '@mui/material';
 import useStyles from './Styles';
 import PopupMenu from './PopupMenu';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
+import { useSelector } from 'react-redux';
 
 const drawerWidth = 240;
 
@@ -25,35 +24,39 @@ const myNav = [
   { title: "Home" },
   {
     title: "About",
-    menuItems: ['Governor', 'DG Team', 'About District 317B', 'Organization Chart']
+    menuItems: ['Governor', 'DG Team', 'About District 317F', 'Organization Chart']
   },
   { title: "Activities" },
   {
     title: "Membership",
-    menuItems: ['Member Directory', 'Business Directory', 'Download Member Data']
+    menuItems: ['Organization Data', 'Member Directory', 'Mini Directory', 'Download Member Data']
   },
   {
     title: "Resources",
     menuItems: ['News', 'Gallery', 'Global Priorities', 'Download Resources']
   },
-  { title: "Login" },
-  { title: "My LCI" },
 ];
 
 function Navbar(props) {
   const { window } = props;
   const [mobileOpen, setMobileOpen] = React.useState(false);
   const classes = useStyles();
+  const navigate = useNavigate();
+  const isAdmin = useSelector((state) => state.auth.admin);
 
   const handleDrawerToggle = () => {
     setMobileOpen((prevState) => !prevState);
   };
 
+  const memberLogin = () => {
+    {isAdmin ? navigate('/dashboard/profile') : navigate('/login')}
+  }
+
   const drawer = (
     <Box onClick={handleDrawerToggle} sx={{ textAlign: 'center' }}>
       <Avatar
         alt="Remy Sharp"
-        src={"/assets/img/logo2.jpg"}
+        src={"/assets/img/logo2.png"}
         sx={{ width: 56, height: 56, margin: '5px auto' }}
         className={classes.clubLogo}
       />
@@ -76,17 +79,20 @@ function Navbar(props) {
     <Box sx={{ display: 'flex', position: 'absolute' }}>
       <CssBaseline />
       <AppBar component="nav" className={classes.mainNav} >
-        <Toolbar sx={{ display: 'flex', justifyContent: 'space-between' }}>
+        <Toolbar>
           <IconButton
             color='#7c7c7c'
             aria-label="open drawer"
             edge="start"
             onClick={handleDrawerToggle}
-            sx={{ mr: 2, display: { sm: 'none' } }}
+            sx={{ mr: 'auto', display: { sm: 'none' } }}
           >
             <MenuIcon />
           </IconButton>
-          <Box sx={{ display: 'flex', gap: '1rem' }}>
+          <Typography
+            component="div"
+            sx={{ flexGrow: 1, display: { xs: 'none', sm: 'flex' }, gap: '1rem' }}
+          >
             <Link to={'/'}>
               <Avatar
                 alt="Remy Sharp"
@@ -102,18 +108,20 @@ function Navbar(props) {
                 className={classes.clubLogo}
               />
             </Link>
-          </Box>
-          <Paper className={classes.myNavPaper} sx={{ display: { xs: 'none', sm: 'block' } }}>
+          </Typography>
+          <Box sx={{ display: { xs: 'none', sm: 'block' } }}>
             {myNav.map((item, index) => (
-              <Button key={index} sx={{ color: '#353535' }} className={classes.drawerButton}>
+              <Button key={index} sx={{ color: '#fff' }} className={classes.drawerButton}>
                 <PopupMenu title={item.title} menuItems={item.menuItems} />
               </Button>
             ))}
-          </Paper>
-          <Box sx={{ display: { xs: 'none', sm: 'flex', gap: '1rem' } }}>
-            <Button variant="outlined" className={classes.loginButton}>Login</Button>
-            <Button variant="outlined" className={classes.loginButton}>My LCI</Button>
           </Box>
+          <Button className={classes.drawerButton} onClick={memberLogin}>
+            {isAdmin ? "My Profile" : "Login"}
+          </Button>
+          <Button className={classes.drawerButton}>
+            My LCI
+          </Button>
         </Toolbar>
       </AppBar>
       <Box component="nav">

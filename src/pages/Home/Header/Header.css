@@ -5,43 +5,69 @@
     position: absolute;
     top: 35%;
     width: 100%;
-    z-index: 999;
-  }
-  
-  .head-dist-h .logoImg{
-    width: 280px;
+    z-index: 998;
+}
+
+.head-dist-h .logoImg {
+    width: 250px;
     margin: auto;
-    margin-bottom: 30px;
-  }
-  
-  .head-lions-i{
+}
+
+.head-lions-i, .head-dist-num {
     color: #fff;
     font-weight: 700;
-  }
-  
-  .head-dist-num{
-    color: #fff;
-    font-weight: 700;
-  }
-  
-  .head-dist-h > a > img {
+}
+
+.head-dist-h > a > img {
     height: 100%;
-    
-  }
-  .imgSlide{
-    position: relative;
-  }
-  
-  .head-dist-h > div {
+}
+
+.head-dist-h > div {
     min-width: 60vw;
-  }
-  
-  .head-lions-i {
+}
+
+.head-lions-i {
     font-size: 2rem;
     font-weight: 600;
-  }
-  
-  .head-dist-num {
+}
+
+.head-dist-num {
     font-size: 1.5rem;
     font-weight: 550;
-  }
+}
+
+@media screen and (max-width: 768px) {
+    .head-dist-h {
+        top: 25%;
+    }
+    .head-dist-h .logoImg {
+        width: 150px;
+    }
+    .head-lions-i, .head-dist-num {
+        font-size: 1.5rem;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .head-dist-h {
+        top: 20%;
+    }
+    .head-dist-h .logoImg {
+        width: 80px;
+    }
+    .head-lions-i, .head-dist-num {
+        font-size: 1rem;
+    }
+}
+
+@media screen and (max-width: 280px) {
+    .head-dist-h {
+        top: 13%;
+    }
+    .head-dist-h .logoImg {
+        width: 80px;
+    }
+    .head-lions-i, .head-dist-num {
+        font-size: 1rem;
+    }
+}

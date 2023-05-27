@@ -1,17 +1,12 @@
 import * as React from "react";
-import Typography from "@mui/material/Typography";
+import { styled } from "@mui/material/styles";
+import { Box, Button, Paper } from "@mui/material";
+import { events } from "../../../actions/client";
 import { useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-import List from "@mui/material/List";
-import { Box, Button, Container, Paper } from "@mui/material";
-import ImageSlider, { Slide } from "react-auto-image-slider";
+import Grid from "@mui/material/Grid";
+import { API_URL } from "../../../api";
 import useStyles from "./Styles";
-import "./Activities.css";
-import { events } from "../../../actions/client";
-import ActivityCard from "../../../components/ActivityCard/ActivityCard";
-import { Carousel } from 'react-carousel-minimal';
-import Chip from '@mui/material/Chip';
-import CalendarTodayIcon from '@mui/icons-material/CalendarToday';
 
 export default function Activities() {
   const classes = useStyles();
@@ -20,128 +15,122 @@ export default function Activities() {
   const activities = useSelector((state) => state.client.events);
   React.useEffect(() => {
     dispatch(events());
-  }, []);
+  }, [dispatch]);
 
-  const data = [
-    {
-      image: "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0c/GoldenGateBridge-001.jpg/1200px-GoldenGateBridge-001.jpg",
-      caption: `<div>
-                  activity 1
-                  <br/>
-                  desc
-                </div>`
-    },
-    {
-      image: "https://cdn.britannica.com/s:800x450,c:crop/35/204435-138-2F2B745A/Time-lapse-hyper-lapse-Isle-Skye-Scotland.jpg",
-      caption: "activity 2"
-    },
-    {
-      image: "https://static2.tripoto.com/media/filter/tst/img/735873/TripDocument/1537686560_1537686557954.jpg",
-      caption: "activity 3"
-    },
-    {
-      image: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/16/Palace_of_Fine_Arts_%2816794p%29.jpg/1200px-Palace_of_Fine_Arts_%2816794p%29.jpg",
-      caption: "activity 4"
-    },
-  ];
+  // New Activity
 
-  const captionStyle = {
-    fontSize: '2em',
-    fontWeight: 'bold',
-  }
-  const slideNumberStyle = {
-    fontSize: '20px',
-    fontWeight: 'bold',
-  }
+  const Item = styled(Paper)(({ theme }) => ({
+    backgroundColor: theme.palette.mode === "dark" ? "#1A2027" : "#fff",
+    ...theme.typography.body2,
+    padding: theme.spacing(1),
+    textAlign: "center",
+    color: theme.palette.text.secondary,
+  }));
 
   return (
     <>
       <Box
         sx={{
           background: "#112E57",
-          paddingBottom: "2rem",
+          padding: "1rem",
           textAlign: "center",
         }}
       >
+        <h1 className={classes.activityHeading}>Activities</h1>
+
         <Paper
           className={classes.activitiesCont}
-          sx={{ display: { xs: "block", md: "flex", width: "100%" } }}
+          sx={{
+            display: { xs: "block", md: "flex", width: "80%", margin: "auto" },
+          }}
         >
-          <Box
-            variant="outlined"
-            sx={{
-              display: "flex",
-              flexDirection: "column",
-              justifyContent: "center",
-              gap: 1,
-              minWidth: "50%",
-              borderRadius: "sm",
-              padding: "2rem 2rem 4rem",
-            }}
+          {/* New Activity */}
+
+          <Grid
+            container
+            rowSpacing={3}
+            columnSpacing={{ xs: 1, sm: 2, md: 3 }}
           >
-            <Typography variant="h4" className={classes.activeH}>
-              Past Activities
-            </Typography>
-            <div className={classes.activityCarouselDiv}>
-              <Carousel
-                data={data}
-                time={4000}
-                width="850px"
-                height="500px"
-                captionStyle={captionStyle}
-                radius="10px"
-                captionPosition="bottom"
-                automatic={true}
-                slideImageFit="cover"
-                thumbnails={true}
-                thumbnailWidth="100px"
-                showNavBtn={false}
-                style={{
-                  textAlign: "center",
-                  maxWidth: "850px",
-                  maxHeight: "500px",
-                }}
-              />
-              <Chip icon={<CalendarTodayIcon />} label='dd/mm/yyyy' sx={{ position: 'absolute', top: '10px', right: '10px', backgroundColor: '#919eab96' }} />
-            </div>
-          </Box>
-          <Box
-            variant="outlined"
-            sx={{
-              display: "flex",
-              flexDirection: "column",
-              justifyContent: "center",
-              gap: 1,
-              minWidth: "50%",
-              borderRadius: "sm",
-              padding: "2rem 2rem 4rem",
-            }}
-          >
-            <Typography variant="h4" className={classes.activeH}>
-              Upcoming Activities
-            </Typography>
-            <List sx={{ py: "var(--ListDivider-gap)" }}>
-              <div className="imageSlider imageSliderX">
-                <ImageSlider>
-                  {activities?.upcoming?.map((item, index) => (
-                    <Slide>
-                      <ActivityCard key={index} item={item} />
-                    </Slide>
-                  ))}
-                </ImageSlider>
-              </div>
-            </List>
-          </Box>
+            {activities.recent?.slice(0, 4).map((item, index) => {
+              return (
+                <>
+                  <Grid
+                    item
+                    xs={12}
+                    sm={6}
+                    position={"relative"}
+                  >
+                    <Item>
+                      <img
+                        src={`${API_URL + item?.image_path}`}
+                        className={classes.activityImage}
+                        alt=""
+                      />
+                      <h3>{item.heading}</h3>
+                      <p>{item.description}</p>
+                      <p className={classes.activityDate}>{item?.date?.slice(0, 10)}</p>
+                    </Item>
+                  </Grid>
+                </>
+              );
+            })}
+          </Grid>
         </Paper>
+
         <Button
-          onClick={() => { navigate("/activities") }}
+          onClick={() => {
+            navigate("/activities");
+          }}
           variant="outlined"
           size="medium"
-          sx={{ color: "white", borderColor: "white" }}
+          sx={{ color: "white", borderColor: "white", marginTop: "2rem" }}
         >
-          View More
+          Register for upcoming activity
         </Button>
       </Box>
     </>
   );
 }
+
+/*
+  const activityData = [
+    {
+      image:
+        "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0c/GoldenGateBridge-001.jpg/1200px-GoldenGateBridge-001.jpg",
+      description: "Description",
+      heading: "Heading",
+      date: "02/04/2023",
+    },
+    {
+      image:
+        "https://cdn.britannica.com/s:800x450,c:crop/35/204435-138-2F2B745A/Time-lapse-hyper-lapse-Isle-Skye-Scotland.jpg",
+      description: "Description",
+      heading: "Heading",
+      date: "02/04/2023",
+    },
+    {
+      image:
+        "https://static2.tripoto.com/media/filter/tst/img/735873/TripDocument/1537686560_1537686557954.jpg",
+      description: "Description",
+      heading: "Heading",
+      date: "02/04/2023",
+    },
+    {
+      image:
+        "https://upload.wikimedia.org/wikipedia/commons/thumb/1/16/Palace_of_Fine_Arts_%2816794p%29.jpg/1200px-Palace_of_Fine_Arts_%2816794p%29.jpg",
+      description: "Description",
+      heading: "Heading",
+      date: "02/04/2023",
+    },
+  ];
+
+  const captionStyle = {
+    fontSize: "2em",
+    fontWeight: "bold",
+  };
+  const slideNumberStyle = {
+    fontSize: "20px",
+    fontWeight: "bold",
+  };
+
+*/

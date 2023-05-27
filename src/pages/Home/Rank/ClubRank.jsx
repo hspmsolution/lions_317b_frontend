@@ -1,14 +1,12 @@
 // import { Timeline } from '@mui/icons-material';
 import * as React from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch,useSelector } from 'react-redux';
 import Timeline from '@mui/lab/Timeline';
 import TimelineItem from '@mui/lab/TimelineItem';
 import TimelineSeparator from '@mui/lab/TimelineSeparator';
 import TimelineConnector from '@mui/lab/TimelineConnector';
 import TimelineContent from '@mui/lab/TimelineContent';
-import AdjustIcon from '@mui/icons-material/Adjust';
 import StarsIcon from '@mui/icons-material/Stars';
-import ArrowCircleUpIcon from '@mui/icons-material/ArrowCircleUp';
 import TimelineOppositeContent, {
   timelineOppositeContentClasses,
 } from '@mui/lab/TimelineOppositeContent';
@@ -39,7 +37,7 @@ const styles = {
     letterSpacing: 2,
     color: '#c50000',
     position: 'relative',
-    margin: '1.5rem 0',
+    margin: '0.5rem',
   },
   sixH1: {
     paddingBottom: 15,
@@ -47,7 +45,7 @@ const styles = {
     fontSize: '1.2em',
     fontWeight: 'normal',
     fontStyle: 'italic',
-    fontFamily: '"Jost", sans-serif',
+    fontFamily: '"Playfair Display","Bookman",serif',
     color: '#999',
     letterSpacing: '-0.005em',
     wordSpacing: 1,
@@ -77,26 +75,26 @@ const styles = {
 
 export default function OppositeContentTimeline() {
   const classes = useStyles();
-  const dispatch = useDispatch();
-  const clubs = useSelector((state) => state.client.topClubs)
+  const dispatch=useDispatch();
+  const clubs=useSelector((state)=>state.client.topClubs)
 
-  React.useEffect(() => {
+  React.useEffect(()=>{
     dispatch(topClubs());
-  }, [])
+  },[])
 
   return (
     <>
       <Box sx={{ backgroundImage: "url('/assets/img/bggg.png')", backgroundAttachment: 'fixed' }}>
-        <Typography variant='h2' className={classes.clubRankH}>Top 8 District Clubs Rank</Typography>
+        <Typography variant='h2' className={classes.clubRankH}>Top 15 District Clubs Rank</Typography>
+        <div className="six">
+          <h1 style={styles.six}>
+            <span style={styles.sixH1}>By Admin Reporting</span>
+            <div style={styles.sixH1Before}></div>
+            <div style={styles.sixH1After}></div>
+          </h1>
+        </div>  
         <Box className={classes.rankRow} sx={{ display: { xs: 'block', md: 'flex' } }}>
           <div className={classes.rankColumn}>
-            <div className="six">
-              <h1 style={styles.six}>
-                <span style={styles.sixH1}>By Activity Reporting</span>
-                <div style={styles.sixH1Before}></div>
-                <div style={styles.sixH1After}></div>
-              </h1>
-            </div>
             <Timeline
               sx={{
                 [`& .${timelineOppositeContentClasses.root}`]: {
@@ -105,29 +103,23 @@ export default function OppositeContentTimeline() {
                 minWidth: '50%',
               }}
             >
-              {clubs.slice(0, clubs.length / 2).map((ranking, index) => (
+              {clubs.slice(0,clubs.length/2).map((ranking, index) => (
                 <>
                   <TimelineItem>
-                    <TimelineOppositeContent color="textSecondary" sx={{ py: 0 }}>
+                    <TimelineOppositeContent color="textSecondary">
                       {ranking.adminstars}
                     </TimelineOppositeContent>
                     <TimelineSeparator>
-                      <ArrowCircleUpIcon sx={{ color: '#d4bc36' }} />
+                      <StarsIcon sx={{ color: '#d4bc36' }} />
+                      {index !== clubRankings.length - 1 && <TimelineConnector />}
                     </TimelineSeparator>
-                    <TimelineContent sx={{ py: 0 }}>{ranking.clubName}</TimelineContent>
+                    <TimelineContent>{ranking.clubName}</TimelineContent>
                   </TimelineItem>
                 </>
               ))}
             </Timeline>
           </div>
           <div className={classes.rankColumn}>
-            <div className="six">
-              <h1 style={styles.six}>
-                <span style={styles.sixH1}>By Admin Reporting</span>
-                <div style={styles.sixH1Before}></div>
-                <div style={styles.sixH1After}></div>
-              </h1>
-            </div>
             <Timeline
               sx={{
                 [`& .${timelineOppositeContentClasses.root}`]: {
@@ -136,16 +128,17 @@ export default function OppositeContentTimeline() {
                 minWidth: '50%',
               }}
             >
-              {clubs.slice(clubs.length / 2).map((ranking, index) => (
+              {clubs.slice(clubs.length/2).map((ranking, index) => (
                 <>
                   <TimelineItem>
-                    <TimelineOppositeContent color="textSecondary" sx={{ py: 0 }}>
+                    <TimelineOppositeContent color="textSecondary">
                       {ranking.adminstars}
                     </TimelineOppositeContent>
                     <TimelineSeparator>
-                      <ArrowCircleUpIcon sx={{ color: '#d4bc36' }} />
+                      <StarsIcon sx={{ color: '#d4bc36' }} />
+                      {index !== clubRankings.length - 1 && <TimelineConnector />}
                     </TimelineSeparator>
-                    <TimelineContent sx={{ py: 0 }}>{ranking.clubName}</TimelineContent>
+                    <TimelineContent>{ranking.clubName}</TimelineContent>
                   </TimelineItem>
                 </>
               ))}

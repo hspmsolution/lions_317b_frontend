@@ -1,76 +1,46 @@
 @import url('https://fonts.googleapis.com/css2?family=Aboreto&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@300&display=swap');
 
-
-/*asasassas*/
-
-
-.card-header {
-    height: 200px;
-    width: 100%;
-    background: linear-gradient(180deg, hsla(187, 88%, 87%, 1) 40%, hsla(0, 0%, 100%, 1) 100%);
-    border-radius: 3rem 3rem 0 0;
-}
-
-
-/*asaddad*/
-
 .about-cnr {
     margin-top: 0;
     /* background-color: #232a34; */
-    /*background: rgb(0, 0, 0) */
-    /*background: linear-gradient(180deg, rgba(0, 0, 0, 1) 0%, rgba(17, 46, 87, 1) 98%);*/
-
-    background: linear-gradient(180deg, hsla(0, 0%, 100%, 1) 0%, hsla(90, 99%, 26%, 1) 100%);
+    background: rgb(0, 0, 0);
+    background: linear-gradient(180deg, rgba(0, 0, 0, 1) 0%, rgba(17, 46, 87, 1) 98%);
     padding: 5rem;
 }
 
 .about-card {
-    /*padding: 1rem;*/
+    padding: 1rem;
     background-color: rgba(222, 213, 213, 0.227);
     border-radius: 3rem;
     box-shadow: 0 4px 20px #00000089;
     color: #fff;
-    /*position: relative;*/
+    position: relative;
     width: 100%;
     min-height: 1px;
     /*padding: auto;*/
-    /*display: flex;*/
-    /*align-items: center;*/
+    display: flex;
+    align-items: center;
+    font-family: sans-serif;
+
 }
 
-.about-dist img {
-    height: 200px;
-    width: 200px;
+.about-card img {
     max-height: 20rem;
     max-width: 20rem;
-    position: absolute;
-    border: 8px solid #08028D;
-    border-radius: 50%;
-    /*margin: 0 auto;*/
-    top: -22%;
-
-    /*margin: 0 auto;*/
-
-    /*margin: 4rem;*/
+    /* margin: 2rem; */
 }
 
 .about-dist {
-    padding: 5rem 6rem 1rem;
+    padding: 0 40px;
     text-align: center;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    position: relative;
-
 }
 
 .about-dist h1 {
-    font-size: 42px;
-    font-family: 'Aboreto', cursive;
+    /*font-size: 0.9rem;*/
+    /*font-family: 'Aboreto', cursive;*/
     font-weight: bolder;
-    /*margin: 2rem 0;*/
-    /*margin: 0;*/
+    margin: 2rem 0;
     border-bottom: 5px solid #084f9d;
     border-radius: 5px;
     padding: 1rem 0;
@@ -78,12 +48,11 @@
 }
 
 .about-dist > p {
-    margin: 1rem;
+    font-size: 1.2rem;
+    margin-top: 0;
+    margin-bottom: 2rem;
     text-align: justify;
-    font-family: 'Roboto Slab', serif;
     letter-spacing: 1px;
-    font-weight: bold;
-    font-size: 1.1rem;
 }
 
 .col-lg-12 {
@@ -123,7 +92,6 @@
 
 #audio h4 {
     font-size: 20px;
-    margin: 0;
 }
 
 .playIcon, .pauseIcon {
@@ -141,7 +109,7 @@
 
 @media screen and (max-width: 600px) {
     .about-cnr {
-        padding: 2rem 0.8rem !important;
+        padding: 0.8rem !important;
     }
 
     .about-dist {
@@ -155,15 +123,7 @@
 
     .about-dist > p {
         letter-spacing: normal;
-        font-size: 12px;
-    }
-
-
-    /*    cmcxc*/
-    .about-dist img {
-        top: -50%;
-        height: 150px;
-        width: 150px;
+        font-size: 14px;
     }
 }
 

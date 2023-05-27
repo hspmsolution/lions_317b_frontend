@@ -17,23 +17,10 @@ export default makeStyles((theme) => ({
     clubLogo: {
         borderRadius: '0%'
     },
-    myNavPaper: {
-        backgroundColor: '#ffffffd6',
-        borderRadius: '2rem',
-        padding: '5px',
-    },
     drawerButton: {
+        color: '#4b4b4b',
         '& div': {
             display: 'flex'
         }
-    },
-    loginButton: {
-        backgroundColor: '#fff',
-        borderRadius: '2rem',
-        border: 'none',
-        '&:hover': {
-            backgroundColor: '#fff',
-            border: 'none',
-        }
-    },
+    }
 }))
