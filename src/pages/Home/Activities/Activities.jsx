@@ -7,7 +7,7 @@ import { useDispatch, useSelector } from "react-redux";
 import Grid from "@mui/material/Grid";
 import { API_URL } from "../../../api";
 import useStyles from "./Styles";
-
+import "./styles.css";
 export default function Activities() {
   const classes = useStyles();
   const dispatch = useDispatch();
@@ -17,21 +17,11 @@ export default function Activities() {
     dispatch(events());
   }, [dispatch]);
 
-  // New Activity
-
-  const Item = styled(Paper)(({ theme }) => ({
-    backgroundColor: theme.palette.mode === "dark" ? "#1A2027" : "#fff",
-    ...theme.typography.body2,
-    padding: theme.spacing(1),
-    textAlign: "center",
-    color: theme.palette.text.secondary,
-  }));
-
   return (
     <>
       <Box
         sx={{
-          background: "#112E57",
+          // background: "#112E57",
           padding: "1rem",
           textAlign: "center",
         }}
@@ -60,16 +50,27 @@ export default function Activities() {
                     sm={6}
                     position={"relative"}
                   >
-                    <Item>
+                    <Box
+                      sx={{
+                        backgroundColor: "rgba(29, 60, 122, 0.85)",
+                        borderRadius: "1rem",
+                        paddingBottom: "1rem",
+                        color: "white",
+                        boxShadow:
+                          "rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px",
+                      }}
+                    >
                       <img
                         src={`${API_URL + item?.image_path}`}
                         className={classes.activityImage}
-                        alt=""
+                        alt="Activity"
                       />
-                      <h3>{item.heading}</h3>
-                      <p>{item.description}</p>
-                      <p className={classes.activityDate}>{item?.date?.slice(0, 10)}</p>
-                    </Item>
+                      <h3>{item.heading}Heading</h3>
+                      <p>{item.description}Description</p>
+                      <p className={classes.activityDate}>
+                        {item?.date?.slice(0, 10)}
+                      </p>
+                    </Box>
                   </Grid>
                 </>
               );
@@ -83,54 +84,17 @@ export default function Activities() {
           }}
           variant="outlined"
           size="medium"
-          sx={{ color: "white", borderColor: "white", marginTop: "2rem" }}
+          sx={{
+            color: "rgba(29, 60, 122, 0.85)",
+            borderColor: "rgba(29, 60, 122, 0.85)",
+            marginTop: "2rem",
+          }}
+          className='activityButton'
         >
-          Register for upcoming activity
+          {/* Register for upcoming activity */}
+          &nbsp;
         </Button>
       </Box>
     </>
   );
 }
-
-/*
-  const activityData = [
-    {
-      image:
-        "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0c/GoldenGateBridge-001.jpg/1200px-GoldenGateBridge-001.jpg",
-      description: "Description",
-      heading: "Heading",
-      date: "02/04/2023",
-    },
-    {
-      image:
-        "https://cdn.britannica.com/s:800x450,c:crop/35/204435-138-2F2B745A/Time-lapse-hyper-lapse-Isle-Skye-Scotland.jpg",
-      description: "Description",
-      heading: "Heading",
-      date: "02/04/2023",
-    },
-    {
-      image:
-        "https://static2.tripoto.com/media/filter/tst/img/735873/TripDocument/1537686560_1537686557954.jpg",
-      description: "Description",
-      heading: "Heading",
-      date: "02/04/2023",
-    },
-    {
-      image:
-        "https://upload.wikimedia.org/wikipedia/commons/thumb/1/16/Palace_of_Fine_Arts_%2816794p%29.jpg/1200px-Palace_of_Fine_Arts_%2816794p%29.jpg",
-      description: "Description",
-      heading: "Heading",
-      date: "02/04/2023",
-    },
-  ];
-
-  const captionStyle = {
-    fontSize: "2em",
-    fontWeight: "bold",
-  };
-  const slideNumberStyle = {
-    fontSize: "20px",
-    fontWeight: "bold",
-  };
-
-*/

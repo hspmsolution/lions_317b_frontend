@@ -1,0 +1,42 @@
+.activityButton {
+  position: relative;
+  overflow: hidden;
+  padding: 0.5rem;
+  /* z-index: 1; */
+  transition: 0.08s ease-in;
+  width: 250px;
+}
+
+.activityButton:after {
+  content: "Register for upcoming activity";
+  position: absolute;
+  width: 100%;
+  /* height: 100%; */
+  left: 0;
+  text-align: center;
+  transition: all 400ms cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.activityButton:before {
+  content: "Register for upcoming activity →";
+  /* height: 100%; */
+  width: 100%;
+  position: absolute;
+  color: #383736;
+  left: -100%;
+  opacity: 0;
+  transition: all 500ms cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+.activityButton:hover {
+  background: rgba(29, 60, 122, 0.85);
+}
+.activityButton:hover:before {
+  left: 0;
+  opacity: 1;
+  color: white;
+}
+
+.activityButton:hover:after {
+  left: 100%;
+  opacity: 0;
+}
