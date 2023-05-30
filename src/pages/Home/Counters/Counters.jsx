@@ -10,7 +10,7 @@ import {
 import CountUp from "react-countup";
 import "./counter.css";
 import { activityStats } from "../../../actions/client";
-import { Grid } from '@mui/material';
+import { Grid } from "@mui/material";
 
 function EventCounter({ event }) {
   return (
@@ -19,10 +19,17 @@ function EventCounter({ event }) {
         <div className="event-icon">{event.icon}</div>
         <div className="event-count">
           <div>{event.name}</div>
-          <CountUp start={event.start} end={event.end} duration={5}>
+          <CountUp
+            start={event.start}
+            end={event.end}
+            duration={5}
+          >
             {({ countUpRef }) => (
               <div>
-                <span ref={countUpRef} style={{  fontSize: ""  }} />
+                <span
+                  ref={countUpRef}
+                  style={{ fontSize: "" }}
+                />
               </div>
             )}
           </CountUp>
@@ -42,18 +49,21 @@ function Counters() {
       start: 0,
       end: stats?.totalActivities,
       icon: <FontAwesomeIcon icon={faUsers} />,
+      class: "counter-one",
     },
     {
       name: "Amount Raised",
       start: 0,
       end: stats?.amountRaised,
       icon: <FontAwesomeIcon icon={faHandHoldingDollar} />,
+      class: "counter-two",
     },
     {
       name: "Amount Spent",
       start: 0,
       end: stats?.totalAmountSpend,
       icon: <FontAwesomeIcon icon={faCoins} />,
+      class: "counter-three",
     },
     {
       name: "Total Clubs",
@@ -66,12 +76,14 @@ function Counters() {
           style={{ width: "60%" }}
         />
       ),
+      class: "counter-four",
     },
     {
       name: "Beneficiaries",
       start: 0,
       end: stats?.beneficiariesServed,
       icon: <FontAwesomeIcon icon={faUniversalAccess} />,
+      class: "counter-five",
     },
   ];
 
@@ -79,21 +91,39 @@ function Counters() {
     dispatch(activityStats());
   }, []);
 
-    return (
-        <div className="counters">
-            <div className='col-lg-12 '>
-                <div ref={countersRef} className='row text-center'>
-                    <Grid container spacing={2} className='counterGrid'>
-                        {events.map((event, index) => (
-                            <Grid key={index} item xs={12} sm={6} md={4} lg={2.4}>
-                                <EventCounter key={event.name} event={event} />
-                            </Grid>
-                        ))}
-                    </Grid>
-                </div>
-            </div>
+  return (
+    <div className="counters">
+      <div className="col-lg-12 ">
+        <div
+          ref={countersRef}
+          className="row text-center"
+        >
+          <Grid
+            container
+            spacing={2}
+            className="counterGrid"
+          >
+            {events.map((event, index) => (
+              <Grid
+                key={index}
+                item
+                xs={12}
+                sm={6}
+                md={4}
+                lg={2.4}
+                className={`${event.class}`}
+              >
+                <EventCounter
+                  key={event.name}
+                  event={event}
+                />
+              </Grid>
+            ))}
+          </Grid>
         </div>
-    );
+      </div>
+    </div>
+  );
 }
 
 export default Counters;

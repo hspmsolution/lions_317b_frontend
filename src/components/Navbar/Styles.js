@@ -10,9 +10,13 @@ export default makeStyles((theme) => ({
             '& .MuiBox-root': {
                 '& button': {
                     color: '#4b4b4b'
+                },
+                '& button:hover':{
+                    color:'white'
                 }
             }
-        }
+        },
+       
     },
     clubLogo: {
         borderRadius: '0%'

@@ -3,7 +3,9 @@
     color: #000000;
     background-color: #ffffff00;
     position: absolute;
-    top: 35%;
+    /* top: 48%; */
+    bottom:43%;
+    
     width: 100%;
     z-index: 998;
 }
@@ -23,12 +25,14 @@
 }
 
 .head-dist-h > div {
-    min-width: 60vw;
+    /* min-width: 60vw; */
 }
 
 .head-lions-i {
-    font-size: 2rem;
+    font-size: 2.5rem;
     font-weight: 600;
+    /* color: rgba(29, 60, 122, 0.93); */
+
 }
 
 .head-dist-num {

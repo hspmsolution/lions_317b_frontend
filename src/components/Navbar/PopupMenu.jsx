@@ -4,8 +4,8 @@ import { styled } from "@mui/material/styles";
 import { toLower } from "lodash";
 import Tooltip, { tooltipClasses } from "@mui/material/Tooltip";
 import { Box, Grid, MenuItem } from "@mui/material";
-import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
-import './Popup.css';
+import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
+import "./Popup.css";
 
 // tooltip function to show menu item on hover and on click
 
@@ -25,7 +25,7 @@ const HtmlTooltip = styled(({ className, isMatch, ...props }) => (
     fontSize: theme.typography.pxToRem(12),
     border: "1px solid #dadde9",
     borderRadius: "8px",
-    boxShadow: "rgb(0 0 0 / 28%) 0px 0px 13px 0px"
+    boxShadow: "rgb(0 0 0 / 28%) 0px 0px 13px 0px",
   },
 }));
 
@@ -36,42 +36,67 @@ const PopupMenu = ({ title, menuItems }) => {
     return (
       <>
         {dropItems.map((item, index) => (
-            <MenuItem key={index} onClick={() => navigate(`/${toLower((title).replaceAll(' ', ''))}/${toLower((item).replaceAll(' ', ''))}`)}>{item}</MenuItem>
+          <MenuItem
+            key={index}
+            onClick={() =>
+              navigate(
+                `/${toLower(title.replaceAll(" ", ""))}/${toLower(
+                  item.replaceAll(" ", "")
+                )}`
+              )
+            }
+          >
+            {item}
+          </MenuItem>
         ))}
       </>
-    )
-  }
-  
+    );
+  };
+
   return (
     <>
       {menuItems ? (
         <HtmlTooltip
-
           title={
-            <Grid item xs={12}>
+            <Grid
+              item
+              xs={12}
+            >
               <Box
                 sx={{
-                  // p: 2,
-                  bgcolor: 'background.default',
-                  display: 'grid',
-                  gridTemplateColumns: { md: '1fr' },
-                  gridTemplateRows: { md: '1fr 1fr' },
+                  // bgcolor: "rgba(29, 60, 122, 0.4)",
+                  display: "grid",
+                  gridTemplateColumns: { md: "1fr" },
+                  gridTemplateRows: { md: "1fr 1fr" },
+                  padding: "0",
+
                   // gap: 2,
                 }}
               >
-
-                <DropDown dropItems={menuItems} />
+                <DropDown
+                  dropItems={menuItems}
+                  
+                />
               </Box>
             </Grid>
           }
         >
-          <div id="" >
-            {title}<ExpandMoreIcon />
+          <div id="">
+            {title}
+            <ExpandMoreIcon />
           </div>
         </HtmlTooltip>
-      ) : (<div onClick={() => 
-        {title === "Home" ? navigate(`/`) :
-          navigate(`/${toLower((title).replaceAll(' ', ''))}`)}}>{title}</div>)}
+      ) : (
+        <div
+          onClick={() => {
+            title === "Home"
+              ? navigate(`/`)
+              : navigate(`/${toLower(title.replaceAll(" ", ""))}`);
+          }}
+        >
+          {title}
+        </div>
+      )}
     </>
   );
 };

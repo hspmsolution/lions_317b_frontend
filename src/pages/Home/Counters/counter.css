@@ -1,7 +1,9 @@
 .counters {
   width: 100%;
   padding: 3rem 0;
-  background: #112E57;
+  /* background: #112E57; */
+  background: linear-gradient(180deg, hsla(0, 0%, 100%, 1) 0%, hsla(240, 100%, 31%, 1) 100%);
+
   background-size: cover;
   color: #fff;
   display: flex;
@@ -62,4 +64,29 @@
 
 .count > div > .event-count {
   font-size: 30%;
+}
+
+.counter-one .count {
+  background-color: rgba(54, 6, 47, 0.7);
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+}
+
+.counter-two .count {
+  background-color: rgba(11, 86, 179, 0.7);
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+}
+
+.counter-three .count {
+  background-color: rgba(205, 0, 2, 0.7);
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+}
+
+.counter-four .count {
+  background-color: rgba(44, 108, 3, 0.7);
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+}
+
+.counter-five .count {
+  background-color: rgba(254, 109, 3, 0.7);
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
 }

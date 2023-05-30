@@ -147,8 +147,10 @@ function Navbar(props) {
                 sx={{
                   color: "#151515",
                   margin: "0.2rem 0.6rem",
-                  outline: "2.2px solid #151515",
-                  width: { xs: "auto",md:'130px'},
+                  width: "130px",
+                  "&:hover": {
+                    backgroundColor: "rgba(29, 60, 122, 0.85)",
+                  },
                 }}
                 className={classes.drawerButton}
               >
@@ -164,7 +166,9 @@ function Navbar(props) {
               size="medium"
               sx={{
                 color: "#151515",
-                outline: "2.2px solid #151515",
+                "&:hover": {
+                  backgroundColor: "rgba(29, 60, 122, 0.85)",
+                },
               }}
               className={classes.loginButton}
               onClick={memberLogin}
@@ -175,7 +179,10 @@ function Navbar(props) {
               size="medium"
               sx={{
                 color: "#151515",
-                outline: "2.2px solid #151515",
+
+                "&:hover": {
+                  backgroundColor: "rgba(29, 60, 122, 0.85)",
+                },
               }}
               className={classes.loginButton}
             >
