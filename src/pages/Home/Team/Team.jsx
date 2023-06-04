@@ -81,10 +81,11 @@ function Team() {
   return (
     <Box
       sx={{
-        backgroundImage: "url('/assets/img/bggg.png')",
+        backgroundImage: "url('/assets/img/newbg02.png')",
         backgroundAttachment: "fixed",
         pb: "2rem",
       }}
+      className="teamsContainer"
     >
       <Container>
         <Typography
@@ -99,23 +100,6 @@ function Team() {
         >
           {teamData.map((member, index) => {
             return (
-              // <Grid
-              //   item
-              //   className="profile-card"
-              //   key={index}
-              // >
-              //   <div className="img">
-              //     <img
-              //       alt=""
-              //       src={member.src}
-              //     />
-              //   </div>
-              //   <div className="caption">
-              //     <h3>{member.name}</h3>
-              //     <h4>{member.sub_design}</h4>
-              //     <p>{member.designation}</p>
-              //   </div>
-              // </Grid>
               <Grid
                 item
                 key={index}
@@ -136,11 +120,6 @@ function Team() {
                     </div>
                   </div>
                 </Paper>
-                {/* <div className="caption">
-                  <h3>{member.name}</h3>
-                  <h4>{member.sub_design}</h4>
-                  <p>{member.designation}</p>
-                </div> */}
               </Grid>
             );
           })}

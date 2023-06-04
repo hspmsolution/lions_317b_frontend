@@ -2,21 +2,21 @@
   /* background: linear-gradient(90deg, rgba(0, 0, 0, .85), rgba(0, 0, 0, .85), rgba(0, 0, 0, .85)), url(/public/assets/img/pexels-monstera.jpg) no-repeat; */
   background-size: 100% 100%;
   background-attachment: fixed;
-  color: black;
+  color: white;
   font-size: 14px;
   font-weight: 400;
-  letter-spacing: .025em;
+  letter-spacing: 0.025em;
   line-height: 1.8;
   margin-bottom: 0;
   min-height: 100vh;
   min-height: calc(100vh - var(--vh-offset, 0px));
   overflow-x: hidden;
   width: 100%;
-  padding-bottom: 3rem;
+  /* padding-bottom: 3rem; */
 }
 
 .aboutGovContainer {
-  color: black;
+  color: white;
   display: block;
   /* background: rgba(255, 255, 255, 0.11); */
   border-radius: 16px;
@@ -24,18 +24,25 @@
   /* backdrop-filter: blur(2.6px); */
   /* -webkit-backdrop-filter: blur(2.6px); */
   /* border: 1px solid rgba(255, 255, 255, 0.3); */
-  border: 2.5px solid rgb(9, 16, 149);
+  /* border: 2.5px solid rgb(9, 16, 149); */
 }
 
 .dist-governer {
   display: flex;
   justify-content: center;
-  color: black;
+  color: white;
   gap: 7rem;
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
   font-size: 15px;
 }
 
 .dist-governer div {
   margin-top: 3rem;
+}
+
+@media screen and (max-width: 600px) {
+  .about-image {
+    width: 220px;
+    height: 220px;
+  }
 }

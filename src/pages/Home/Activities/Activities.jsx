@@ -8,6 +8,7 @@ import Grid from "@mui/material/Grid";
 import { API_URL } from "../../../api";
 import useStyles from "./Styles";
 import "./styles.css";
+import ArrowForwardIcon from "@mui/icons-material/ArrowForward";
 export default function Activities() {
   const classes = useStyles();
   const dispatch = useDispatch();
@@ -22,16 +23,26 @@ export default function Activities() {
       <Box
         sx={{
           // background: "#112E57",
+          backgroundImage: "url('/assets/img/newbg02.png')",
+          backgroundAttachment: "fixed",
           padding: "1rem",
           textAlign: "center",
         }}
+        className="activityContainer"
       >
-        <h1 className={classes.activityHeading}>Activities</h1>
+        <h1 className="activityHeading">Activities</h1>
 
         <Paper
           className={classes.activitiesCont}
           sx={{
-            display: { xs: "block", md: "flex", width: "80%", margin: "auto" },
+            display: {
+              xs: "block",
+              md: "flex",
+              width: "80%",
+              margin: "auto",
+              paddingTop: "2rem",
+              backgroundColor: "transparent",
+            },
           }}
         >
           {/* New Activity */}
@@ -56,8 +67,15 @@ export default function Activities() {
                         borderRadius: "1rem",
                         paddingBottom: "1rem",
                         color: "white",
+                        cursor: "pointer",
                         boxShadow:
                           "rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px",
+                        "&:hover": {
+                          boxShadow: " rgba(0, 0, 0, 0.35) 0px 5px 15px",
+                        },
+                      }}
+                      onClick={() => {
+                        navigate("/activities");
                       }}
                     >
                       <img
@@ -89,10 +107,10 @@ export default function Activities() {
             borderColor: "rgba(29, 60, 122, 0.85)",
             marginTop: "2rem",
           }}
-          className='activityButton'
+          className="activityButton"
         >
-          {/* Register for upcoming activity */}
-          &nbsp;
+          View All &nbsp;
+          <ArrowForwardIcon />
         </Button>
       </Box>
     </>

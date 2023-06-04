@@ -36,14 +36,22 @@ export default function News() {
     dispatch(topNews(page));
   }, [dispatch, page]);
 
-  
-
   return (
     <>
       <Box
         sx={{
-          backgroundImage: "url('/assets/img/bggg.png')",
+          backgroundImage: "url('/assets/img/newbg02.png')",
           backgroundAttachment: "fixed",
+          animation: " animatedBackground 20s linear infinite;",
+          "@keyframes animatedBackground": {
+            "0%": {
+              backgroundPosition: " 0 0",
+            },
+
+            "100%": {
+              backgroundPosition: "100% 0",
+            },
+          },
         }}
       >
         <CustomizedBreadcrumbs
@@ -55,7 +63,7 @@ export default function News() {
             display: "flex",
             flexWrap: "wrap",
             justifyContent: "center",
-            padding: "1rem",
+            padding: "3rem 2rem",
           }}
         >
           <Grid
@@ -67,10 +75,6 @@ export default function News() {
           >
             {newsData.map((item, index) => (
               <>
-                {/* <NewsCard
-                item={item}
-                key={index}
-              /> */}
                 <Grid
                   item
                   xs={12}
@@ -79,9 +83,18 @@ export default function News() {
                   lg={4}
                   key={index}
                 >
-                  <Paper elevation={3}>
+                  <Paper
+                    elevation={3}
+                    sx={{
+                      borderRadius: "1rem",
+                      backgroundColor: "rgba(29, 60, 122, 0.85)",
+                      color: "white",
+                      boxShadow:
+                        "rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px",
+                    }}
+                  >
                     <CommonCard
-                      type='news'
+                      type="news"
                       images={`${API_URL + item?.image}`}
                       srcSet={`${API_URL + item?.image}`}
                       alt={item.newsTitle}

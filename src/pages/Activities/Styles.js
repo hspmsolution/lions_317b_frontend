@@ -5,7 +5,7 @@ export default makeStyles(() => ({
     margin: "3rem auto",
   },
   eventCard: {
-    padding: 0,
+    padding: "0",
     textAlign: "center",
   },
   slider: {
@@ -28,5 +28,8 @@ export default makeStyles(() => ({
     dialogPaper: {
       height: "250px",
     },
+  },
+  dialogTitle: {
+    color: "rgba(29, 60, 122, 1)",
   },
 }));

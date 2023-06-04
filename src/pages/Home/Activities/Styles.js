@@ -17,9 +17,6 @@ export default makeStyles((theme) => ({
     height: "300px",
     borderRadius: "1rem 1rem 0 0",
   },
-  activityHeading: {
-    color: "rgba(29, 60, 122, 0.85)",
-  },
   activityDate: {
     position: "absolute",
     top: "6%",

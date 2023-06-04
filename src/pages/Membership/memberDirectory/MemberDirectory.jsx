@@ -21,9 +21,19 @@ export default function MemberDirectory() {
     <>
       <Box
         sx={{
-          backgroundImage: "url('/assets/img/bggg.png')",
+          backgroundImage: "url('/assets/img/newbg02.png')",
           backgroundAttachment: "fixed",
-          pb: "2rem",
+          animation: " animatedBackground 20s linear infinite;",
+          "@keyframes animatedBackground": {
+            "0%": {
+              backgroundPosition: " 0 0",
+            },
+
+            "100%": {
+              backgroundPosition: "100% 0",
+            },
+          },
+          
         }}
       >
         <CustomizedBreadcrumbs

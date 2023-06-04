@@ -36,8 +36,9 @@ const myNav = [
   {
     title: "Membership",
     menuItems: [
+      "Organization Data",
       "Member Directory",
-      "Business Directory",
+      "Mini Directory",
       "Download Member Data",
     ],
   },
@@ -146,7 +147,7 @@ function Navbar(props) {
                 key={index}
                 sx={{
                   color: "#151515",
-                  margin: "0.2rem 0.6rem",
+                  margin: "0 6px",
                   width: "130px",
                   "&:hover": {
                     backgroundColor: "rgba(29, 60, 122, 0.85)",

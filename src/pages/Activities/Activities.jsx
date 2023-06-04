@@ -56,12 +56,21 @@ function ResponsiveDialog({
   const classes = useStyles();
   return (
     <div>
-      <Button
-        variant="outlined"
-        onClick={handleClickOpen}
-      >
-        Open Activity Details
-      </Button>
+      <Box sx={{}}>
+        <Button
+          // variant="outlined"
+          onClick={handleClickOpen}
+          sx={{
+            color: "white",
+            backgroundColor: "rgba(29, 60, 122, 0.85)",
+            "&:hover": {
+              backgroundColor: "rgba(29, 60, 122, 0.85)",
+            },
+          }}
+        >
+          Open Activity Details
+        </Button>
+      </Box>
       <Dialog
         fullScreen={fullScreen}
         open={open}
@@ -99,7 +108,7 @@ function ResponsiveDialog({
                 <TableRow
                   sx={{ "&:last-child td, &:last-child th": { border: 0 } }}
                 >
-                  <TableCell>
+                  <TableCell className={classes.dialogTitle}>
                     <strong>Activity Title:</strong>
                   </TableCell>
                   <TableCell>{title}</TableCell>
@@ -107,7 +116,7 @@ function ResponsiveDialog({
                 <TableRow
                   sx={{ "&:last-child td, &:last-child th": { border: 0 } }}
                 >
-                  <TableCell>
+                  <TableCell className={classes.dialogTitle}>
                     <strong>Activity Date:</strong>
                   </TableCell>
                   <TableCell>{date?.slice(0, 10)}</TableCell>
@@ -116,14 +125,16 @@ function ResponsiveDialog({
                   sx={{ "&:last-child td, &:last-child th": { border: 0 } }}
                 >
                   <TableCell>
-                    <strong>Activity Type:</strong>
+                    <strong className={classes.dialogTitle}>
+                      Activity Type:
+                    </strong>
                   </TableCell>
                   <TableCell>{type}</TableCell>
                 </TableRow>
                 <TableRow
                   sx={{ "&:last-child td, &:last-child th": { border: 0 } }}
                 >
-                  <TableCell>
+                  <TableCell className={classes.dialogTitle}>
                     <strong>Activity Category:</strong>
                   </TableCell>
                   <TableCell>Catergory</TableCell>
@@ -131,7 +142,7 @@ function ResponsiveDialog({
                 <TableRow
                   sx={{ "&:last-child td, &:last-child th": { border: 0 } }}
                 >
-                  <TableCell>
+                  <TableCell className={classes.dialogTitle}>
                     <strong>Activity Place:</strong>
                   </TableCell>
                   <TableCell>Place</TableCell>
@@ -139,7 +150,7 @@ function ResponsiveDialog({
                 <TableRow
                   sx={{ "&:last-child td, &:last-child th": { border: 0 } }}
                 >
-                  <TableCell>
+                  <TableCell className={classes.dialogTitle}>
                     <strong> Activity Description:</strong>
                   </TableCell>
                   <TableCell>{description}</TableCell>
@@ -174,20 +185,14 @@ function BasicCard({ title, bgImage, type, date, description, activityId }) {
   const classes = useStyles();
 
   return (
-    <Card sx={{ minWidth: 275, maxWidth: 520, margin: "auto" }}>
+    <Card
+      sx={{
+        boxShadow:
+          "rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px",
+      }}
+    >
       <CardContent className={classes.eventCard}>
-        <Box
-          sx={{
-            width: "100%",
-            height: "16rem",
-            mb: { xs: "1.5rem", lg: "4rem" },
-          }}
-        >
-          {/* <img
-            src={API_URL + bgImage}
-            style={{ height: "100%", width: "100%", objectFit: "contain" }}
-          /> */}
-
+        <Box>
           <CommonCard
             image={API_URL + bgImage}
             date={date?.slice(0, 10)}
@@ -220,8 +225,18 @@ export default function Events() {
     <>
       <Box
         sx={{
-          backgroundImage: "url('/assets/img/bggg.png')",
+          backgroundImage: "url('/assets/img/newbg02.png')",
           backgroundAttachment: "fixed",
+          animation: " animatedBackground 20s linear infinite;",
+          "@keyframes animatedBackground": {
+            "0%": {
+              backgroundPosition: " 0 0",
+            },
+
+            "100%": {
+              backgroundPosition: "100% 0",
+            },
+          },
           pb: "2rem",
         }}
       >
@@ -232,7 +247,8 @@ export default function Events() {
         >
           <Typography
             variant="h4"
-            sx={{ textAlign: "center", marginBottom: "2rem" }}
+            sx={{ textAlign: "center",}}
+            className="heading11"
           >
             Upcoming Activities
           </Typography>
@@ -247,16 +263,18 @@ export default function Events() {
             >
               <Box
                 sx={{
-                  p: 2,
+                  p: '3rem 2rem',
                   display: "grid",
                   gridTemplateColumns: { md: "4fr 4fr 4fr" },
-                  gap: 2,
+                  gap: 4,
                 }}
               >
                 {activities?.upcoming?.length === 0 ? (
                   <Typography
                     variant="h6"
-                    color="black"
+                    color="green"
+                    sx={{borderBottom:'3px solid green'}}
+                    textAlign={"center"}
                   >
                     No Upcoming Activity Found
                   </Typography>
@@ -281,7 +299,8 @@ export default function Events() {
         <Container sx={{ margin: "3rem auto" }}>
           <Typography
             variant="h4"
-            sx={{ textAlign: "center", marginBottom: "2rem" }}
+            sx={{ textAlign: "center",}}
+            className="heading11"
           >
             Past Activities
           </Typography>
@@ -296,10 +315,10 @@ export default function Events() {
             >
               <Box
                 sx={{
-                  p: 2,
+                  p: '3rem 2rem',
                   display: "grid",
                   gridTemplateColumns: { md: "4fr 4fr 4fr" },
-                  gap: 2,
+                  gap: 4,
                 }}
               >
                 {activities?.past?.length === 0 ? (

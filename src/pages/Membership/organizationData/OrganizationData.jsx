@@ -1,6 +1,6 @@
-import  React,{useEffect} from "react";
+import React, { useEffect } from "react";
 import MUIDataTable from "mui-datatables";
-import { useSelector,useDispatch } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 import { ThemeProvider } from "@mui/material/styles";
 import { createTheme } from "@mui/material/styles";
 import { CacheProvider } from "@emotion/react";
@@ -8,11 +8,11 @@ import createCache from "@emotion/cache";
 import { Container } from "@mui/material";
 import { Box } from "@mui/material";
 import CustomizedBreadcrumbs from "../../../components/Breadcrumb/Breadcrumb";
-import useStyles from './Styles';
-import {getMembers} from "../../../actions/member";
+import useStyles from "./Styles";
+import { getMembers } from "../../../actions/member";
 const muiCache = createCache({
   key: "mui-datatables",
-  prepend: true
+  prepend: true,
 });
 
 export default function OrganizationData() {
@@ -30,7 +30,7 @@ export default function OrganizationData() {
     "Title",
     { name: "Full Name", options: { filterOptions: { fullWidth: true } } },
     "Club Name",
-    "Occupation"
+    "Occupation",
   ];
 
   const options = {
@@ -41,39 +41,58 @@ export default function OrganizationData() {
     filter: filterBtn,
     filterType: "dropdown",
     responsive,
-    selectableRows: 'none', // Disable the checkbox column
+    selectableRows: "none", // Disable the checkbox column
     tableBodyMaxHeight,
     onTableChange: (action, state) => {
       console.log(action);
       console.dir(state);
-    }
+    },
   };
   const Members = () => {
     const dispatch = useDispatch();
     const membersD = useSelector((state) => state.clubMembers.memberDirectory);
-  
-  
+
     useEffect(() => {
       dispatch(getMembers());
     }, [dispatch]);
-  
+
     const data = membersD.map((member, index) => [
       index + 1,
       member.title,
       member.fullName,
       member.clubName,
-      member.Occupation
+      member.Occupation,
     ]);
-  
+
     return data;
   };
 
-
   return (
     <div className="memberTable">
-      <Box sx={{ background: "url('/assets/img/bggg.png')", backgroundAttachment: 'fixed' }}>
-        <CustomizedBreadcrumbs label={'Membership'} subLabel={'Organization Data'} />
-        <Container sx={{ pb: '5rem' }} className={classes.muiTableContainer}>
+      <Box
+        sx={{
+          backgroundImage: "url('/assets/img/newbg02.png')",
+          backgroundAttachment: "fixed",
+          animation: " animatedBackground 20s linear infinite;",
+          "@keyframes animatedBackground": {
+            "0%": {
+              backgroundPosition: " 0 0",
+            },
+
+            "100%": {
+              backgroundPosition: "100% 0",
+            },
+          },
+        }}
+      >
+        <CustomizedBreadcrumbs
+          label={"Membership"}
+          subLabel={"Organization Data"}
+        />
+        <Container
+          sx={{ p: "3rem 2rem" }}
+          className={classes.muiTableContainer}
+        >
           <CacheProvider value={muiCache}>
             <ThemeProvider theme={createTheme()}>
               <MUIDataTable

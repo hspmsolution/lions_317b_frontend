@@ -65,22 +65,36 @@ export default function MemberData() {
     <>
       <Box
         sx={{
-          backgroundImage: "url('/assets/img/bggg.png')",
+          backgroundImage: "url('/assets/img/newbg02.png')",
           backgroundAttachment: "fixed",
+          animation: " animatedBackground 20s linear infinite;",
+          "@keyframes animatedBackground": {
+            "0%": {
+              backgroundPosition: " 0 0",
+            },
+
+            "100%": {
+              backgroundPosition: "100% 0",
+            },
+          },
         }}
       >
         <CustomizedBreadcrumbs
           label={"Membership"}
           subLabel={"Download Member Data"}
         />
-        <Container sx={{ paddingX: { sm: '5rem' } }}>
-          <Box sx={{ width: "100%", pb: "4rem", textAlign: 'center' }}>
+        <Container sx={{ paddingX: { sm: "5rem" }, paddingY: "3rem" }}>
+          <Box sx={{ width: "100%", pb: "4rem", textAlign: "center" }}>
             <Grid
               container
               rowSpacing={1}
               columnSpacing={{ xs: 1, sm: 2, md: 3 }}
             >
-              <Grid item xs={12} md={6}>
+              <Grid
+                item
+                xs={12}
+                md={6}
+              >
                 <Item className={classes.checkItems}>
                   <Typography variant="h6">Select Clubs</Typography>
                   <Box
@@ -89,8 +103,8 @@ export default function MemberData() {
                       margin: "1rem",
                       padding: "0.5rem",
                       borderRadius: "5px",
-                      height: '500px',
-                      overflowY: 'scroll',
+                      height: "500px",
+                      overflowY: "scroll",
                     }}
                   >
                     <FormGroup>
@@ -115,13 +129,20 @@ export default function MemberData() {
                     </FormGroup>
                   </Box>
                   <Box sx={{ display: "inline-flex", gap: "2rem" }}>
-                    <Button variant="contained" onClick={selectClubs}>
+                    <Button
+                      variant="contained"
+                      onClick={selectClubs}
+                    >
                       {selectAllClubs ? "Deselect All" : "Select All"}
                     </Button>
                   </Box>
                 </Item>
               </Grid>
-              <Grid item xs={12} md={6}>
+              <Grid
+                item
+                xs={12}
+                md={6}
+              >
                 <Item className={classes.checkItems}>
                   <Typography variant="h6">Select Positions</Typography>
                   <Box
@@ -130,8 +151,8 @@ export default function MemberData() {
                       margin: "1rem",
                       padding: "0.5rem",
                       borderRadius: "5px",
-                      height: '500px',
-                      overflowY: 'scroll',
+                      height: "500px",
+                      overflowY: "scroll",
                     }}
                   >
                     <FormGroup>
@@ -156,7 +177,10 @@ export default function MemberData() {
                     </FormGroup>
                   </Box>
                   <Box sx={{ display: "inline-flex", gap: "2rem" }}>
-                    <Button variant="contained" onClick={selectTitles}>
+                    <Button
+                      variant="contained"
+                      onClick={selectTitles}
+                    >
                       {selectAllTitles ? "Deselect All" : "Select All"}
                     </Button>
                   </Box>
@@ -164,7 +188,7 @@ export default function MemberData() {
               </Grid>
             </Grid>
             <Button
-              sx={{ marginRight: "auto", mt: '2rem' }}
+              sx={{ marginRight: "auto", mt: "2rem" }}
               variant="contained"
               onClick={downloadData}
             >
