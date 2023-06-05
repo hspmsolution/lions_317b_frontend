@@ -21,10 +21,7 @@ function Privacy() {
         minHeight: "100vh",
       }}
     >
-      <CustomizedBreadcrumbs
-        // label={"Resources"}
-        subLabel={"Privacy Policies"}
-      />
+      <CustomizedBreadcrumbs label={"Privacy Policies"} />
       <Container
         sx={{
           padding: "3rem 2rem",

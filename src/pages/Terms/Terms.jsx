@@ -21,10 +21,7 @@ function Terms() {
         minHeight: "100vh",
       }}
     >
-      <CustomizedBreadcrumbs
-        // label={"Resources"}
-        subLabel={"Terms and Conditions"}
-      />
+      <CustomizedBreadcrumbs label={"Terms and Conditions"} />
       <Container
         sx={{
           padding: "3rem 2rem",
