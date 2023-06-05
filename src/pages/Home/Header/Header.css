@@ -4,7 +4,7 @@
   background-color: #ffffff00;
   position: absolute;
   /* top: 48%; */
-  bottom: 43%;
+  bottom: 40%;
 
   width: 100%;
   z-index: 998;
@@ -42,9 +42,9 @@
   font-weight: 550;
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 900px) {
   .head-dist-h {
-    /* top: 25%; */
+    bottom: 15%;
   }
   .head-dist-h .logoImg {
     width: 150px;
@@ -55,22 +55,28 @@
   }
 }
 
+@media screen and (max-width: 1024px) {
+  .head-dist-h {
+    bottom: 17%;
+  }
+}
+
 @media screen and (max-width: 480px) {
   .head-dist-h {
-    top: 20%;
+    bottom: 1%;
   }
   .head-dist-h .logoImg {
     width: 80px;
   }
   .head-lions-i,
   .head-dist-num {
-    font-size: 1rem;
+    font-size: 0.8rem;
   }
 }
 
 @media screen and (max-width: 280px) {
   .head-dist-h {
-    top: 13%;
+    /* top: 13%; */
   }
   .head-dist-h .logoImg {
     width: 80px;

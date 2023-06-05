@@ -74,8 +74,6 @@
   background-color: rgba(29, 60, 122, 0.85);
 }
 
-
-
 .activityContainer {
   animation: animatedBackground 20s linear infinite;
 }
@@ -87,5 +85,11 @@
 
   100% {
     background-position: 100% 0;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .activityHeading {
+    font-size: 25px;
   }
 }

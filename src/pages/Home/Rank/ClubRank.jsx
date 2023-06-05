@@ -32,7 +32,7 @@ const styles = {
   six: {
     textAlign: "center",
     color: "#222",
-    fontSize: 30,
+    // fontSize: 30,
     fontWeight: 400,
     textTransform: "uppercase",
     wordSpacing: 1,
@@ -43,13 +43,13 @@ const styles = {
   },
   sixH1: {
     paddingBottom: 15,
-    textTransform: "none",
-    fontSize: "1.2em",
-    fontWeight: "normal",
-    fontStyle: "italic",
-    fontFamily: '"Playfair Display","Bookman",serif',
+    // textTransform: "none",
+    // fontSize: "1.6rem",
+    // fontWeight: "normal",
+    // fontStyle: "italic",
+    // fontFamily: '"Playfair Display","Bookman",serif',
     color: "#999",
-    letterSpacing: "-0.005em",
+    // letterSpacing: "-0.005em",
     wordSpacing: 1,
     letterSpacing: "none",
   },
@@ -101,7 +101,12 @@ export default function OppositeContentTimeline() {
         </Typography>
         <div className="six">
           <h1 style={styles.six}>
-            <span style={styles.sixH1}>By Admin Reporting</span>
+            <span
+              style={styles.sixH1}
+              className="rankHeading"
+            >
+              By Admin Reporting
+            </span>
             <div style={styles.sixH1Before}></div>
             <div style={styles.sixH1After}></div>
           </h1>
@@ -159,7 +164,7 @@ export default function OppositeContentTimeline() {
                     <TimelineContent
                       sx={{
                         py: "12px",
-                        px: 2,
+                        // px: 2,
                         backgroundColor: "rgba(29, 60, 122, 0.85)",
                         // margin: "6px",
                         borderRadius: "1rem",

@@ -22,7 +22,6 @@ export default function Activities() {
     <>
       <Box
         sx={{
-          // background: "#112E57",
           backgroundImage: "url('/assets/img/newbg02.png')",
           backgroundAttachment: "fixed",
           padding: "1rem",
@@ -32,69 +31,76 @@ export default function Activities() {
       >
         <h1 className="activityHeading">Activities</h1>
 
-        <Paper
-          className={classes.activitiesCont}
+        {/* <Paper
           sx={{
             display: {
               xs: "block",
               md: "flex",
-              width: "80%",
+              // width: "80%",
               margin: "auto",
               paddingTop: "2rem",
               backgroundColor: "transparent",
             },
           }}
+        > */}
+        <Grid
+          container
+          // columnSpacing={1}
+          rowSpacing={5}
+          columnSpacing={{ xs: 1, sm: 2, md: 1 }}
+          sx={{
+            padding: { xs: "1rem", md: "2rem 7rem", lg: " 2rem 10rem" },
+          }}
         >
-          {/* New Activity */}
-
-          <Grid
-            container
-            rowSpacing={3}
-            columnSpacing={{ xs: 1, sm: 2, md: 3 }}
-          >
-            {activities.recent?.slice(0, 4).map((item, index) => {
-              return (
-                <>
-                  <Grid
-                    item
-                    xs={12}
-                    sm={6}
+          {activities.recent?.slice(0, 4).map((item, index) => {
+            return (
+              <>
+                <Grid
+                  item
+                  xs={12}
+                  sm={6}
+                  sx={{
+                    display: "flex",
+                    justifyContent: "center",
+                    alignItems: "center",
+                  }}
+                >
+                  <Box
+                    sx={{
+                      backgroundColor: "rgba(29, 60, 122, 0.85)",
+                      borderRadius: "1rem",
+                      paddingBottom: "1rem",
+                      color: "white",
+                      cursor: "pointer",
+                      boxShadow:
+                        "rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px",
+                      "&:hover": {
+                        boxShadow: " rgba(0, 0, 0, 0.35) 0px 5px 15px",
+                      },
+                    }}
                     position={"relative"}
+                    className={classes.activityCard}
+                    onClick={() => {
+                      navigate("/activities");
+                    }}
                   >
-                    <Box
-                      sx={{
-                        backgroundColor: "rgba(29, 60, 122, 0.85)",
-                        borderRadius: "1rem",
-                        paddingBottom: "1rem",
-                        color: "white",
-                        cursor: "pointer",
-                        boxShadow:
-                          "rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px",
-                        "&:hover": {
-                          boxShadow: " rgba(0, 0, 0, 0.35) 0px 5px 15px",
-                        },
-                      }}
-                      onClick={() => {
-                        navigate("/activities");
-                      }}
-                    >
-                      <img
-                        src={`${API_URL + item?.image_path}`}
-                        className={classes.activityImage}
-                        alt="Activity"
-                      />
-                      <h3>{item.heading}Heading</h3>
-                      <p>{item.description}Description</p>
-                      <p className={classes.activityDate}>
-                        {item?.date?.slice(0, 10)}
-                      </p>
-                    </Box>
-                  </Grid>
-                </>
-              );
-            })}
-          </Grid>
-        </Paper>
+                    <img
+                      src={`${API_URL + item?.image_path}`}
+                      className={classes.activityImage}
+                      alt="Activity"
+                    />
+                    <h3>{item.heading}Heading</h3>
+                    <p>{item.description}Description</p>
+                    <p className={classes.activityDate}>
+                      {item?.date?.slice(0, 10)}
+                    </p>
+                  </Box>
+                </Grid>
+              </>
+            );
+          })}
+        </Grid>
+        {/* </Paper> */}
 
         <Button
           onClick={() => {

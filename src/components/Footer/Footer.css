@@ -236,6 +236,11 @@ ul.list-links li {
   .footer-nav02 {
     order: 3;
   }
+  .footorXS {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+  }
 }
 
 /*Footer Background Image*/

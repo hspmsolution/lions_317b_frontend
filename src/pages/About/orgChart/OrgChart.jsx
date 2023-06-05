@@ -41,7 +41,11 @@ export default function OrgChart() {
         }}
       >
         <CustomizedBreadcrumbs label={"Organization Chart"} />
-        <Container sx={{ p: "3rem" }}>
+        <Container
+          sx={{
+            padding: { xs: "3rem 0.5rem", sm: "3rem 2rem", lg: "3rem 2rem" },
+          }}
+        >
           {data.map((region, index) => (
             <Accordion
               expanded={expanded === index}
@@ -58,14 +62,17 @@ export default function OrgChart() {
                 <Typography
                   variant="h4"
                   sx={{
-                    width: "33%",
+                    width: "40%",
                     flexShrink: 0,
                     color: "rgba(29, 60, 122, 0.9)",
+                    fontSize: { xs: "0.8rem",md:"1.25rem" },
                   }}
                 >
                   {region.name}
                 </Typography>
-                <Typography sx={{ color: "text.secondary" }}>
+                <Typography
+                  sx={{ color: "text.secondary", fontSize: { xs: "0.7rem",md:'1rem' } }}
+                >
                   Region Chairperson{region.chairPerson}
                 </Typography>
               </AccordionSummary>

@@ -238,7 +238,6 @@ export default function Events() {
               backgroundPosition: "100% 0",
             },
           },
-          pb: "2rem",
         }}
       >
         <CustomizedBreadcrumbs label={"Activities"} />
@@ -264,7 +263,11 @@ export default function Events() {
             >
               <Box
                 sx={{
-                  p: "3rem 2rem",
+                  padding: {
+                    xs: "3rem 0.5rem",
+                    sm: "3rem 2rem",
+                    lg: "3rem 2rem",
+                  },
                   display: "grid",
                   gridTemplateColumns: { md: "4fr 4fr 4fr" },
                   gap: 4,
@@ -316,7 +319,11 @@ export default function Events() {
             >
               <Box
                 sx={{
-                  p: "3rem 2rem",
+                  padding: {
+                    xs: "3rem 0.5rem",
+                    sm: "3rem 2rem",
+                    lg: "3rem 2rem",
+                  },
                   display: "grid",
                   gridTemplateColumns: { md: "4fr 4fr 4fr" },
                   gap: 4,

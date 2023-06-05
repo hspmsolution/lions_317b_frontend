@@ -15,11 +15,11 @@ function District() {
             // margin: "1rem",
             backgroundImage: 'url("/assets/img/aboutbg03.png")',
             backgroundSize: "cover",
-            padding: "3rem 2rem",
+            padding: { xs: "3rem 0.5rem", sm: "3rem 2rem", lg: "3rem 2rem" },
           }}
         >
           <Container
-            // sx={{ my: "5rem" }}
+            sx={{ padding: "0" }}
             className="aboutGovContainer"
           >
             <Paper className="districtPaper ">

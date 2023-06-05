@@ -4,7 +4,7 @@ export default makeStyles((theme) => ({
   rankRow: {},
   rankColumn: {
     minWidth: "50%",
-    padding: "2rem",
+    padding: "2rem 0",
   },
   teamSubH: {
     fontSize: "35px",
@@ -16,15 +16,5 @@ export default makeStyles((theme) => ({
     letterSpacing: "-0.005em",
     wordSpacing: "1px",
     letterSpacing: "none",
-  },
-  clubRankH: {
-    fontSize: "42px",
-    // fontFamily: "'Aboreto', cursive",
-    fontWeight: "bolder",
-    paddingTop: "2rem",
-    textAlign: "center",
-    wordSpacing: "1px",
-    letterSpacing: "2px",
-    color: "#c50000",
   },
 }));

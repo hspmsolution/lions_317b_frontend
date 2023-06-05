@@ -36,16 +36,21 @@
 
 
 .rankContainer {
-    animation: animatedBackground 20s linear infinite;
+  animation: animatedBackground 20s linear infinite;
+}
+
+@keyframes animatedBackground {
+  0% {
+    background-position: 0 0;
   }
-  
-  @keyframes animatedBackground {
-    0% {
-      background-position: 0 0;
-    }
-  
-    100% {
-      background-position: 100% 0;
-    }
+
+  100% {
+    background-position: 100% 0;
   }
-  
+}
+@media only screen and (max-width: 600px) {
+  .clubRankH {
+    font-size: 25px;
+  }
+ 
+}

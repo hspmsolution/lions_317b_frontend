@@ -25,12 +25,12 @@ function DGTeam() {
             justifyContent: "center",
             backgroundImage: 'url("/assets/img/aboutbg03.png")',
             backgroundSize: "cover",
-            padding: "3rem 2rem",
+            padding: { xs: "3rem 0.5rem", sm: "3rem 2rem", lg: "3rem 2rem" },
           }}
         >
           <Grid
             item
-            xs={10}
+            xs={12}
             className="gov"
           >
             <Item
@@ -83,7 +83,7 @@ function DGTeam() {
           </Grid>
           <Grid
             item
-            xs={10}
+            xs={12}
             md={5}
             className="vcGov1"
           >
@@ -142,7 +142,7 @@ function DGTeam() {
           </Grid>
           <Grid
             item
-            xs={10}
+            xs={12}
             md={5}
             className="vcGov2"
           >

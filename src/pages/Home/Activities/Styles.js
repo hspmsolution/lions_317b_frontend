@@ -2,8 +2,8 @@ import { useMediaQuery } from "@mui/material";
 import { makeStyles } from "@mui/styles";
 
 export default makeStyles((theme) => ({
-  activitiesCont: {
-    // background: '#112E57'
+  activityCard: {
+    width:'450px'
   },
   activeH: {
     color: "white",
@@ -19,7 +19,7 @@ export default makeStyles((theme) => ({
   },
   activityDate: {
     position: "absolute",
-    top: "6%",
+    top: "0%",
     right: "4%",
     backgroundColor: "white",
     padding: "0.2rem 0.6rem",

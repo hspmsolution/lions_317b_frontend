@@ -92,7 +92,6 @@ const socialIcos = [
     icon: <FontAwesomeIcon icon={faYoutube} />,
     link: "https://www.youtube.com/channel/UCPS2Iv4WWFni-BcLSMXOT5g",
   },
-  
 ];
 // const footItems = [{
 // }]
@@ -113,7 +112,7 @@ function Footer() {
     >
       <Box
         sx={{
-          backgroundColor: "rgba(4,27,59,0.5)",
+          backgroundColor: "rgba(4,27,59,0.3)",
           color: "#fff",
         }}
         className={classes.footer}
@@ -151,7 +150,7 @@ function Footer() {
                       py: "5px",
                       borderRadius: "1rem",
                       "&:hover": {
-                        backgroundColor: "rgba(255, 255, 255, 0.7)",
+                        backgroundColor: "rgba(255, 255, 255, 0.8)",
                         color: "black",
                       },
                     }}
@@ -163,20 +162,20 @@ function Footer() {
               ))}
             </List>
           </nav>
-
-          <Avatar
-            alt="Remy Sharp"
-            src={"/assets/img/logo2.png"}
-            sx={{
-              width: { xs: "130px", lg: "180px" },
-              height: { xs: "130px", lg: "180px" },
-              borderRadius: "0",
-              margin: "1rem 2rem",
-              display: { xs: "block", sm: "block" },
-            }}
-            className="footer-logo"
-          />
-
+          <Box className="footorXS">
+            <Avatar
+              alt="Remy Sharp"
+              src={"/assets/img/logo2.png"}
+              sx={{
+                width: { xs: "130px", lg: "180px" },
+                height: { xs: "130px", lg: "180px" },
+                borderRadius: "0",
+                margin: "1rem 2rem",
+                display: { xs: "block", sm: "block" },
+              }}
+              className="footer-logo"
+            />
+          </Box>
           <nav
             aria-label="secondary mailbox folders"
             className="footer-nav02"
@@ -209,7 +208,7 @@ function Footer() {
 
       <Box
         sx={{
-          backgroundColor: "rgba(4,27,59,0.5)",
+          backgroundColor: "rgba(4,27,59,0.3)",
           color: "#fff",
         }}
       >
@@ -226,7 +225,13 @@ function Footer() {
                 </Typography>*/}
           <Box className={classes.socialIcons}>
             {socialIcos.map((item, index) => (
-              <Link to={item.link} target="_blank" key={index}>{item.icon}</Link>
+              <Link
+                to={item.link}
+                target="_blank"
+                key={index}
+              >
+                {item.icon}
+              </Link>
             ))}
           </Box>
         </Container>
