@@ -24,7 +24,7 @@ export default makeStyles(() => ({
     },
     "& .css-1wuw8dw-MuiBreadcrumbs-separator": {
       color: "white",
-      fontWeight:'bold'
+      fontWeight: "bold",
     },
   },
 }));
