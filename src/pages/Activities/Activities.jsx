@@ -194,6 +194,7 @@ function BasicCard({ title, bgImage, type, date, description, activityId }) {
       <CardContent className={classes.eventCard}>
         <Box>
           <CommonCard
+            type="activities"
             image={API_URL + bgImage}
             date={date?.slice(0, 10)}
           />
@@ -247,7 +248,7 @@ export default function Events() {
         >
           <Typography
             variant="h4"
-            sx={{ textAlign: "center",}}
+            sx={{ textAlign: "center" }}
             className="heading11"
           >
             Upcoming Activities
@@ -263,7 +264,7 @@ export default function Events() {
             >
               <Box
                 sx={{
-                  p: '3rem 2rem',
+                  p: "3rem 2rem",
                   display: "grid",
                   gridTemplateColumns: { md: "4fr 4fr 4fr" },
                   gap: 4,
@@ -273,7 +274,7 @@ export default function Events() {
                   <Typography
                     variant="h6"
                     color="green"
-                    sx={{borderBottom:'3px solid green'}}
+                    sx={{ borderBottom: "3px solid green" }}
                     textAlign={"center"}
                   >
                     No Upcoming Activity Found
@@ -299,7 +300,7 @@ export default function Events() {
         <Container sx={{ margin: "3rem auto" }}>
           <Typography
             variant="h4"
-            sx={{ textAlign: "center",}}
+            sx={{ textAlign: "center" }}
             className="heading11"
           >
             Past Activities
@@ -315,7 +316,7 @@ export default function Events() {
             >
               <Box
                 sx={{
-                  p: '3rem 2rem',
+                  p: "3rem 2rem",
                   display: "grid",
                   gridTemplateColumns: { md: "4fr 4fr 4fr" },
                   gap: 4,

@@ -22,11 +22,10 @@ export default makeStyles((theme) => ({
   },
   description: {
     lineHeight: "1.3",
-    padding:'0 1rem',
+    padding: "0 1rem",
     height: "60px",
     overflow: "hidden",
     textOverflow: "ellipsis",
-    // display: "inline-block",
     textAlign: "center",
     whiteSpace: "normal",
     display: "-webkit-box",

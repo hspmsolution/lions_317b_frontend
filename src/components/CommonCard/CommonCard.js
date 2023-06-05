@@ -36,7 +36,11 @@ export default function CommonCard(props) {
           className={classes.activityImage}
         />
         <h3>{props.heading}</h3>
-        <p className={classes.description}>
+        <p
+          className={
+            props.type === "activities" ? "" : `${classes.description}`
+          }
+        >
           {props.description}
         </p>
         <p className={classes.activityDate}>{props.date}</p>
