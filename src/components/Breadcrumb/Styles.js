@@ -4,7 +4,7 @@ export default makeStyles(() => ({
   breadcrumbCont: {
     height: "11rem",
     padding: "0 2rem",
-    backgroundImage: "url('assets/img/breadcrumbs.jpg')",
+    backgroundImage: "url('/assets/img/breadcrumbs.png')",
     backgroundSize: "600px",
     backgroundAttachment: "fixed",
     display: "flex",
