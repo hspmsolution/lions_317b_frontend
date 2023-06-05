@@ -11,6 +11,8 @@ import TableHead from "@mui/material/TableHead";
 import TableRow from "@mui/material/TableRow";
 import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
+import CustomizedBreadcrumbs from "../../components/Breadcrumb/Breadcrumb";
+
 const ContactForm = () => {
   const classes = useStyles();
   const [firstName, setFirstName] = useState("");
@@ -39,10 +41,21 @@ const ContactForm = () => {
     <>
       <Box
         sx={{
-          paddingTop: "6rem",
-          backgroundImage: "url('/assets/img/bggg.png')",
+          backgroundImage: "url('/assets/img/newbg02.png')",
+          backgroundAttachment: "fixed",
+          animation: " animatedBackground 20s linear infinite;",
+          "@keyframes animatedBackground": {
+            "0%": {
+              backgroundPosition: " 0 0",
+            },
+
+            "100%": {
+              backgroundPosition: "100% 0",
+            },
+          },
         }}
       >
+        <CustomizedBreadcrumbs label={"Contact Us"} />
         <Box className={classes.box}>
           <Grid
             container
@@ -56,7 +69,7 @@ const ContactForm = () => {
               sx={{ margin: "auto" }}
             >
               <Typography
-                variant="h6"
+                variant="h4"
                 align="center"
                 className={classes.heading}
               >
@@ -66,11 +79,19 @@ const ContactForm = () => {
                 sx={{ display: "flex", flexDirection: "column", gap: "2rem" }}
               >
                 {rows.map((item, index) => (
-                  <Card sx={{ MaxWidth: 350, borderLeft: "4px solid #37F90D" }}>
+                  <Card
+                    sx={{
+                      MaxWidth: 350,
+                      borderLeft: "4px solid rgba(29, 60, 122, 0.85)",
+                      boxShadow:
+                        "rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px",
+                    }}
+                  >
                     <CardContent>
                       <Typography
                         variant="h5"
                         component="div"
+                        sx={{ color: "rgba(29, 60, 122, 0.9)" }}
                       >
                         Name : {item.name}
                       </Typography>
@@ -87,12 +108,14 @@ const ContactForm = () => {
               <Card
                 sx={{
                   MaxWidth: 350,
-                  borderLeft: "4px solid #37F90D",
+                  borderLeft: "4px solid rgba(29, 60, 122, 0.85)",
                   marginTop: "2rem",
+                  boxShadow:
+                    "rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px",
                 }}
               >
                 <CardContent>
-                  <Typography>
+                  <Typography sx={{ color: "rgba(29, 60, 122, 0.9)" }}>
                     <strong>Email: lions317f2324@gmail.com</strong>
                   </Typography>
                 </CardContent>

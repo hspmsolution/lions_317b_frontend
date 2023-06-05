@@ -27,7 +27,8 @@ import {makeStyles} from "@mui/styles";
       padding:'2rem 3rem',
     },
     heading:{
-      paddingBottom:'1rem'
+      paddingBottom:'1rem',
+      color:'rgba(29, 60, 122, 0.85)'
     }
   });
   
