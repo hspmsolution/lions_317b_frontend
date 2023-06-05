@@ -148,7 +148,7 @@ function Navbar(props) {
                 sx={{
                   color: "#151515",
                   margin: "0 6px",
-                  width: "130px",
+                  // width: "130px",
                   "&:hover": {
                     backgroundColor: "rgba(29, 60, 122, 0.85)",
                   },
