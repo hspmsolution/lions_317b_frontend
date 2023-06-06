@@ -12,7 +12,7 @@ export default function MemberDirectory() {
 
   // Define an empty array to hold the members data
   const Members = useSelector((state) => state.clubMembers.memberDirectory);
-  
+
   useEffect(() => {
     dispatch(getMembers());
   }, [dispatch]);
@@ -33,17 +33,30 @@ export default function MemberDirectory() {
               backgroundPosition: "100% 0",
             },
           },
-          
         }}
       >
         <CustomizedBreadcrumbs
           label={"Membership"}
           subLabel={"Member Directory"}
         />
-        <Container className={classes.profileContainer}>
-          <Grid container spacing={2}>
+        <Container
+          sx={{
+            padding: { xs: "3rem 0.5rem", sm: "3rem 2rem", lg: "3rem 2rem" },
+          }}
+          className={classes.profileContainer}
+        >
+          <Grid
+            container
+            spacing={2}
+          >
             {Members?.map((member, index) => (
-              <Grid item xs={12} md={4} lg={4} key={index}>
+              <Grid
+                item
+                xs={12}
+                md={4}
+                lg={4}
+                key={index}
+              >
                 <ProfileCard
                   fullName={member.fullName}
                   title={member.title}

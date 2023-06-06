@@ -45,7 +45,7 @@
   top: 0;
 }
 
-.imgSlide > img:before{
+.imgSlide > img:before {
   background-color: red;
 }
 
@@ -53,8 +53,12 @@
   position: relative;
 }
 
-.gQPiQM {
-  display: none;
+.gQPiQM,
+.sc-dmyDGi,
+.gtrAwG,
+.sc-eDLJxc {
+  color: transparent !important;
+  display: none !important;
 }
 .slideOverlay:before {
   background: rgba(0, 0, 0, 0.5);

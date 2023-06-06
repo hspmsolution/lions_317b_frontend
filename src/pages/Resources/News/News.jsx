@@ -63,7 +63,7 @@ export default function News() {
             display: "flex",
             flexWrap: "wrap",
             justifyContent: "center",
-            padding: "3rem 2rem",
+            padding: { xs: "3rem 0.5rem", sm: "3rem 2rem", lg: "3rem 2rem" },
           }}
         >
           <Grid
@@ -114,7 +114,7 @@ export default function News() {
           sx={{
             display: "flex",
             justifyContent: "center",
-            p: "2rem",
+            p: "2rem 1rem",
           }}
         >
           <Pagination

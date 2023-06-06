@@ -18,56 +18,11 @@ export default function Gallery(props) {
 
   return (
     <>
-      {/* <Box>
-        <Grid
-          container
-          spacing={1}
-        >
-          {images.map((item, index) => (
-            <>
-              <Grid
-                xs={12}
-                lg={6}
-                sx={{
-                  display: "flex",
-                  justifyContent: "center",
-                  alignItems: "center",
-                  padding: "1rem",
-                }}
-              >
-                <button
-                  type="button"
-                  onClick={() => {
-                    setIsOpen(true);
-                    setPhotoIndex(index);
-                  }}
-                  className="itemButton"
-                  key={index}
-                >
-                  <Paper elevation={3}>
-                    <Box sx={{ height: "300px" }}>
-                      <img
-                        src={`${API_URL + item.image}`}
-                        loading="lazy"
-                      />
-                    </Box>
-                    <Box sx={{ padding: "1rem" }}>
-                      <Typography variant={2}>Heading</Typography>
-                      <br></br>
-                      <Typography variant={5}>Description</Typography>
-                    </Box>
-                  </Paper>
-                </button>
-              </Grid>
-            </>
-          ))}
-        </Grid>
-      </Box> */}
       <Box
         sx={{
           flexGrow: 1,
           // background: "#112E57",
-          padding: "3rem 2rem",
+          padding: { xs: "3rem 0.5rem", sm: "3rem 2rem", lg: "3rem 2rem" },
           textAlign: "center",
         }}
       >
@@ -96,8 +51,15 @@ export default function Gallery(props) {
               >
                 <Paper
                   elevation={3}
-                  sx={{ cursor: "pointer" ,borderRadius:'1rem' ,color:'white', backgroundColor:"rgba(29, 60, 122, 0.85)", pb:'0.5rem',boxShadow:
-                  "rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px"}}
+                  sx={{
+                    cursor: "pointer",
+                    borderRadius: "1rem",
+                    color: "white",
+                    backgroundColor: "rgba(29, 60, 122, 0.85)",
+                    pb: "0.5rem",
+                    boxShadow:
+                      "rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px",
+                  }}
                 >
                   <CommonCard
                     image={`${API_URL + item.image}`}

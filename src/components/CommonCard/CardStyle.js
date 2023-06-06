@@ -26,7 +26,7 @@ export default makeStyles((theme) => ({
     height: "60px",
     overflow: "hidden",
     textOverflow: "ellipsis",
-    textAlign: "center",
+    textAlign: "left",
     whiteSpace: "normal",
     display: "-webkit-box",
     "-webkit-line-clamp": 3,

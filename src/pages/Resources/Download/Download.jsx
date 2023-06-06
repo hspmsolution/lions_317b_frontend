@@ -54,7 +54,7 @@ export default function Download() {
             display: "flex",
             justifyContent: "space-evenly",
             flexWrap: "wrap",
-            padding: "3rem 2rem",
+            padding: { xs: "3rem 0.5rem", sm: "3rem 2rem", lg: "3rem 2rem" },
           }}
         >
           <Box sx={{ flexGrow: 1 }}>

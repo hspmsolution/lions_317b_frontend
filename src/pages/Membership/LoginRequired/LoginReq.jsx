@@ -13,10 +13,18 @@ import { makeStyles } from "@mui/styles";
 const useStyles = makeStyles({
   label: {
     " & label.MuiInputLabel-root, & input.MuiInputBase-input": {
-      color: "#39459b",
+      color: "white",
+    },
+    " & label.MuiInputLabel-root": {
+      color: "white",
+      fontWeight: "bolder",
+    },
+    " & input.MuiInputBase-input": {
+      padding: "0.8rem",
+      borderRadius: "0.5rem",
     },
     "& label.Mui-focused": {
-      color: "#39459b",
+      color: "white",
     },
   },
   button: {
@@ -29,7 +37,7 @@ const useStyles = makeStyles({
       },
       "&:active": {
         backgroundColor: "#0d99d7",
-        color: "#39459b",
+        // color: "#39459b",
       },
     },
   },
@@ -55,7 +63,7 @@ const Login = () => {
     }),
     onSubmit: (data) => {
       setTimeout(() => {
-        dispatch(signInReq(data,navigate));
+        dispatch(signInReq(data, navigate));
       }, 500);
 
       setDisabled(true);
@@ -74,15 +82,11 @@ const Login = () => {
   return (
     <Box
       sx={{
-        backgroundImage: 'url("/assets/img/loginPage.jpg")',
+        backgroundImage: 'url("/assets/img/login01.png")',
         backgroundSize: "cover",
         display: "flex",
         minHeight: "100vh",
         alignItems: "center",
-        backdropFilter: "blur(5px)",
-        color: "#39459b",
-        backgroundColor: "rgba(255, 255, 255, 0.3)",
-        boxShadow: "inset 0 0 0 1000px rgba(255, 255, 255, 0.1)",
       }}
     >
       <Helmet>
@@ -91,29 +95,32 @@ const Login = () => {
       <Box
         //component="main"
         sx={{
-          background: " rgba( 255, 255, 255, 0.45 )",
           boxShadow: " 0 8px 32px 0 rgba( 31, 38, 135, 0.37 )",
           backdropFilter: "blur( 5.5px )",
-          backdropFilter: "blur( 5.5px )",
-          borderRadius: "20px",
-          border: "1px solid rgba( 255, 255, 255, 0.18 )",
+          borderRadius: "1rem",
           maxWidth: "758px",
           margin: "auto",
-          padding: "77px 99px 87px",
-          color: "#fff",
+          padding: { xs: "3rem 0.5rem", sm: "3rem 3rem", lg: "3rem 5rem" },
+          color: "white",
         }}
       >
         <Container maxWidth="sm">
           <Link to="/">
             <Button
               component="a"
-              sx={{ color: "white" }}
+              sx={{
+                color: "white",
+                "&:hover": { backgroundColor: "white", color: "rgb(22,20,69)" },
+              }}
               startIcon={<ArrowBackIcon fontSize="small" />}
             >
               Home
             </Button>
           </Link>
-          <form onSubmit={formik.handleSubmit} className={classes.label}>
+          <form
+            onSubmit={formik.handleSubmit}
+            className={classes.label}
+          >
             <Box
               sx={{
                 pb: 1,
@@ -121,7 +128,11 @@ const Login = () => {
                 color: "white",
               }}
             >
-              <Typography align="center" color="white" variant="h6">
+              <Typography
+                align="center"
+                color="white"
+                variant="h6"
+              >
                 Login with Member Id
               </Typography>
             </Box>

@@ -90,7 +90,9 @@ export default function OrganizationData() {
           subLabel={"Organization Data"}
         />
         <Container
-          sx={{ p: "3rem 2rem" }}
+          sx={{
+            padding: { xs: "3rem 0.5rem", sm: "3rem 2rem", lg: "3rem 2rem" },
+          }}
           className={classes.muiTableContainer}
         >
           <CacheProvider value={muiCache}>

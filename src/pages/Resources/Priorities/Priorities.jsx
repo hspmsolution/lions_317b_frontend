@@ -41,7 +41,9 @@ export default function Priorities() {
           container
           rowSpacing={3}
           columnSpacing={{ xs: 1, sm: 2, md: 3 }}
-          sx={{ padding: "3rem 3rem 5rem" }}
+          sx={{
+            padding: { xs: "3rem 0.5rem", sm: "3rem 2rem", lg: "3rem 2rem" },
+          }}
         >
           <Grid
             item
@@ -111,8 +113,7 @@ export default function Priorities() {
                 empowering the service of Lions around the world . As we enter
                 the second year of the campaign, we want to keep your momentum
                 going by encouraging everyone to give what they can. Toghether,
-                we bring long-term change and lasting hope to the communities
-                that need us most.
+                
               </Box>
             </Item>
           </Grid>

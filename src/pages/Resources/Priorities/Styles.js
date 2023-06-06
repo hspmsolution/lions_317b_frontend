@@ -6,9 +6,10 @@ export default makeStyles((theme) => ({
             display: 'flex',
             alignItems: 'center',
             textAlign: 'justify',
-            padding: '2rem',
-            backgroundColor: '#33338f',
-            color: 'white'
+            padding: '2rem 0.7rem',
+            backgroundColor: 'rgba(29, 60, 122, 0.85)',
+            color: 'white',
+            
         },
         '& .MuiBox-root': {
             justifyContent: 'center',

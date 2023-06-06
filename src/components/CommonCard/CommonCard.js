@@ -35,7 +35,7 @@ export default function CommonCard(props) {
           alt={props.alt}
           className={classes.activityImage}
         />
-        <h3>{props.heading}</h3>
+        <h3 style={{ textAlign: "center" }}>{props.heading}</h3>
         <p
           className={
             props.type === "activities" ? "" : `${classes.description}`
@@ -43,7 +43,8 @@ export default function CommonCard(props) {
         >
           {props.description}
         </p>
-        <p className={classes.activityDate}>{props.date}</p>
+        {props.date ? <p className={classes.activityDate}>{props.date}</p> : ""}
+        {/*  <p className={classes.activityDate}>{props.date}</p> */}
         {props.type === "news" ? (
           <a
             href={`${props.newsPaperLink}`}

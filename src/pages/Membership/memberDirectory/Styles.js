@@ -6,7 +6,6 @@ export default makeStyles((theme) => ({
     flexWrap: "wrap",
     justifyContent: "center",
     alignItems: "center",
-    padding: "3rem 2rem",
   },
   cardContent: {
     display: "grid",

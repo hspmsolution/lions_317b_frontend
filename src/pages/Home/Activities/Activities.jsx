@@ -31,25 +31,14 @@ export default function Activities() {
       >
         <h1 className="activityHeading">Activities</h1>
 
-        {/* <Paper
-          sx={{
-            display: {
-              xs: "block",
-              md: "flex",
-              // width: "80%",
-              margin: "auto",
-              paddingTop: "2rem",
-              backgroundColor: "transparent",
-            },
-          }}
-        > */}
+        
         <Grid
           container
           // columnSpacing={1}
           rowSpacing={5}
           columnSpacing={{ xs: 1, sm: 2, md: 1 }}
           sx={{
-            padding: { xs: "1rem", md: "2rem 7rem", lg: " 2rem 10rem" },
+            padding: { xs: "0", md: "2rem 7rem", lg: " 2rem 10rem" },
           }}
         >
           {activities.recent?.slice(0, 4).map((item, index) => {
