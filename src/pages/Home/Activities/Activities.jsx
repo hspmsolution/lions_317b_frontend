@@ -31,23 +31,23 @@ export default function Activities() {
       >
         <h1 className="activityHeading">Activities</h1>
 
-        
         <Grid
           container
-          // columnSpacing={1}
-          rowSpacing={5}
-          columnSpacing={{ xs: 1, sm: 2, md: 1 }}
+          rowSpacing={4}
+          columnSpacing={{ xs: 1, sm: 2, md: 4 }}
           sx={{
-            padding: { xs: "0", md: "2rem 7rem", lg: " 2rem 10rem" },
+            padding: { xs: "0", md: "2rem 3rem", lg: " 2rem 5rem" },
+            marginTop: "0",
           }}
         >
-          {activities.recent?.slice(0, 4).map((item, index) => {
+          {activities.recent?.slice(0, 6).map((item, index) => {
             return (
               <>
                 <Grid
                   item
                   xs={12}
                   sm={6}
+                  md={4}
                   sx={{
                     display: "flex",
                     justifyContent: "center",

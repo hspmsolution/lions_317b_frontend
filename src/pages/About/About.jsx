@@ -30,7 +30,7 @@ const About = () => {
               }}
             >
               <Avatar
-                src={"/assets/dist_img/01_BSN.jpeg"}
+                src={"/assets/dist_img/dg.jpeg"}
                 alt="our district governer"
                 sx={{ mt: "1rem", width: "300px", height: "220px" }}
                 className="about-image"
@@ -40,7 +40,7 @@ const About = () => {
                 variant="h4"
                 className="itemTitle"
               >
-                B S Nagaraj, PMJF
+                ERLE BRITO
               </Typography>
               <Typography variant="h5">District Governor</Typography>
             </div>

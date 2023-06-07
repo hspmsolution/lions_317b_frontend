@@ -65,13 +65,17 @@ export default function OrgChart() {
                     width: "40%",
                     flexShrink: 0,
                     color: "rgba(29, 60, 122, 0.9)",
-                    fontSize: { xs: "0.8rem",md:"1.25rem" },
+                    fontSize: { xs: "0.8rem", md: "1.25rem" },
                   }}
                 >
                   {region.name}
                 </Typography>
                 <Typography
-                  sx={{ color: "text.secondary", fontSize: { xs: "0.7rem",md:'1rem' } }}
+                  sx={{
+                    color: "text.secondary",
+                    fontSize: { xs: "0.7rem", md: "1rem" },
+                    fontWeight: "bold",
+                  }}
                 >
                   Region Chairperson{region.chairPerson}
                 </Typography>

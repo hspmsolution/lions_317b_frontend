@@ -97,9 +97,9 @@ export default function OppositeContentTimeline() {
           variant="h2"
           className="clubRankH"
         >
-          Top 15 District Clubs Rank
+          Top 10 District Clubs Rank
         </Typography>
-        <div className="six">
+        {/* <div className="six">
           <h1 style={styles.six}>
             <span
               style={styles.sixH1}
@@ -110,7 +110,7 @@ export default function OppositeContentTimeline() {
             <div style={styles.sixH1Before}></div>
             <div style={styles.sixH1After}></div>
           </h1>
-        </div>
+        </div> */}
 
         <Box
           className={classes.rankRow}
@@ -129,6 +129,16 @@ export default function OppositeContentTimeline() {
                 // width: "50%",
               }}
             >
+              <Box marginBottom={"1.3rem"}>
+                <Typography
+                  textAlign={"center"}
+                  variant="h4"
+                  sx={{ color: "rgba(29, 60, 122, 0.85)", margin: "1rem 0" }}
+                  className="timelineH"
+                >
+                  Activity Reporting
+                </Typography>
+              </Box>
               {clubs.slice(0, clubs.length / 2).map((ranking, index) => (
                 <>
                   <TimelineItem>
@@ -194,6 +204,16 @@ export default function OppositeContentTimeline() {
                 // width: "50%",
               }}
             >
+              <Box marginBottom={"1.3rem"}>
+                <Typography
+                  textAlign={"center"}
+                  variant="h4"
+                  sx={{ color: "rgba(29, 60, 122, 0.85)", margin: "1rem 0" }}
+                  className="timelineH"
+                >
+                  Admin Reporting
+                </Typography>
+              </Box>
               {clubs.slice(clubs.length / 2).map((ranking, index) => (
                 <>
                   <TimelineItem>
