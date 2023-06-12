@@ -97,20 +97,12 @@ export default function OppositeContentTimeline() {
           variant="h2"
           className="clubRankH"
         >
-          Top 10 District Clubs Rank
+          <span style={{ color: "#0157ac" }}>Top </span>
+          <span style={{ color: "#cd0000" }}>10 </span>
+          <span style={{ color: "#4c8d00" }}>District </span>
+          <span style={{ color: "#4c8d00" }}>Clubs </span>
+          <span style={{ color: "#2c025f" }}>Rank</span>
         </Typography>
-        {/* <div className="six">
-          <h1 style={styles.six}>
-            <span
-              style={styles.sixH1}
-              className="rankHeading"
-            >
-              By Admin Reporting
-            </span>
-            <div style={styles.sixH1Before}></div>
-            <div style={styles.sixH1After}></div>
-          </h1>
-        </div> */}
 
         <Box
           className={classes.rankRow}
