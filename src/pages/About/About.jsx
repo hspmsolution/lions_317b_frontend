@@ -7,10 +7,7 @@ const About = () => {
   return (
     <>
       <div className="aboutGov">
-        <CustomizedBreadcrumbs
-          label={"About"}
-          subLabel={"Governor"}
-        />
+        <CustomizedBreadcrumbs label={"About"} subLabel={"Governor"} />
         <Box
           sx={{
             // margin: "1rem",
@@ -36,10 +33,7 @@ const About = () => {
                 className="about-image"
                 variant="rounded"
               />
-              <Typography
-                variant="h4"
-                className="itemTitle"
-              >
+              <Typography variant="h4" className="itemTitle">
                 ERLE BRITO
               </Typography>
               <Typography variant="h5">District Governor</Typography>
