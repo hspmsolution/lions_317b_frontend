@@ -79,14 +79,14 @@
   right: 0;
 }
 
-.head-dist-h {
+/* .head-dist-h {
   bottom: 30%;
-}
+} */
 
 .hero-text {
   border-radius: 1rem;
   width: fit-content;
-  padding: 1rem 2rem;
+  padding: 1rem;
 }
 
 @media only screen and (max-width: 768px) {
@@ -98,5 +98,11 @@
 @media only screen and (max-width: 480px) {
   .imgSlider>article>div:nth-child(2) {
     top: 23% !important;
+  }
+  .sc-guDLRT,
+  .faTUqF {
+    width: 1.5rem !important;
+    height: 1.5rem !important;
+    line-height: 1.5rem !important;
   }
 }

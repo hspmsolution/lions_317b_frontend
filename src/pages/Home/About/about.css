@@ -1,221 +1,217 @@
-@import url('https://fonts.googleapis.com/css2?family=Aboreto&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@300&display=swap');
-
+@import url("https://fonts.googleapis.com/css2?family=Aboreto&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@300&display=swap");
 
 /*asasassas*/
 
-
 .card-header {
-    height: 200px;
-    width: 100%;
-    background: linear-gradient(180deg, hsla(187, 88%, 87%, 1) 40%, hsla(0, 0%, 100%, 1) 100%);
-    border-radius: 3rem 3rem 0 0;
+  height: 200px;
+  width: 100%;
+  background: linear-gradient(
+    180deg,
+    hsla(187, 88%, 87%, 1) 40%,
+    hsla(0, 0%, 100%, 1) 100%
+  );
+  border-radius: 3rem 3rem 0 0;
 }
-
 
 /*asaddad*/
 
 .about-cnr {
-    margin-top: 0;
-    /* background-color: #232a34; */
-    /*background: rgb(0, 0, 0) */
-    /*background: linear-gradient(180deg, rgba(0, 0, 0, 1) 0%, rgba(17, 46, 87, 1) 98%);*/
+  margin-top: 0;
+  /* background-color: #232a34; */
+  /*background: rgb(0, 0, 0) */
+  /*background: linear-gradient(180deg, rgba(0, 0, 0, 1) 0%, rgba(17, 46, 87, 1) 98%);*/
 
-    background: linear-gradient(180deg, hsla(0, 0%, 100%, 1) 0%, hsla(90, 99%, 26%, 1) 100%);
-    padding: 5rem;
+  background: linear-gradient(
+    180deg,
+    hsla(0, 0%, 100%, 1) 0%,
+    hsla(90, 99%, 26%, 1) 100%
+  );
+  padding: 5rem;
 }
 
 .about-card {
-    /*padding: 1rem;*/
-    background-color: rgba(222, 213, 213, 0.227);
-    border-radius: 3rem;
-    box-shadow: 0 4px 20px #00000089;
-    color: #fff;
-    /*position: relative;*/
-    width: 100%;
-    min-height: 1px;
-    /*padding: auto;*/
-    /*display: flex;*/
-    /*align-items: center;*/
+  /*padding: 1rem;*/
+  background-color: rgba(222, 213, 213, 0.227);
+  border-radius: 3rem;
+  box-shadow: 0 4px 20px #00000089;
+  color: #fff;
+  /*position: relative;*/
+  width: 100%;
+  min-height: 1px;
+  /*padding: auto;*/
+  /*display: flex;*/
+  /*align-items: center;*/
 }
 
 .about-dist img {
-    height: 250px;
-    width: 250px;
-    max-height: 20rem;
-    max-width: 20rem;
-    position: absolute;
-    border: 8px solid #08028D;
-    border-radius: 50%;
-    /*margin: 0 auto;*/
-    top: -25%;
+  height: 250px;
+  width: 250px;
+  max-height: 20rem;
+  max-width: 20rem;
+  position: absolute;
+  border: 8px solid #08028d;
+  border-radius: 50%;
+  /*margin: 0 auto;*/
+  top: -25%;
 
-    /*margin: 0 auto;*/
+  /*margin: 0 auto;*/
 
-    /*margin: 4rem;*/
+  /*margin: 4rem;*/
 }
 
 .about-dist {
-    padding: 6rem 4rem;
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    position: relative;
-
+  padding: 6rem 4rem;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
 }
 
 .about-dist h1 {
-    font-size: 42px;
-    font-family: sans-serif;
-    font-weight: bolder;
-    margin: 25px 0;
-    border-bottom: 5px solid #084f9d;
-    border-radius: 5px;
-    padding: 0 0;
-    white-space: nowrap;
+  font-size: 42px;
+  font-family: sans-serif;
+  font-weight: bolder;
+  margin: 25px 0;
+  border-bottom: 5px solid #084f9d;
+  border-radius: 5px;
+  padding: 0 0;
+  white-space: nowrap;
 }
 
-.about-dist>p {
-    margin: 0 1rem;
-    text-align: justify;
-    font-family: sans-serif;
-    letter-spacing: 1px;
-    font-weight: bold;
-    font-size: 1.2rem;
+.about-dist > p {
+  padding: 1rem;
+  text-align: justify;
+  font-family: sans-serif;
+  letter-spacing: 1px;
+  font-weight: bold;
+  font-size: 1.2rem;
+  margin: 0;
 }
 
 .col-lg-12 {
-    position: relative;
-    width: 100%;
-    min-height: 1px;
-    padding-right: 15px;
-    padding-left: 15px;
+  position: relative;
+  width: 100%;
+  min-height: 1px;
+  padding-right: 15px;
+  padding-left: 15px;
 }
 
-
 .col-md-3 {
-    width: 25%;
-    padding: 0 10px;
-    align-items: center;
+  width: 25%;
+  padding: 0 10px;
+  align-items: center;
 }
 
 .col-md-3 img {
-    width: 100%;
+  width: 100%;
 }
 
 .col-md-9 {
-    width: 75%;
-    padding-top: 40px !important;
+  width: 75%;
+  padding-top: 40px !important;
 }
 
-
 #audio {
-    text-align: center;
-    margin: auto;
+  text-align: center;
+  margin: auto;
 }
 
 #audio h4 {
-    font-size: 20px;
-    margin: 0;
+  font-size: 20px;
+  margin: 0;
 }
 
 .playIcon,
 .pauseIcon {
-    display: inline-block;
-    margin: 15px;
-    transition: all .7s ease-in-out;
-    color: white;
-    font-size: 38px;
+  display: inline-block;
+  /* margin: 15px; */
+  transition: all 0.7s ease-in-out;
+  color: white;
+  font-size: 38px;
 }
 
 .play_button {
-    cursor: pointer;
+  cursor: pointer;
 }
 
 .playIcon:hover,
 .pauseIcon:hover {
-    display: inline-block;
-    animation: gelatine 0.5s infinite;
+  display: inline-block;
+  animation: gelatine 0.5s infinite;
 }
 
-.p_play{
-    margin:5px 0 0;
+.p_play {
+  margin: 5px 0 0;
 }
 
 @keyframes gelatine {
+  from,
+  to {
+    transform: scale(1, 1);
+  }
 
-    from,
-    to {
-        transform: scale(1, 1);
-    }
+  25% {
+    transform: scale(0.9, 1.1);
+  }
 
-    25% {
-        transform: scale(0.9, 1.1);
-    }
+  50% {
+    transform: scale(1.1, 0.9);
+  }
 
-    50% {
-        transform: scale(1.1, 0.9);
-    }
-
-    75% {
-        transform: scale(0.95, 1.05);
-    }
+  75% {
+    transform: scale(0.95, 1.05);
+  }
 }
 
-
-
-
 @media screen and (max-width: 600px) {
-    .about-cnr {
-        padding: 2rem 0.8rem !important;
-    }
+  .about-cnr {
+    padding: 2rem 0.8rem !important;
+  }
 
-    .about-dist {
-        padding: 0;
-    }
+  .about-dist {
+    padding: 0;
+  }
 
-    .about-dist-h {
-        margin: 1rem 0 !important;
-        font-size: 20px !important;
-    }
+  .about-dist-h {
+    margin: 1rem 0 !important;
+    font-size: 20px !important;
+  }
 
-    .about-dist>p {
-        letter-spacing: normal;
-        font-size: 12px;
-    }
+  .about-dist > p {
+    letter-spacing: normal;
+    font-size: 12px;
+  }
 
+  /*    cmcxc*/
+  .about-dist img {
+    top: -52%;
+    height: 150px;
+    width: 150px;
+  }
 
-    /*    cmcxc*/
-    .about-dist img {
-        top: -50%;
-        height: 150px;
-        width: 150px;
-    }
-
-    #audio h4 {
-        font-size: 17px;
-        margin: 0;
-    }
+  #audio h4 {
+    font-size: 17px;
+    margin: 0;
+  }
 }
 
 @media screen and (max-width: 768px) {
-    .about-cnr {
-        padding: 2rem;
-    }
+  .about-cnr {
+    padding: 2rem;
+  }
 
-    .about-card h1 {
-        font-size: 30px;
-        white-space: normal;
-    }
+  .about-card h1 {
+    font-size: 30px;
+    white-space: normal;
+  }
 }
 
 @media only screen and (max-width: 1024px) {
-    .about-card {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-    }
-
-
+  .about-card {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
 }
