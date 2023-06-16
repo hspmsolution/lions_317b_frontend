@@ -16,7 +16,10 @@ import Button from "@mui/material/Button";
 import { Avatar } from "@mui/material";
 import useStyles from "./Styles";
 import PopupMenu from "./PopupMenu";
-import { Link, useNavigate } from "react-router-dom";
+import {
+  Link,
+  useNavigate,
+} from "react-router-dom";
 import { useSelector } from "react-redux";
 
 const drawerWidth = 240;
@@ -44,7 +47,12 @@ const myNav = [
   },
   {
     title: "Resources",
-    menuItems: ["News", "Gallery", "Global Priorities", "Download Resources"],
+    menuItems: [
+      "News",
+      "Gallery",
+      "Global Priorities",
+      "Download Resources",
+    ],
   },
   // { title: "Login" },
   // { title: "My LCI" },
@@ -52,10 +60,13 @@ const myNav = [
 
 function Navbar(props) {
   const { window } = props;
-  const [mobileOpen, setMobileOpen] = React.useState(false);
+  const [mobileOpen, setMobileOpen] =
+    React.useState(false);
   const classes = useStyles();
   const navigate = useNavigate();
-  const isAdmin = useSelector((state) => state.auth.admin);
+  const isAdmin = useSelector(
+    (state) => state.auth.admin
+  );
 
   const handleDrawerToggle = () => {
     setMobileOpen((prevState) => !prevState);
@@ -63,19 +74,24 @@ function Navbar(props) {
 
   const memberLogin = () => {
     {
-      isAdmin ? navigate("/dashboard/profile") : navigate("/login");
+      isAdmin
+        ? navigate("/dashboard/profile")
+        : navigate("/login");
     }
   };
 
   const drawer = (
     <Box
       onClick={handleDrawerToggle}
-      sx={{ textAlign: "center" }}
-    >
+      sx={{ textAlign: "center" }}>
       <Avatar
         alt="Remy Sharp"
         src={"/assets/img/logo2.png"}
-        sx={{ width: 56, height: 56, margin: "5px auto" }}
+        sx={{
+          width: 56,
+          height: 56,
+          margin: "5px auto",
+        }}
         className={classes.clubLogo}
       />
       <Divider variant="middle" />
@@ -83,13 +99,11 @@ function Navbar(props) {
         {myNav.map((item, index) => (
           <ListItem
             key={index}
-            disablePadding
-          >
+            disablePadding>
             <Button
               key={index}
               sx={{ color: "#565656" }}
-              className={classes.drawerButton}
-            >
+              className={classes.drawerButton}>
               <PopupMenu
                 title={item.title}
                 menuItems={item.menuItems}
@@ -102,26 +116,38 @@ function Navbar(props) {
   );
 
   const container =
-    window !== undefined ? () => window().document.body : undefined;
+    window !== undefined
+      ? () => window().document.body
+      : undefined;
 
   return (
-    <Box sx={{ display: "flex", position: "absolute" }}>
+    <Box
+      sx={{
+        display: "flex",
+        position: "absolute",
+      }}>
       <CssBaseline />
       <AppBar
         component="nav"
-        className={classes.mainNav}
-      >
-        <Toolbar sx={{ display: "flex", justifyContent: "space-between" }}>
+        className={classes.mainNav}>
+        <Toolbar
+          sx={{
+            display: "flex",
+            justifyContent: "space-between",
+          }}>
           <IconButton
             color="#7c7c7c"
             aria-label="open drawer"
             edge="start"
             onClick={handleDrawerToggle}
-            sx={{ mr: "auto", display: { sm: "none" } }}
-          >
+            sx={{
+              mr: "auto",
+              display: { sm: "none" },
+            }}>
             <MenuIcon />
           </IconButton>
-          <Box sx={{ display: "flex", gap: "1rem" }}>
+          <Box
+            sx={{ display: "flex", gap: "1rem" }}>
             <Link to={"/"}>
               <Avatar
                 alt="Remy Sharp"
@@ -148,8 +174,12 @@ function Navbar(props) {
           </Box>
           <Box
             className={classes.myNavPaper}
-            sx={{ display: { xs: "none", sm: "block" } }}
-          >
+            sx={{
+              display: {
+                xs: "none",
+                sm: "block",
+              },
+            }}>
             {myNav.map((item, index) => (
               <Button
                 key={index}
@@ -158,11 +188,11 @@ function Navbar(props) {
                   margin: "0 6px",
                   // width: "130px",
                   "&:hover": {
-                    backgroundColor: "rgba(29, 60, 122, 0.85)",
+                    backgroundColor:
+                      "rgba(29, 60, 122, 0.85)",
                   },
                 }}
-                className={classes.drawerButton}
-              >
+                className={classes.drawerButton}>
                 <PopupMenu
                   title={item.title}
                   menuItems={item.menuItems}
@@ -170,18 +200,25 @@ function Navbar(props) {
               </Button>
             ))}
           </Box>
-          <Box sx={{ display: { xs: "none", sm: "flex", gap: "1rem" } }}>
+          <Box
+            sx={{
+              display: {
+                xs: "none",
+                sm: "flex",
+                gap: "1rem",
+              },
+            }}>
             <Button
               size="medium"
               sx={{
                 color: "#151515",
                 "&:hover": {
-                  backgroundColor: "rgba(29, 60, 122, 0.85)",
+                  backgroundColor:
+                    "rgba(29, 60, 122, 0.85)",
                 },
               }}
               className={classes.loginButton}
-              onClick={memberLogin}
-            >
+              onClick={memberLogin}>
               {isAdmin ? "My Profile" : "Login"}
             </Button>
             <Button
@@ -190,11 +227,11 @@ function Navbar(props) {
                 color: "#151515",
 
                 "&:hover": {
-                  backgroundColor: "rgba(29, 60, 122, 0.85)",
+                  backgroundColor:
+                    "rgba(29, 60, 122, 0.85)",
                 },
               }}
-              className={classes.loginButton}
-            >
+              className={classes.loginButton}>
               My LCI
             </Button>
           </Box>
@@ -215,15 +252,13 @@ function Navbar(props) {
               boxSizing: "border-box",
               width: drawerWidth,
             },
-          }}
-        >
+          }}>
           {drawer}
         </Drawer>
       </Box>
       <Box
         component="main"
-        sx={{ p: 0 }}
-      >
+        sx={{ p: 0 }}>
         <Toolbar />
       </Box>
     </Box>

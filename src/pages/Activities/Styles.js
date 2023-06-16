@@ -32,4 +32,9 @@ export default makeStyles(() => ({
   dialogTitle: {
     color: "rgba(29, 60, 122, 1)",
   },
+  newsPagination: {
+    "& ul": {
+      gap: "10px",
+    },
+  },
 }));
