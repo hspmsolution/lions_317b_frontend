@@ -38,27 +38,23 @@ export default function OrgChart() {
               backgroundPosition: "100% 0",
             },
           },
-        }}
-      >
+        }}>
         <CustomizedBreadcrumbs label={"Organization Chart"} />
         <Container
           sx={{
             padding: { xs: "3rem 0.5rem", sm: "3rem 2rem", lg: "3rem 2rem" },
-          }}
-        >
+          }}>
           {data.map((region, index) => (
             <Accordion
               expanded={expanded === index}
               onChange={handleChange(index)}
               key={index}
-              sx={{ backgroundColor: "rgb(0 0 0 / 4%)", borderRadius: "1rem" }}
-            >
+              sx={{ backgroundColor: "rgb(0 0 0 / 4%)", borderRadius: "1rem" }}>
               <AccordionSummary
                 expandIcon={<ExpandMoreIcon />}
                 aria-controls="panel1bh-content"
                 id="panel1bh-header"
-                sx={{ display: { sm: "block", md: "flex" } }}
-              >
+                sx={{ display: { sm: "block", md: "flex" } }}>
                 <Typography
                   variant="h4"
                   sx={{
@@ -66,8 +62,7 @@ export default function OrgChart() {
                     flexShrink: 0,
                     color: "rgba(29, 60, 122, 0.9)",
                     fontSize: { xs: "0.8rem", md: "1.25rem" },
-                  }}
-                >
+                  }}>
                   {region.name}
                 </Typography>
                 <Typography
@@ -75,9 +70,8 @@ export default function OrgChart() {
                     color: "text.secondary",
                     fontSize: { xs: "0.7rem", md: "1rem" },
                     fontWeight: "bold",
-                  }}
-                >
-                  Region Chairperson{region.chairPerson}
+                  }}>
+                  Region Chairperson: {region.chairPerson}
                 </Typography>
               </AccordionSummary>
               <AccordionDetails
@@ -88,8 +82,7 @@ export default function OrgChart() {
                   justifyContent: "center",
                   // backgroundColor: "rgb(0 0 0 / 3%)",
                   borderRadius: "0 0 1rem 1rem",
-                }}
-              >
+                }}>
                 {region.zones?.map((zone, i) => (
                   <ZoneTable
                     zone={zone}

@@ -238,7 +238,7 @@ function Footer() {
         <Container sx={{ textAlign: "center", mb: "1.5rem" }}>
           <Typography variant="subtitle2">
             Copyright 2023 © All rights reserved. | Designed & Developed by{" "}
-            <a href="https://lions-superadmin.up.railway.app/">
+            <a href="https://lions-superadmin.up.railway.app/" target="_blank">
               <FontAwesomeIcon icon={faCube} /> <b>HSPM Solutions LLP.</b>
             </a>
           </Typography>

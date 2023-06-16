@@ -67,7 +67,11 @@ export default function Profile() {
       event.target.value = "";
       return;
     }
-    if (file.type !== "image/jpeg" && file.type !== "image/png" && file.type !== "image/jpg") {
+    if (
+      file.type !== "image/jpeg" &&
+      file.type !== "image/png" &&
+      file.type !== "image/jpg"
+    ) {
       dispatch({
         type: CLIENT_MSG,
         message: { info: "file type not supported", status: 400 },
@@ -75,7 +79,7 @@ export default function Profile() {
       event.target.value = "";
       return;
     }
-    
+
     const img = {
       preview: URL.createObjectURL(event.target.files[0]),
       data: event.target.files[0],
@@ -125,14 +129,16 @@ export default function Profile() {
           alignItems="center"
           mx="auto"
           borderRadius="5px"
-          className={classes.box}
-        >
-          <Typography varient='h6'sx={{
+          className={classes.box}>
+          <Typography
+            varient="h6"
+            sx={{
               color: "#003895",
-              fontWeight:'700',
-              fontSize:'1.5em'
-
-          }} >Profile</Typography>
+              fontWeight: "700",
+              fontSize: "1.5em",
+            }}>
+            Profile
+          </Typography>
           {/* <Card
             sx={{
               maxWidth: 345,
@@ -171,8 +177,13 @@ export default function Profile() {
             </CardActions>
           </Card> */}
 
-          <Grid container spacing={4}>
-            <Grid item xs={12} sm={4}>
+          <Grid
+            container
+            spacing={4}>
+            <Grid
+              item
+              xs={12}
+              sm={4}>
               <TextField
                 required
                 id="firstName"
@@ -185,7 +196,10 @@ export default function Profile() {
                 variant="standard"
               />
             </Grid>
-            <Grid item xs={12} sm={4}>
+            <Grid
+              item
+              xs={12}
+              sm={4}>
               <TextField
                 required
                 id="middleName"
@@ -197,7 +211,10 @@ export default function Profile() {
                 variant="standard"
               />
             </Grid>
-            <Grid item xs={12} sm={4}>
+            <Grid
+              item
+              xs={12}
+              sm={4}>
               <TextField
                 required
                 id="lastName"
@@ -209,7 +226,10 @@ export default function Profile() {
                 variant="standard"
               />
             </Grid>
-            <Grid item xs={12} sm={4}>
+            <Grid
+              item
+              xs={12}
+              sm={4}>
               <TextField
                 required
                 id="email"
@@ -222,7 +242,10 @@ export default function Profile() {
                 variant="standard"
               />
             </Grid>
-            <Grid item xs={12} sm={4}>
+            <Grid
+              item
+              xs={12}
+              sm={4}>
               <TextField
                 required
                 id="phone"
@@ -235,7 +258,10 @@ export default function Profile() {
                 onChange={handleChange}
               />
             </Grid>
-            <Grid item xs={12} sm={4}>
+            <Grid
+              item
+              xs={12}
+              sm={4}>
               <TextField
                 required
                 id="occupation"
@@ -247,7 +273,10 @@ export default function Profile() {
                 onChange={handleChange}
               />
             </Grid>
-            <Grid item xs={12} sm={4}>
+            <Grid
+              item
+              xs={12}
+              sm={4}>
               <TextField
                 required
                 id="spouseName"
@@ -260,7 +289,10 @@ export default function Profile() {
               />
             </Grid>
 
-            <Grid item xs={12} sm={4}>
+            <Grid
+              item
+              xs={12}
+              sm={4}>
               <TextField
                 required
                 id="dob"
@@ -276,7 +308,10 @@ export default function Profile() {
                 }}
               />
             </Grid>
-            <Grid item xs={12} sm={4}>
+            <Grid
+              item
+              xs={12}
+              sm={4}>
               <TextField
                 required
                 id="address1"
@@ -288,7 +323,10 @@ export default function Profile() {
                 variant="standard"
               />
             </Grid>
-            <Grid item xs={12} sm={4}>
+            <Grid
+              item
+              xs={12}
+              sm={4}>
               <TextField
                 required
                 id="address2"
@@ -301,7 +339,10 @@ export default function Profile() {
               />
             </Grid>
 
-            <Grid item xs={12} sm={4}>
+            <Grid
+              item
+              xs={12}
+              sm={4}>
               <TextField
                 id="city"
                 name="city"
@@ -313,7 +354,10 @@ export default function Profile() {
                 onChange={handleChange}
               />
             </Grid>
-            <Grid item xs={12} sm={4}>
+            <Grid
+              item
+              xs={12}
+              sm={4}>
               <TextField
                 required
                 id="state"
@@ -325,7 +369,10 @@ export default function Profile() {
                 onChange={handleChange}
               />
             </Grid>
-            <Grid item xs={12} sm={4}>
+            <Grid
+              item
+              xs={12}
+              sm={4}>
               <TextField
                 required
                 id="postalCode"
@@ -339,7 +386,10 @@ export default function Profile() {
               />
             </Grid>
 
-            <Grid item xs={12} sm={4}>
+            <Grid
+              item
+              xs={12}
+              sm={4}>
               <TextField
                 id="gender"
                 select
@@ -347,17 +397,21 @@ export default function Profile() {
                 value={user.gender}
                 fullWidth
                 name="gender"
-                onChange={handleChange}
-              >
+                onChange={handleChange}>
                 {gender?.map((option) => (
-                  <MenuItem key={option.id} value={option.name}>
+                  <MenuItem
+                    key={option.id}
+                    value={option.name}>
                     {option.name}
                   </MenuItem>
                 ))}
               </TextField>
             </Grid>
           </Grid>
-          <Grid item xs={12} sm={6}>
+          <Grid
+            item
+            xs={12}
+            sm={6}>
             <TextField
               ref={fileUploadRef}
               type="file"
@@ -376,7 +430,11 @@ export default function Profile() {
               onClick={() => fileUploadRef.current.click()}
             />
             {imageData.preview && (
-              <img src={imageData.preview} width="100" height="100" />
+              <img
+                src={imageData.preview}
+                width="100"
+                height="100"
+              />
             )}
           </Grid>
 
@@ -384,16 +442,24 @@ export default function Profile() {
             container
             justifyContent="center"
             marginTop={2}
-            className={classes.Btn}
-          >
-            <Grid item xs={2}>
-              <Button type="submit" variant="contained" color="primary">
+            className={classes.Btn}>
+            <Grid
+              item
+              xs={2}>
+              <Button
+                type="submit"
+                variant="contained"
+                color="primary">
                 Submit
               </Button>
             </Grid>
-            <Grid item xs={2}>
+            <Grid
+              item
+              xs={2}>
               <Box marginLeft={3}>
-                <Button type="button" variant="outlined">
+                <Button
+                  type="button"
+                  variant="outlined">
                   Cancel
                 </Button>
               </Box>
