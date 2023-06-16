@@ -16,10 +16,7 @@ import Button from "@mui/material/Button";
 import { Avatar } from "@mui/material";
 import useStyles from "./Styles";
 import PopupMenu from "./PopupMenu";
-import {
-  Link,
-  useNavigate,
-} from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useSelector } from "react-redux";
 
 const drawerWidth = 240;
@@ -47,12 +44,7 @@ const myNav = [
   },
   {
     title: "Resources",
-    menuItems: [
-      "News",
-      "Gallery",
-      "Global Priorities",
-      "Download Resources",
-    ],
+    menuItems: ["News", "Gallery", "Global Priorities", "Download Resources"],
   },
   // { title: "Login" },
   // { title: "My LCI" },
@@ -60,13 +52,10 @@ const myNav = [
 
 function Navbar(props) {
   const { window } = props;
-  const [mobileOpen, setMobileOpen] =
-    React.useState(false);
+  const [mobileOpen, setMobileOpen] = React.useState(false);
   const classes = useStyles();
   const navigate = useNavigate();
-  const isAdmin = useSelector(
-    (state) => state.auth.admin
-  );
+  const isAdmin = useSelector((state) => state.auth.admin);
 
   const handleDrawerToggle = () => {
     setMobileOpen((prevState) => !prevState);
@@ -74,9 +63,7 @@ function Navbar(props) {
 
   const memberLogin = () => {
     {
-      isAdmin
-        ? navigate("/dashboard/profile")
-        : navigate("/login");
+      isAdmin ? navigate("/dashboard/profile") : navigate("/login");
     }
   };
 
@@ -84,7 +71,7 @@ function Navbar(props) {
     <Box
       onClick={handleDrawerToggle}
       sx={{ textAlign: "center" }}>
-      <Avatar
+      {/* <Avatar
         alt="Remy Sharp"
         src={"/assets/img/logo2.png"}
         sx={{
@@ -93,7 +80,43 @@ function Navbar(props) {
           margin: "5px auto",
         }}
         className={classes.clubLogo}
-      />
+      /> */}
+
+      <Box
+        sx={{
+          display: {
+            // xs: "none",
+            sm: "flex",
+            gap: "1rem",
+            padding:'1rem 0'
+          },
+        }}>
+        <Button
+          size="medium"
+          sx={{
+            color: "#151515",
+            "&:hover": {
+              backgroundColor: "rgba(29, 60, 122, 0.85)",
+            },
+          }}
+          className={classes.loginButton}
+          onClick={memberLogin}>
+          {isAdmin ? "My Profile" : "Login"}
+        </Button>
+        <Button
+          size="medium"
+          sx={{
+            color: "#151515",
+
+            "&:hover": {
+              backgroundColor: "rgba(29, 60, 122, 0.85)",
+            },
+          }}
+          className={classes.loginButton}>
+          My LCI
+        </Button>
+      </Box>
+
       <Divider variant="middle" />
       <List>
         {myNav.map((item, index) => (
@@ -116,9 +139,7 @@ function Navbar(props) {
   );
 
   const container =
-    window !== undefined
-      ? () => window().document.body
-      : undefined;
+    window !== undefined ? () => window().document.body : undefined;
 
   return (
     <Box
@@ -146,8 +167,7 @@ function Navbar(props) {
             }}>
             <MenuIcon />
           </IconButton>
-          <Box
-            sx={{ display: "flex", gap: "1rem" }}>
+          <Box sx={{ display: "flex", gap: "1rem" }}>
             <Link to={"/"}>
               <Avatar
                 alt="Remy Sharp"
@@ -188,8 +208,7 @@ function Navbar(props) {
                   margin: "0 6px",
                   // width: "130px",
                   "&:hover": {
-                    backgroundColor:
-                      "rgba(29, 60, 122, 0.85)",
+                    backgroundColor: "rgba(29, 60, 122, 0.85)",
                   },
                 }}
                 className={classes.drawerButton}>
@@ -213,8 +232,7 @@ function Navbar(props) {
               sx={{
                 color: "#151515",
                 "&:hover": {
-                  backgroundColor:
-                    "rgba(29, 60, 122, 0.85)",
+                  backgroundColor: "rgba(29, 60, 122, 0.85)",
                 },
               }}
               className={classes.loginButton}
@@ -227,8 +245,7 @@ function Navbar(props) {
                 color: "#151515",
 
                 "&:hover": {
-                  backgroundColor:
-                    "rgba(29, 60, 122, 0.85)",
+                  backgroundColor: "rgba(29, 60, 122, 0.85)",
                 },
               }}
               className={classes.loginButton}>

@@ -91,4 +91,10 @@
   .imgSlider > article > div:nth-child(2) {
     top: 23% !important;
   }
+  .sc-guDLRT,
+  .faTUqF {
+    width: 1.5rem !important;
+    height: 1.5rem !important;
+    line-height: 1.5rem !important;
+  }
 }
