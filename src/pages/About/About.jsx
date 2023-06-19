@@ -7,15 +7,17 @@ const About = () => {
   return (
     <>
       <div className="aboutGov">
-        <CustomizedBreadcrumbs label={"About"} subLabel={"Governor"} />
+        <CustomizedBreadcrumbs
+          label={"About"}
+          subLabel={"Governor"}
+        />
         <Box
           sx={{
             // margin: "1rem",
             backgroundImage: 'url("/assets/img/aboutbg03.png")',
             backgroundSize: "cover",
             padding: { xs: "3rem 0.5rem", sm: "3rem 2rem", lg: "3rem 2rem" },
-          }}
-        >
+          }}>
           <Container className="aboutGovContainer">
             <div
               style={{
@@ -24,8 +26,7 @@ const About = () => {
                 alignItems: "center",
                 textAlign: "center",
                 // margin: "2rem 0",
-              }}
-            >
+              }}>
               <Avatar
                 src={"/assets/dist_img/dg.jpeg"}
                 alt="our district governer"
@@ -33,7 +34,9 @@ const About = () => {
                 className="about-image"
                 variant="rounded"
               />
-              <Typography variant="h4" className="itemTitle">
+              <Typography
+                variant="h4"
+                className="itemTitle">
                 ERLE BRITO
               </Typography>
               <Typography variant="h5">District Governor</Typography>

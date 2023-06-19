@@ -12,13 +12,15 @@ export default makeStyles((theme) => ({
 
   activityDate: {
     position: "absolute",
-    top: "6%",
-    right: "4%",
+    top: "2%",
+    right: "3%",
     backgroundColor: "white",
     padding: "0.2rem 0.6rem",
     borderRadius: "1rem",
     color: "red",
     margin: "0",
+    fontSize: "0.8rem",
+    fontWeight:'bold'
   },
   description: {
     lineHeight: "1.3",

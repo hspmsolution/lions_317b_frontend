@@ -1,19 +1,12 @@
 import React from "react";
-import { Box, Paper } from "@mui/material";
-import { styled } from "@mui/material/styles";
-import useStyles from "./CardStyle";
+import { Box, } from "@mui/material";
+import useStyles from "./Style";
 import LinkIcon from "@mui/icons-material/Link";
 
 export default function CommonCard(props) {
   const classes = useStyles();
 
-  // const Item = styled(Paper)(({ theme }) => ({
-  //   backgroundColor: theme.palette.mode === "dark" ? "#1A2027" : "#fff",
-  //   ...theme.typography.body2,
-  //   padding: theme.spacing(1),
-  //   textAlign: "center",
-  //   color: theme.palette.text.secondary,
-  // }));
+  
 
   console.log(props.newsPaperLink);
 

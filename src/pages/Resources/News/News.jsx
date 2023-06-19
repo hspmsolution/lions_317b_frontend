@@ -1,16 +1,16 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
 import { Box, Pagination } from "@mui/material";
 import CustomizedBreadcrumbs from "../../../components/Breadcrumb/Breadcrumb";
 import { useDispatch, useSelector } from "react-redux";
 import { topNews } from "../../../actions/news";
 import useStyles from "./Styles";
-import { Paper } from "@mui/material";
 import Grid from "@mui/material/Grid";
-import CommonCard from "../../../components/CommonCard/CommonCard";
 import { API_URL } from "../../../api";
+import LinkIcon from "@mui/icons-material/Link";
 
 export default function News() {
+  const [activeIndex, setActiveIndex] = useState(null);
   const classes = useStyles();
   const dispatch = useDispatch();
   const navigate = useNavigate();
@@ -78,27 +78,55 @@ export default function News() {
                   sm={6}
                   md={4}
                   lg={4}
-                  key={index}>
-                  <Paper
-                    elevation={3}
+                  key={index}
+                  position={"relative"}>
+                  <Box
+                    position={"relative"}
                     sx={{
+                      flexGrow: 1,
+                      justifyContent: "center",
+                      textAlign: "center",
                       borderRadius: "1rem",
                       backgroundColor: "rgba(29, 60, 122, 0.85)",
                       color: "white",
                       boxShadow:
                         "rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px",
+                    }}
+                    onClick={() => {
+                      if (!activeIndex) {
+                        setActiveIndex(index);
+                      }
+                      if (activeIndex === index) {
+                        setActiveIndex(null);
+                      }
                     }}>
-                    <CommonCard
-                      type="news"
-                      images={`${API_URL + item?.image}`}
+                    <img
+                      src={`${API_URL + item?.image}`}
                       srcSet={`${API_URL + item?.image}`}
                       alt={item.newsTitle}
-                      heading={item.newsTitle}
-                      description={item.description}
-                      date={item?.date?.slice(0, 10)}
-                      newsPaperLink={item.newsPaperLink}
+                      className={classes.activityImage}
                     />
-                  </Paper>
+                    <h3 style={{ textAlign: "center" }}>{item.newsTitle}</h3>
+                    <p
+                      className={
+                        activeIndex === index
+                          ? classes.descriptionExpand
+                          : classes.description
+                      }>
+                      {item.description}
+                    </p>
+                    <p className={classes.activityDate}>
+                      {item?.date?.slice(0, 10)}
+                    </p>
+
+                    <a
+                      href={item.newsPaperLink}
+                      rel="noreferrer"
+                      target="_blank"
+                      style={{ color: "white" }}>
+                      <LinkIcon />
+                    </a>
+                  </Box>
                 </Grid>
               </>
             ))}
