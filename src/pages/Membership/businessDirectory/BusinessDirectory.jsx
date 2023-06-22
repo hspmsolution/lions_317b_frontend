@@ -2,13 +2,23 @@ import React from "react";
 import CustomizedBreadcrumbs from "../../../components/Breadcrumb/Breadcrumb";
 import useStyles from "./Styles";
 import { Box, Container } from "@mui/material";
+import { useNavigate, useLocation } from "react-router-dom";
+import { useEffect } from "react";
 
-export default function MiniDirectory() {
+export default function BusinessDirectory() {
   const classes = useStyles();
 
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    window.open("https://lions-superadmin.up.railway.app/", "_blank");
+    navigate("/");
+  }, [navigate]);
+
   return (
-    <div>
-      <Box
+    <>
+    kl
+      {/* <Box
         sx={{
           backgroundImage: "url('/assets/img/newbg02.png')",
           backgroundAttachment: "fixed",
@@ -35,7 +45,7 @@ export default function MiniDirectory() {
             className={classes.businessPdfIframe}
           />
         </Container>
-      </Box>
-    </div>
+      </Box> */}
+    </>
   );
 }

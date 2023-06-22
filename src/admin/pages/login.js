@@ -1,15 +1,50 @@
-import { useState, useEffect } from 'react';
-import { Helmet } from 'react-helmet-async';
-import { Link, useNavigate } from 'react-router-dom';
-import { useDispatch, useSelector } from 'react-redux';
-import { useFormik } from 'formik';
-import * as Yup from 'yup';
-import { Box, Button, Container, TextField, Typography } from '@mui/material';
-import ArrowBackIcon from '@mui/icons-material/ArrowBack';
-import { signIn } from '../../actions/auth';
-import { ADMIN } from '../../constants/actionTypes';
+import { useState, useEffect } from "react";
+import { Helmet } from "react-helmet-async";
+import { Link, useNavigate } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import { useFormik } from "formik";
+import * as Yup from "yup";
+import { Box, Button, Container, TextField, Typography } from "@mui/material";
+import ArrowBackIcon from "@mui/icons-material/ArrowBack";
+import { signIn } from "../../actions/auth";
+import { ADMIN } from "../../constants/actionTypes";
+import { makeStyles } from "@mui/styles";
+
+const useStyles = makeStyles({
+  label: {
+    " & label.MuiInputLabel-root, & input.MuiInputBase-input": {
+      color: "white",
+    },
+    " & label.MuiInputLabel-root": {
+      color: "white",
+      fontWeight: "bolder",
+    },
+    " & input.MuiInputBase-input": {
+      padding: "0.8rem",
+      borderRadius: "0.5rem",
+    },
+    "& label.Mui-focused": {
+      color: "white",
+    },
+  },
+  button: {
+    "&.MuiButton-root": {
+      backgroundColor: "transparent",
+      border: "1px solid white",
+      "&:hover, &:active": {
+        color: "white",
+        border: "1px solid white",
+      },
+      "&:active": {
+        backgroundColor: "#0d99d7",
+        // color: "#39459b",
+      },
+    },
+  },
+});
 
 const Login = () => {
+  const classes = useStyles();
   const navigate = useNavigate();
   const dispatch = useDispatch();
   const message = useSelector((state) => state.auth.message?.info);
@@ -17,16 +52,18 @@ const Login = () => {
   const [disabled, setDisabled] = useState(false);
   const formik = useFormik({
     initialValues: {
-      memberId: '',
-      password: '',
+      memberId: "",
+      password: "",
     },
     validationSchema: Yup.object({
-      memberId: Yup.number().integer('Must be an integer').required('Member Id is required'),
-      password: Yup.string().max(255).required('Password is required'),
+      memberId: Yup.number()
+        .integer("Must be an integer")
+        .required("Member Id is required"),
+      password: Yup.string().max(255).required("Password is required"),
     }),
     onSubmit: (data) => {
       setTimeout(() => {
-       dispatch(signIn(data, navigate));
+        dispatch(signIn(data, navigate));
       }, 500);
 
       setDisabled(true);
@@ -35,7 +72,7 @@ const Login = () => {
 
   useEffect(() => {
     dispatch({ type: ADMIN });
-   if(isAdmin)navigate('/dashboard/app')
+    if (isAdmin) navigate("/dashboard/app");
   }, []);
 
   useEffect(() => {
@@ -44,68 +81,104 @@ const Login = () => {
 
   return (
     <>
-      <Helmet>
-        <title> Login </title>
-      </Helmet>
       <Box
-        component="main"
         sx={{
-          alignItems: 'center',
-          display: 'flex',
-          flexGrow: 1,
-          minHeight: '100%',
-        }}
-      >
-        <Container maxWidth="sm">
-          <Link to="/">
-            <Button component="a" startIcon={<ArrowBackIcon fontSize="small" />}>
-              Home
-            </Button>
-          </Link>
-          <form onSubmit={formik.handleSubmit}>
-            <Box
-              sx={{
-                pb: 1,
-                pt: 3,
-              }}
-            >
-              <Typography align="center" color="textSecondary" variant="body1">
-                login with Member Id
-              </Typography>
-            </Box>
-            <TextField
-              error={Boolean(formik.touched.memberId && formik.errors.memberId)}
-              fullWidth
-              helperText={formik.touched.memberId && formik.errors.memberId}
-              label="Member Id"
-              margin="normal"
-              name="memberId"
-              onBlur={formik.handleBlur}
-              onChange={formik.handleChange}
-              type="number"
-              value={formik.values.email}
-              variant="outlined"
-            />
-            <TextField
-              error={Boolean(formik.touched.password && formik.errors.password)}
-              fullWidth
-              helperText={formik.touched.password && formik.errors.password}
-              label="Password"
-              margin="normal"
-              name="password"
-              onBlur={formik.handleBlur}
-              onChange={formik.handleChange}
-              type="password"
-              value={formik.values.password}
-              variant="outlined"
-            />
-            <Box sx={{ py: 2 }}>
-              <Button color="primary" disabled={disabled} fullWidth size="large" type="submit" variant="contained">
-                Login In Now
+          backgroundImage: 'url("/assets/img/login01.png")',
+          backgroundSize: "cover",
+          display: "flex",
+          minHeight: "100vh",
+          alignItems: "center",
+        }}>
+        <Helmet>
+          <title> Login </title>
+        </Helmet>
+        <Box
+          // component="main"
+          sx={{
+            boxShadow: " 0 8px 32px 0 rgba( 31, 38, 135, 0.37 )",
+            backdropFilter: "blur( 5.5px )",
+            borderRadius: "1rem",
+            maxWidth: "758px",
+            margin: "auto",
+            padding: { xs: "3rem 0.5rem", sm: "3rem 3rem", lg: "3rem 5rem" },
+            color: "white",
+          }}>
+          <Container maxWidth="sm">
+            <Link to="/">
+              <Button
+                component="a"
+                startIcon={<ArrowBackIcon fontSize="small" />}
+                sx={{
+                  color: "white",
+                  "&:hover": {
+                    backgroundColor: "white",
+                    color: "rgb(22,20,69)",
+                  },
+                }}
+                // className={classes.button}
+                >
+                Home
               </Button>
-            </Box>
-          </form>
-        </Container>
+            </Link>
+            <form
+              onSubmit={formik.handleSubmit}
+              className={classes.label}>
+              <Box
+                sx={{
+                  pb: 1,
+                  pt: 3,
+                }}>
+                <Typography
+                  align="center"
+                  color="white"
+                  variant="body1">
+                  login with Member Id
+                </Typography>
+              </Box>
+              <TextField
+                error={Boolean(
+                  formik.touched.memberId && formik.errors.memberId
+                )}
+                fullWidth
+                helperText={formik.touched.memberId && formik.errors.memberId}
+                label="Member Id"
+                margin="normal"
+                name="memberId"
+                onBlur={formik.handleBlur}
+                onChange={formik.handleChange}
+                type="number"
+                value={formik.values.email}
+                variant="outlined"
+              />
+              <TextField
+                error={Boolean(
+                  formik.touched.password && formik.errors.password
+                )}
+                fullWidth
+                helperText={formik.touched.password && formik.errors.password}
+                label="Password"
+                margin="normal"
+                name="password"
+                onBlur={formik.handleBlur}
+                onChange={formik.handleChange}
+                type="password"
+                value={formik.values.password}
+                variant="outlined"
+              />
+              <Box sx={{ py: 2 }}>
+                <Button
+                  color="primary"
+                  disabled={disabled}
+                  fullWidth
+                  size="large"
+                  type="submit"
+                  variant="contained">
+                  Login In Now
+                </Button>
+              </Box>
+            </form>
+          </Container>
+        </Box>
       </Box>
     </>
   );

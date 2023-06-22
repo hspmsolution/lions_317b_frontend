@@ -28,7 +28,7 @@ import OrgChart from "./pages/About/orgChart/OrgChart";
 import Activities from "./pages/Activities/Activities";
 import OrganizationData from "./pages/Membership/organizationData/OrganizationData";
 import MemberDirectory from "./pages/Membership/memberDirectory/MemberDirectory";
-import MiniDirectory from "./pages/Membership/miniDirectory/MiniDirectory";
+import BusinessDirectory from "./pages/Membership/businessDirectory/BusinessDirectory";
 import MemberData from "./pages/Membership/MemberData/MemberData";
 import NewsResource from "./pages/Resources/News/News";
 import GalleryR from "./pages/Resources/Gallery/Gallery";
@@ -38,6 +38,7 @@ import Download from "./pages/Resources/Download/Download";
 import ContactUS from "./pages/contact/Contact";
 import Privacy from "./pages/PrivacyPolicy/Privacy";
 import Terms from "./pages/Terms/Terms";
+import { element } from "prop-types";
 
 export default function Router() {
   const isAdmin = useSelector((state) => state.auth.admin);
@@ -107,15 +108,16 @@ export default function Router() {
             ),
           },
           {
-            path: "/membership/minidirectory",
-            element: isAdmin ? (
-              <MiniDirectory />
-            ) : (
-              <Navigate
-                to="/loginReq"
-                replace
-              />
-            ),
+            path: "/membership/businessdirectory",
+            element:<BusinessDirectory />,
+            // element: isAdmin ? (
+            //   <BusinessDirectory />
+            // ) : (
+            //   <Navigate
+            //     to="/loginReq"
+            //     replace
+            //   />
+            // ),
           },
           {
             path: "/membership/downloadmemberdata",
