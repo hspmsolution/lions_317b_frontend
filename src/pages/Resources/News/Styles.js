@@ -9,12 +9,7 @@ export default makeStyles(() => ({
     transform: "translateX(-50%)",
     left: "50%",
   },
-  //   activityImage: {
-  //     width: "100%",
-  //     height: "200px !important",
-  //     objectFit: "cover",
-  //     position: "absolute",
-  //   },
+  
   newsPagination: {
     "& ul": {
       gap: "10px",
@@ -59,12 +54,6 @@ export default makeStyles(() => ({
     height: "fit-content",
     padding: "0 1rem",
     textAlign: "justify",
-    //////////////
-    // position: "absolute",
-    // backgroundColor: "rgba(29, 60, 122, 0.9)",
-    // zIndex:'9999',
-    // borderRadius:'1rem',
-    // marginTop:'2rem'
-
+   
   },
 }));

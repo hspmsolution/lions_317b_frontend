@@ -22,8 +22,7 @@ function EventCounter({ event }) {
           <CountUp
             start={event.start}
             end={event.end}
-            duration={5}
-          >
+            duration={5}>
             {({ countUpRef }) => (
               <div>
                 <span
@@ -96,13 +95,11 @@ function Counters() {
       <div className="col-lg-12 ">
         <div
           ref={countersRef}
-          className="row text-center"
-        >
+          className="row text-center">
           <Grid
             container
             spacing={2}
-            className="counterGrid"
-          >
+            className="counterGrid">
             {events.map((event, index) => (
               <Grid
                 key={index}
@@ -111,8 +108,7 @@ function Counters() {
                 sm={6}
                 md={4}
                 lg={2.4}
-                className={`${event.class}`}
-              >
+                className={`${event.class}`}>
                 <EventCounter
                   key={event.name}
                   event={event}

@@ -44,8 +44,7 @@ const PopupMenu = ({ title, menuItems }) => {
                   item.replaceAll(" ", "")
                 )}`
               )
-            }
-          >
+            }>
             {item}
           </MenuItem>
         ))}
@@ -60,8 +59,7 @@ const PopupMenu = ({ title, menuItems }) => {
           title={
             <Grid
               item
-              xs={12}
-            >
+              xs={12}>
               <Box
                 sx={{
                   // bgcolor: "rgba(29, 60, 122, 0.4)",
@@ -71,16 +69,11 @@ const PopupMenu = ({ title, menuItems }) => {
                   padding: "0",
 
                   // gap: 2,
-                }}
-              >
-                <DropDown
-                  dropItems={menuItems}
-                  
-                />
+                }}>
+                <DropDown dropItems={menuItems} />
               </Box>
             </Grid>
-          }
-        >
+          }>
           <div id="">
             {title}
             <ExpandMoreIcon />
@@ -92,8 +85,7 @@ const PopupMenu = ({ title, menuItems }) => {
             title === "Home"
               ? navigate(`/`)
               : navigate(`/${toLower(title.replaceAll(" ", ""))}`);
-          }}
-        >
+          }}>
           {title}
         </div>
       )}

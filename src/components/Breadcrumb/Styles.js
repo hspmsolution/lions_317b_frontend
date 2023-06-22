@@ -10,7 +10,6 @@ export default makeStyles(() => ({
     display: "flex",
     color: "white",
     position: "relative",
-    // marginBottom: "3rem",
     "@media (min-width:300px)": {
       padding: 0,
     },
@@ -19,9 +18,7 @@ export default makeStyles(() => ({
     position: "absolute",
     bottom: "15px",
     right: "20px",
-    "@media (min-width:300px)": {
-      // right: '0'
-    },
+    "@media (min-width:300px)": {},
     "& .css-1wuw8dw-MuiBreadcrumbs-separator": {
       color: "white",
       fontWeight: "bold",

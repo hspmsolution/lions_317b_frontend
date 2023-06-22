@@ -99,19 +99,16 @@ const ContactForm = () => {
               backgroundPosition: "100% 0",
             },
           },
-        }}
-      >
+        }}>
         <CustomizedBreadcrumbs label={"Contact Us"} />
 
         <Box
           sx={{
             flexGrow: 1,
-            // backgroundColor: "rgba(29, 60, 122, 0.5)",
             padding: "3rem 0",
             display: "flex",
             justifyContent: "center",
-          }}
-        >
+          }}>
           <Grid
             container
             // spacing={2}
@@ -121,8 +118,7 @@ const ContactForm = () => {
               padding: { xs: "3rem  0", md: "3rem 3rem 3rem 0" },
               boxShadow:
                 "rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px",
-            }}
-          >
+            }}>
             <Grid
               item
               xs={12}
@@ -131,39 +127,31 @@ const ContactForm = () => {
               lg={4}
               sx={{
                 display: "flex",
-                // justifyContent: "center",
-                // alignContent: "center",
+
                 alignItems: "center",
-              }}
-            >
+              }}>
               <Box
                 sx={{
-                  // position: "absolute",
                   backgroundColor: "rgba(29, 60, 122, 0.85)",
                   marginLeft: { xs: "0", md: "-70px" },
                   width: "100%",
                   height: "auto%",
                   padding: "1.5rem",
                 }}
-                md={4}
-              >
+                md={4}>
                 {rows.map((item, index) => (
                   <Card
                     sx={{
-                      // MaxWidth:' 350px',
-                      // borderLeft: "4px solid rgba(29, 60, 122, 0.85)",
                       boxShadow:
                         "rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px",
                       margin: "2rem 0",
                       width: "100%",
-                    }}
-                  >
+                    }}>
                     <CardContent>
                       <Typography
                         variant="h5"
                         component="div"
-                        sx={{ color: "rgba(29, 60, 122, 0.9)" }}
-                      >
+                        sx={{ color: "rgba(29, 60, 122, 0.9)" }}>
                         Name : {item.name}
                       </Typography>
                       <Typography color="text.secondary">
@@ -182,29 +170,25 @@ const ContactForm = () => {
               xs={12}
               sm={8}
               md={8}
-              lg={8}
-            >
+              lg={8}>
               <Box sx={{ backgroundColor: "", padding: "1rem" }}>
                 <Typography
                   variant={"h2"}
                   textAlign={"center"}
                   fontWeight={"bold"}
                   marginBottom={"2rem"}
-                  color={"rgba(29, 60, 122, 0.85)"}
-                >
+                  color={"rgba(29, 60, 122, 0.85)"}>
                   Contact Us
                 </Typography>
                 <form onSubmit={handleSubmit}>
                   <Grid
                     container
-                    spacing={3}
-                  >
+                    spacing={3}>
                     <Grid
                       item
                       xs={12}
                       md={6}
-                      lg={6}
-                    >
+                      lg={6}>
                       <TextField
                         label="First Name"
                         variant="outlined"
@@ -213,7 +197,6 @@ const ContactForm = () => {
                           setFirstName(e.target.value);
                           setFirstNameError(false);
                         }}
-                        // className={classes.textField}
                         fullWidth
                         type="text"
                         error={firstNameError}
@@ -224,8 +207,7 @@ const ContactForm = () => {
                       item
                       xs={12}
                       md={6}
-                      lg={6}
-                    >
+                      lg={6}>
                       <TextField
                         label="Last Name"
                         variant="outlined"
@@ -245,8 +227,7 @@ const ContactForm = () => {
                       item
                       xs={12}
                       md={6}
-                      lg={6}
-                    >
+                      lg={6}>
                       <TextField
                         label="Email"
                         variant="outlined"
@@ -266,8 +247,7 @@ const ContactForm = () => {
                       item
                       xs={12}
                       md={6}
-                      lg={6}
-                    >
+                      lg={6}>
                       <TextField
                         label="Phone Number"
                         variant="outlined"
@@ -291,8 +271,7 @@ const ContactForm = () => {
                       xs={12}
                       subject
                       md={12}
-                      lg={12}
-                    >
+                      lg={12}>
                       <TextField
                         label="Subject"
                         variant="outlined"
@@ -311,8 +290,7 @@ const ContactForm = () => {
                       item
                       xs={12}
                       md={12}
-                      lg={12}
-                    >
+                      lg={12}>
                       <TextField
                         label="Message"
                         variant="outlined"
@@ -333,14 +311,12 @@ const ContactForm = () => {
                       item
                       xs={12}
                       md={12}
-                      lg={12}
-                    >
+                      lg={12}>
                       <Button
                         variant="contained"
                         color={buttonColor}
                         type="submit"
-                        className={classes.button}
-                      >
+                        className={classes.button}>
                         Submit
                       </Button>
                     </Grid>

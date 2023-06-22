@@ -77,8 +77,7 @@ export default function MemberData() {
               backgroundPosition: "100% 0",
             },
           },
-        }}
-      >
+        }}>
         <CustomizedBreadcrumbs
           label={"Membership"}
           subLabel={"Download Member Data"}
@@ -88,13 +87,11 @@ export default function MemberData() {
             <Grid
               container
               rowSpacing={1}
-              columnSpacing={{ xs: 1, sm: 2, md: 3 }}
-            >
+              columnSpacing={{ xs: 1, sm: 2, md: 3 }}>
               <Grid
                 item
                 xs={12}
-                md={6}
-              >
+                md={6}>
                 <Item className={classes.checkItems}>
                   <Typography variant="h6">Select Clubs</Typography>
                   <Box
@@ -105,8 +102,7 @@ export default function MemberData() {
                       borderRadius: "5px",
                       height: "500px",
                       overflowY: "scroll",
-                    }}
-                  >
+                    }}>
                     <FormGroup>
                       {clubs.map((club, index) => (
                         <FormControlLabel
@@ -131,8 +127,7 @@ export default function MemberData() {
                   <Box sx={{ display: "inline-flex", gap: "2rem" }}>
                     <Button
                       variant="contained"
-                      onClick={selectClubs}
-                    >
+                      onClick={selectClubs}>
                       {selectAllClubs ? "Deselect All" : "Select All"}
                     </Button>
                   </Box>
@@ -141,8 +136,7 @@ export default function MemberData() {
               <Grid
                 item
                 xs={12}
-                md={6}
-              >
+                md={6}>
                 <Item className={classes.checkItems}>
                   <Typography variant="h6">Select Positions</Typography>
                   <Box
@@ -153,8 +147,7 @@ export default function MemberData() {
                       borderRadius: "5px",
                       height: "500px",
                       overflowY: "scroll",
-                    }}
-                  >
+                    }}>
                     <FormGroup>
                       {alltitles.map((item, i) => (
                         <FormControlLabel
@@ -179,8 +172,7 @@ export default function MemberData() {
                   <Box sx={{ display: "inline-flex", gap: "2rem" }}>
                     <Button
                       variant="contained"
-                      onClick={selectTitles}
-                    >
+                      onClick={selectTitles}>
                       {selectAllTitles ? "Deselect All" : "Select All"}
                     </Button>
                   </Box>
@@ -190,8 +182,7 @@ export default function MemberData() {
             <Button
               sx={{ marginRight: "auto", mt: "2rem" }}
               variant="contained"
-              onClick={downloadData}
-            >
+              onClick={downloadData}>
               Download
             </Button>
           </Box>

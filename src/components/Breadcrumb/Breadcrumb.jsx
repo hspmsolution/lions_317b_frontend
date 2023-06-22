@@ -1,5 +1,5 @@
 import * as React from "react";
-import { emphasize, styled } from "@mui/material/styles";
+import { styled } from "@mui/material/styles";
 import Breadcrumbs from "@mui/material/Breadcrumbs";
 import Chip from "@mui/material/Chip";
 import HomeIcon from "@mui/icons-material/Home";
@@ -41,8 +41,7 @@ export default function CustomizedBreadcrumbs({ label, subLabel }) {
     <div
       role="presentation"
       onClick={handleClick}
-      className={`${classes.breadcrumbCont} breadcrumbBg`}
-    >
+      className={`${classes.breadcrumbCont} breadcrumbBg`}>
       <Box sx={{ paddingTop: "2rem" }}>
         {subLabel ? (
           <Typography
@@ -52,8 +51,7 @@ export default function CustomizedBreadcrumbs({ label, subLabel }) {
               transform: "translateX(-50%)",
               left: "50%",
               top: "58%",
-            }}
-          >
+            }}>
             {subLabel}
           </Typography>
         ) : (
@@ -64,15 +62,13 @@ export default function CustomizedBreadcrumbs({ label, subLabel }) {
               transform: "translateX(-50%)",
               left: "50%",
               top: "58%",
-            }}
-          >
+            }}>
             {label}
           </Typography>
         )}
         <Breadcrumbs
           aria-label="breadcrumb"
-          className={classes.breadcrumb}
-        >
+          className={classes.breadcrumb}>
           <StyledBreadcrumb
             component="a"
             href="#"

@@ -19,8 +19,7 @@ export default function GalleryR() {
               backgroundPosition: "100% 0",
             },
           },
-        }}
-      >
+        }}>
         <CustomizedBreadcrumbs
           label={"Resources"}
           subLabel={"Gallery"}

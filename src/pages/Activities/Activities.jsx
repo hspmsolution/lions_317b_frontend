@@ -4,7 +4,7 @@ import Button from "@mui/material/Button";
 import Dialog from "@mui/material/Dialog";
 import DialogActions from "@mui/material/DialogActions";
 import DialogContent from "@mui/material/DialogContent";
-import DialogContentText from "@mui/material/DialogContentText";
+// import DialogContentText from "@mui/material/DialogContentText";
 import DialogTitle from "@mui/material/DialogTitle";
 import useMediaQuery from "@mui/material/useMediaQuery";
 import { useTheme } from "@mui/material/styles";
@@ -18,7 +18,6 @@ import { events } from "../../actions/client";
 import { API_URL } from "../../api";
 import CustomizedBreadcrumbs from "../../components/Breadcrumb/Breadcrumb";
 import CommonCard from "../.././components/CommonCard/CommonCard";
-import ImageSlider, { Slide } from "react-auto-image-slider";
 import { Pagination } from "@mui/material";
 import { useNavigate, useLocation } from "react-router-dom";
 
@@ -26,7 +25,6 @@ import Table from "@mui/material/Table";
 import TableBody from "@mui/material/TableBody";
 import TableCell from "@mui/material/TableCell";
 import TableContainer from "@mui/material/TableContainer";
-import TableHead from "@mui/material/TableHead";
 import TableRow from "@mui/material/TableRow";
 
 function ResponsiveDialog({

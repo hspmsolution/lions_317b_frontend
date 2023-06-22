@@ -87,8 +87,7 @@ const Login = () => {
         display: "flex",
         minHeight: "100vh",
         alignItems: "center",
-      }}
-    >
+      }}>
       <Helmet>
         <title> Login </title>
       </Helmet>
@@ -102,8 +101,7 @@ const Login = () => {
           margin: "auto",
           padding: { xs: "3rem 0.5rem", sm: "3rem 3rem", lg: "3rem 5rem" },
           color: "white",
-        }}
-      >
+        }}>
         <Container maxWidth="sm">
           <Link to="/">
             <Button
@@ -112,27 +110,23 @@ const Login = () => {
                 color: "white",
                 "&:hover": { backgroundColor: "white", color: "rgb(22,20,69)" },
               }}
-              startIcon={<ArrowBackIcon fontSize="small" />}
-            >
+              startIcon={<ArrowBackIcon fontSize="small" />}>
               Home
             </Button>
           </Link>
           <form
             onSubmit={formik.handleSubmit}
-            className={classes.label}
-          >
+            className={classes.label}>
             <Box
               sx={{
                 pb: 1,
                 pt: 3,
                 color: "white",
-              }}
-            >
+              }}>
               <Typography
                 align="center"
                 color="white"
-                variant="h6"
-              >
+                variant="h6">
                 Login with Member Id
               </Typography>
             </Box>
@@ -169,8 +163,7 @@ const Login = () => {
                 fullWidth
                 size="large"
                 type="submit"
-                variant="contained"
-              >
+                variant="contained">
                 Login In Now
               </Button>
             </Box>

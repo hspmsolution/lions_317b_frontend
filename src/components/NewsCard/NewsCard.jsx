@@ -10,8 +10,12 @@ export default function NewsCard({ item }) {
   return (
     <Card
       variant="outlined"
-      sx={{ maxWidth: "450px", minWidth: "250px", minheight: "320px", margin: '1rem' }}
-    >
+      sx={{
+        maxWidth: "450px",
+        minWidth: "250px",
+        minheight: "320px",
+        margin: "1rem",
+      }}>
       <Box sx={{ flexBasis: 120, borderRadius: "sm", height: "200px" }}>
         <img
           src={`${API_URL + item?.image}`}
@@ -26,7 +30,9 @@ export default function NewsCard({ item }) {
           label={item?.date?.slice(0, 10)}
           className={classes.dateChip}
         />
-        <Typography variant="h6" className={classes.newsTitle}>
+        <Typography
+          variant="h6"
+          className={classes.newsTitle}>
           {item.newsTitle}
         </Typography>
         <Typography className={classes.activityDesc}>

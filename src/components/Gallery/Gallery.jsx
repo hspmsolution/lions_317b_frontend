@@ -24,8 +24,7 @@ export default function Gallery(props) {
           // background: "#112E57",
           padding: { xs: "3rem 0.5rem", sm: "3rem 2rem", lg: "3rem 2rem" },
           textAlign: "center",
-        }}
-      >
+        }}>
         <Grid
           container
           spacing={5}
@@ -33,8 +32,7 @@ export default function Gallery(props) {
             display: "flex",
             justifyContent: "center",
             alignContent: "center",
-          }}
-        >
+          }}>
           {images.map((item, index) => (
             <>
               <Grid
@@ -47,8 +45,7 @@ export default function Gallery(props) {
                   setIsOpen(true);
                   setPhotoIndex(index);
                 }}
-                key={index}
-              >
+                key={index}>
                 <Paper
                   elevation={3}
                   sx={{
@@ -59,8 +56,7 @@ export default function Gallery(props) {
                     pb: "0.5rem",
                     boxShadow:
                       "rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px",
-                  }}
-                >
+                  }}>
                   <CommonCard
                     image={`${API_URL + item.image}`}
                     heading={item.title}

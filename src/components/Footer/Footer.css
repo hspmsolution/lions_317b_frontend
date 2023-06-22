@@ -9,7 +9,6 @@ footer {
   line-height: 24px;
   font-family: "Tajawal", sans-serif;
   word-break: normal;
-  /* border-radius: 10px; */
   box-shadow: 2px 6px 60px 20px rgba(0, 0, 0, 0.1);
 }
 
@@ -246,9 +245,7 @@ ul.list-links li {
 /*Footer Background Image*/
 
 .footer-background {
-  /* background-image: url("/public/assets/img/footer01.png"); */
   background-image: url("/public/assets/img/footerbg01.png");
-
   background-repeat: no-repeat;
   background-size: cover;
   background-position-y: center;

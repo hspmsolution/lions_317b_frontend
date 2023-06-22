@@ -12,7 +12,6 @@ export default makeStyles(() => ({
     textAlign: "center",
     "& a": {
       color: "#fff",
-      // margin: '10px',
       fontSize: "1.5rem",
       padding: "1rem",
       borderRadius: "1rem",

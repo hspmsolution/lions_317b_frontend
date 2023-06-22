@@ -1,5 +1,4 @@
 .aboutGov {
-  /* background: linear-gradient(90deg, rgba(0, 0, 0, .85), rgba(0, 0, 0, .85), rgba(0, 0, 0, .85)), url(/public/assets/img/pexels-monstera.jpg) no-repeat; */
   background-size: 100% 100%;
   background-attachment: fixed;
   color: white;
@@ -18,13 +17,8 @@
 .aboutGovContainer {
   color: white;
   display: block;
-  /* background: rgba(255, 255, 255, 0.11); */
   border-radius: 16px;
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.4);
-  /* backdrop-filter: blur(2.6px); */
-  /* -webkit-backdrop-filter: blur(2.6px); */
-  /* border: 1px solid rgba(255, 255, 255, 0.3); */
-  /* border: 2.5px solid rgb(9, 16, 149); */
 }
 
 .dist-governer {

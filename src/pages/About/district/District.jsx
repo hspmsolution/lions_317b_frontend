@@ -12,23 +12,19 @@ function District() {
         />
         <Box
           sx={{
-            // margin: "1rem",
             backgroundImage: 'url("/assets/img/aboutbg03.png")',
             backgroundSize: "cover",
             padding: { xs: "3rem 0.5rem", sm: "3rem 2rem", lg: "3rem 2rem" },
-          }}
-        >
+          }}>
           <Container
             sx={{ padding: "0" }}
-            className="aboutGovContainer"
-          >
+            className="aboutGovContainer">
             <Paper className="districtPaper ">
               <Box>
                 <Typography
                   variant="h3"
                   gutterBottom
-                  className="itemTitle"
-                >
+                  className="itemTitle">
                   WELCOME TO OUR WEBSITE OF VIBRANT LIONS CLUBS DISTRICT 3234-D2
                 </Typography>
               </Box>
@@ -75,8 +71,7 @@ function District() {
               <br />
               <Typography
                 variant="h6"
-                gutterBottom
-              >
+                gutterBottom>
                 District Governor,
                 <br />
                 2020-2021

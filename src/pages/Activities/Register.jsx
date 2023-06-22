@@ -1,14 +1,10 @@
 import {
-  Avatar,
   Box,
   Button,
   DialogActions,
   DialogContent,
   DialogTitle,
-  Paper,
   TextField,
-  Typography,
-  getNativeSelectUtilityClasses,
   useMediaQuery,
 } from "@mui/material";
 import { useDispatch, useSelector } from "react-redux";
@@ -20,16 +16,20 @@ import RadioGroup from "@mui/material/RadioGroup";
 import FormControlLabel from "@mui/material/FormControlLabel";
 import { registerActivity } from "../../actions/activity";
 
-
 export default function Register({ activityId }) {
   const [open, setOpen] = React.useState(true);
   const [isMember, setIsMember] = React.useState(false);
   const theme = useTheme();
-  const dispatch=useDispatch();
+  const dispatch = useDispatch();
   const fullScreen = useMediaQuery(theme.breakpoints.down("md"));
-  const initialData = { memberId:null, name: "", contact: "" ,activityId:activityId};
+  const initialData = {
+    memberId: null,
+    name: "",
+    contact: "",
+    activityId: activityId,
+  };
   const [registrationData, setRegistrationData] = React.useState(initialData);
-  
+
   const handleClose = () => {
     setOpen(false);
   };
@@ -54,8 +54,7 @@ export default function Register({ activityId }) {
         fullScreen={fullScreen}
         open={open}
         onClose={handleClose}
-        aria-labelledby="responsive-dialog-title"
-      >
+        aria-labelledby="responsive-dialog-title">
         <DialogTitle id="responsive-dialog-title">
           {"Activity Registration"}
         </DialogTitle>
@@ -68,11 +67,18 @@ export default function Register({ activityId }) {
             onChange={() => {
               setIsMember(!isMember);
             }}
-            sx={{ mb: '1rem', gap: '1rem', alignItems: 'center' }}
-          >
+            sx={{ mb: "1rem", gap: "1rem", alignItems: "center" }}>
             Are You a Lion Member
-            <FormControlLabel value="Yes" control={<Radio />} label="Yes" />
-            <FormControlLabel value="No" control={<Radio />} label="No" />
+            <FormControlLabel
+              value="Yes"
+              control={<Radio />}
+              label="Yes"
+            />
+            <FormControlLabel
+              value="No"
+              control={<Radio />}
+              label="No"
+            />
           </RadioGroup>
           <form onSubmit={onSubmit}>
             {isMember && (
@@ -82,8 +88,7 @@ export default function Register({ activityId }) {
                   gap: "1.5rem",
                   mt: "0.5rem",
                   mb: "1.5rem",
-                }}
-              >
+                }}>
                 <TextField
                   id="outlined-basic"
                   label="Enter Lion Member ID"
@@ -116,7 +121,9 @@ export default function Register({ activityId }) {
               />
             </Box>
             <DialogActions>
-              <Button autoFocus onClick={handleClose}>
+              <Button
+                autoFocus
+                onClick={handleClose}>
                 Close
               </Button>
               <Button type="submit">Submit</Button>

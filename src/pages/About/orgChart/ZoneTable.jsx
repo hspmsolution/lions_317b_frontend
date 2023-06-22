@@ -21,9 +21,9 @@ export default function ZoneTable({ zone }) {
           minWidth: 250,
           maxWidth: 350,
           backgroundColor: "#F4F6F8",
-          boxShadow: "rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;",
-        }}
-      >
+          boxShadow:
+            "rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;",
+        }}>
         <Table aria-label="simple table">
           <TableHead>
             <TableRow>
@@ -32,8 +32,7 @@ export default function ZoneTable({ zone }) {
                   textAlign: "center",
                   backgroundColor: "#3b557e",
                   color: "#fff",
-                }}
-              >
+                }}>
                 {zone.name}
                 <Typography variant="h5">
                   Zone Chairperson{zone.chairPerson}
@@ -44,8 +43,7 @@ export default function ZoneTable({ zone }) {
           <TableBody>
             <Table
               aria-label="simple table"
-              sx={{ borderRadius: "6px" }}
-            >
+              sx={{ borderRadius: "6px" }}>
               <TableHead>
                 <TableRow>
                   <TableCell sx={{ backgroundColor: "#48689b", color: "#fff" }}>
@@ -53,8 +51,7 @@ export default function ZoneTable({ zone }) {
                   </TableCell>
                   <TableCell
                     sx={{ backgroundColor: "#48689b", color: "#fff" }}
-                    align="right"
-                  >
+                    align="right">
                     Club Id's
                   </TableCell>
                 </TableRow>
@@ -63,16 +60,13 @@ export default function ZoneTable({ zone }) {
                 {zone.clubs?.map((club, id) => (
                   <TableRow
                     key={club.id}
-                    sx={{ "&:last-child td, &:last-child th": { border: 0 } }}
-                  >
+                    sx={{ "&:last-child td, &:last-child th": { border: 0 } }}>
                     <TableCell
                       component="th"
-                      scope="row"
-                    >
+                      scope="row">
                       <Link
                         onClick={() => navigate("/organizationdata")}
-                        style={{ color: "#000" }}
-                      >
+                        style={{ color: "#000" }}>
                         {club.name}
                       </Link>
                     </TableCell>

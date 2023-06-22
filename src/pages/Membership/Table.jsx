@@ -1,22 +1,30 @@
-import * as React from 'react';
-import PropTypes from 'prop-types';
-import { useTheme } from '@mui/material/styles';
-import Box from '@mui/material/Box';
-import Table from '@mui/material/Table';
-import TableBody from '@mui/material/TableBody';
-import TableCell from '@mui/material/TableCell';
-import TableContainer from '@mui/material/TableContainer';
-import TableFooter from '@mui/material/TableFooter';
-import TablePagination from '@mui/material/TablePagination';
-import TableRow from '@mui/material/TableRow';
-import Paper from '@mui/material/Paper';
-import IconButton from '@mui/material/IconButton';
-import FirstPageIcon from '@mui/icons-material/FirstPage';
-import KeyboardArrowLeft from '@mui/icons-material/KeyboardArrowLeft';
-import KeyboardArrowRight from '@mui/icons-material/KeyboardArrowRight';
-import LastPageIcon from '@mui/icons-material/LastPage';
-import { Autocomplete, Button, Container, Grid, TableHead, TextField, Typography } from '@mui/material';
-import Navbar from '../../components/Navbar/Navbar';
+import * as React from "react";
+import PropTypes from "prop-types";
+import { useTheme } from "@mui/material/styles";
+import Box from "@mui/material/Box";
+import Table from "@mui/material/Table";
+import TableBody from "@mui/material/TableBody";
+import TableCell from "@mui/material/TableCell";
+import TableContainer from "@mui/material/TableContainer";
+import TableFooter from "@mui/material/TableFooter";
+import TablePagination from "@mui/material/TablePagination";
+import TableRow from "@mui/material/TableRow";
+import Paper from "@mui/material/Paper";
+import IconButton from "@mui/material/IconButton";
+import FirstPageIcon from "@mui/icons-material/FirstPage";
+import KeyboardArrowLeft from "@mui/icons-material/KeyboardArrowLeft";
+import KeyboardArrowRight from "@mui/icons-material/KeyboardArrowRight";
+import LastPageIcon from "@mui/icons-material/LastPage";
+import {
+  Autocomplete,
+  Button,
+  Container,
+  Grid,
+  TableHead,
+  TextField,
+  Typography,
+} from "@mui/material";
+import Navbar from "../../components/Navbar/Navbar";
 
 function TablePaginationActions(props) {
   const theme = useTheme();
@@ -43,30 +51,34 @@ function TablePaginationActions(props) {
       <IconButton
         onClick={handleFirstPageButtonClick}
         disabled={page === 0}
-        aria-label="first page"
-      >
-        {theme.direction === 'rtl' ? <LastPageIcon /> : <FirstPageIcon />}
+        aria-label="first page">
+        {theme.direction === "rtl" ? <LastPageIcon /> : <FirstPageIcon />}
       </IconButton>
       <IconButton
         onClick={handleBackButtonClick}
         disabled={page === 0}
-        aria-label="previous page"
-      >
-        {theme.direction === 'rtl' ? <KeyboardArrowRight /> : <KeyboardArrowLeft />}
+        aria-label="previous page">
+        {theme.direction === "rtl" ? (
+          <KeyboardArrowRight />
+        ) : (
+          <KeyboardArrowLeft />
+        )}
       </IconButton>
       <IconButton
         onClick={handleNextButtonClick}
         disabled={page >= Math.ceil(count / rowsPerPage) - 1}
-        aria-label="next page"
-      >
-        {theme.direction === 'rtl' ? <KeyboardArrowLeft /> : <KeyboardArrowRight />}
+        aria-label="next page">
+        {theme.direction === "rtl" ? (
+          <KeyboardArrowLeft />
+        ) : (
+          <KeyboardArrowRight />
+        )}
       </IconButton>
       <IconButton
         onClick={handleLastPageButtonClick}
         disabled={page >= Math.ceil(count / rowsPerPage) - 1}
-        aria-label="last page"
-      >
-        {theme.direction === 'rtl' ? <FirstPageIcon /> : <LastPageIcon />}
+        aria-label="last page">
+        {theme.direction === "rtl" ? <FirstPageIcon /> : <LastPageIcon />}
       </IconButton>
     </Box>
   );
@@ -84,57 +96,55 @@ function createData(name, calories) {
 }
 
 const rows = [
-  createData('POONA GANESHKHIND', 769),
-  createData('LONAVLA SUPREMOS', 340),
-  createData('PUNE AGRASEN', 297),
-  createData('POONA SARASBAUG', 222),
-  createData('PUNE PRABHAT', 219),
-  createData('NASHIK ROYALS', 200),
-  createData('POONA', 198),
-  createData('POONA CENTRAL', 166),
-  createData('TALEGAON', 150),
-  createData('KOPERGAON', 144),
-  createData('abc', 318),
+  createData("POONA GANESHKHIND", 769),
+  createData("LONAVLA SUPREMOS", 340),
+  createData("PUNE AGRASEN", 297),
+  createData("POONA SARASBAUG", 222),
+  createData("PUNE PRABHAT", 219),
+  createData("NASHIK ROYALS", 200),
+  createData("POONA", 198),
+  createData("POONA CENTRAL", 166),
+  createData("TALEGAON", 150),
+  createData("KOPERGAON", 144),
+  createData("abc", 318),
 ].sort((a, b) => (a.calories > b.calories ? -1 : 1));
 
 const headCells = [
   {
-    id: 'name',
+    id: "name",
     numeric: false,
     disablePadding: true,
-    label: 'Sr.',
+    label: "Sr.",
   },
   {
-    id: 'calories',
+    id: "calories",
     numeric: true,
     disablePadding: false,
-    label: 'Title',
+    label: "Title",
   },
   {
-    id: 'fat',
+    id: "fat",
     numeric: true,
     disablePadding: false,
-    label: 'Full Name',
+    label: "Full Name",
   },
   {
-    id: 'carbs',
+    id: "carbs",
     numeric: true,
     disablePadding: false,
-    label: 'Club Name',
+    label: "Club Name",
   },
 ];
 
 function EnhancedTableHead(props) {
-
   return (
     <TableHead>
       <TableRow>
         {headCells.map((headCell) => (
           <TableCell
             key={headCell.id}
-            align={headCell.numeric ? 'right' : 'left'}
-            padding={'1rem'}
-          >
+            align={headCell.numeric ? "right" : "left"}
+            padding={"1rem"}>
             {headCell.label}
           </TableCell>
         ))}
@@ -147,11 +157,10 @@ EnhancedTableHead.propTypes = {
   numSelected: PropTypes.number.isRequired,
   onRequestSort: PropTypes.func.isRequired,
   onSelectAllClick: PropTypes.func.isRequired,
-  order: PropTypes.oneOf(['asc', 'desc']).isRequired,
+  order: PropTypes.oneOf(["asc", "desc"]).isRequired,
   orderBy: PropTypes.string.isRequired,
   rowCount: PropTypes.number.isRequired,
 };
-
 
 export default function CustomPaginationActionsTable() {
   const [page, setPage] = React.useState(0);
@@ -172,35 +181,40 @@ export default function CustomPaginationActionsTable() {
 
   const filters = [
     {
-      heading: 'Instrument Type',
+      heading: "Instrument Type",
       // options: instruments,
-      label: "Search Club"
+      label: "Search Club",
     },
     {
-      heading: 'Choose product',
+      heading: "Choose product",
       // options: rows,
-      label: "Enter Name to Search Directory"
-    }
-  ]
+      label: "Enter Name to Search Directory",
+    },
+  ];
 
   return (
     <>
       <Navbar />
-      <Container sx={{ margin: '5rem auto' }}>
-        <Typography variant='h3' sx={{ textAlign: 'center' }}>
+      <Container sx={{ margin: "5rem auto" }}>
+        <Typography
+          variant="h3"
+          sx={{ textAlign: "center" }}>
           Member Directory
         </Typography>
-        <Grid container spacing={2}>
-          <Grid item xs={12}>
+        <Grid
+          container
+          spacing={2}>
+          <Grid
+            item
+            xs={12}>
             <Box
               sx={{
                 p: 2,
-                bgcolor: 'background.default',
-                display: 'grid',
-                gridTemplateColumns: { md: '4fr 4fr' },
+                bgcolor: "background.default",
+                display: "grid",
+                gridTemplateColumns: { md: "4fr 4fr" },
                 gap: 2,
-              }}
-            >
+              }}>
               {filters.map((filter, index) => (
                 <Box key={index}>
                   <Autocomplete
@@ -208,28 +222,50 @@ export default function CustomPaginationActionsTable() {
                     id="combo-box-demo"
                     options={filter.options}
                     sx={{ width: 300 }}
-                    renderInput={(params) => <TextField {...params} label={filter.label} />}
+                    renderInput={(params) => (
+                      <TextField
+                        {...params}
+                        label={filter.label}
+                      />
+                    )}
                   />
                 </Box>
               ))}
-              <Button variant="contained" sx={{ width: '18rem' }}>Download All Members Data</Button>
-              <Button variant="contained" sx={{ width: '8rem' }}>Reset</Button>
+              <Button
+                variant="contained"
+                sx={{ width: "18rem" }}>
+                Download All Members Data
+              </Button>
+              <Button
+                variant="contained"
+                sx={{ width: "8rem" }}>
+                Reset
+              </Button>
             </Box>
           </Grid>
         </Grid>
         <TableContainer component={Paper}>
-          <Table sx={{ minWidth: 500 }} aria-label="custom pagination table">
+          <Table
+            sx={{ minWidth: 500 }}
+            aria-label="custom pagination table">
             <EnhancedTableHead />
             <TableBody>
               {(rowsPerPage > 0
-                ? rows.slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage)
+                ? rows.slice(
+                    page * rowsPerPage,
+                    page * rowsPerPage + rowsPerPage
+                  )
                 : rows
               ).map((row, index) => (
                 <TableRow key={row.name}>
-                  <TableCell component="th" scope="row">
+                  <TableCell
+                    component="th"
+                    scope="row">
                     {row.name}
                   </TableCell>
-                  <TableCell style={{ width: 160 }} align="right">
+                  <TableCell
+                    style={{ width: 160 }}
+                    align="right">
                     {row.calories}
                   </TableCell>
                 </TableRow>
@@ -251,7 +287,7 @@ export default function CustomPaginationActionsTable() {
                   page={page}
                   SelectProps={{
                     inputProps: {
-                      'aria-label': 'rows per page',
+                      "aria-label": "rows per page",
                     },
                     native: true,
                   }}

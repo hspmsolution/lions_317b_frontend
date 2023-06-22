@@ -1,6 +1,5 @@
 import * as React from "react";
-import { styled } from "@mui/material/styles";
-import { Box, Button, Paper } from "@mui/material";
+import { Box, Button,  } from "@mui/material";
 import { events } from "../../../actions/client";
 import { useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
@@ -27,8 +26,7 @@ export default function Activities() {
           padding: "1rem",
           textAlign: "center",
         }}
-        className="activityContainer"
-      >
+        className="activityContainer">
         <h1 className="activityHeading">Activities</h1>
 
         <Grid
@@ -38,8 +36,7 @@ export default function Activities() {
           sx={{
             padding: { xs: "0", md: "2rem 3rem", lg: " 2rem 5rem" },
             marginTop: "0",
-          }}
-        >
+          }}>
           {activities.recent?.slice(0, 6).map((item, index) => {
             return (
               <>
@@ -52,8 +49,7 @@ export default function Activities() {
                     display: "flex",
                     justifyContent: "center",
                     alignItems: "center",
-                  }}
-                >
+                  }}>
                   <Box
                     sx={{
                       backgroundColor: "rgba(29, 60, 122, 0.85)",
@@ -71,8 +67,7 @@ export default function Activities() {
                     className={classes.activityCard}
                     onClick={() => {
                       navigate("/activities");
-                    }}
-                  >
+                    }}>
                     <img
                       src={`${API_URL + item?.image_path}`}
                       className={classes.activityImage}
@@ -89,7 +84,6 @@ export default function Activities() {
             );
           })}
         </Grid>
-        {/* </Paper> */}
 
         <Button
           onClick={() => {
@@ -102,8 +96,7 @@ export default function Activities() {
             borderColor: "rgba(29, 60, 122, 0.85)",
             marginTop: "2rem",
           }}
-          className="activityButton"
-        >
+          className="activityButton">
           View All &nbsp;
           <ArrowForwardIcon />
         </Button>

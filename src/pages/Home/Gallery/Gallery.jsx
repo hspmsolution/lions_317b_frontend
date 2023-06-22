@@ -1,4 +1,3 @@
-
 import React from "react";
 import "react-image-lightbox/style.css"; // This only needs to be imported once in your app
 import "./Gallery.css";
@@ -32,7 +31,6 @@ const Gallery = () => {
     ],
   };
 
- 
   const images = useSelector((state) => state.client.galleryImages);
   return (
     <>
@@ -44,8 +42,7 @@ const Gallery = () => {
               <>
                 <div
                   key={index}
-                  className="carousel"
-                >
+                  className="carousel">
                   <div className="carouselBody">
                     <img
                       src={`${API_URL}${item?.image}`}

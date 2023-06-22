@@ -31,8 +31,7 @@ export default function Priorities() {
               backgroundPosition: "100% 0",
             },
           },
-        }}
-      >
+        }}>
         <CustomizedBreadcrumbs
           label={"Resources"}
           subLabel={"Global Priorities"}
@@ -43,14 +42,12 @@ export default function Priorities() {
           columnSpacing={{ xs: 1, sm: 2, md: 3 }}
           sx={{
             padding: { xs: "3rem 0.5rem", sm: "3rem 2rem", lg: "3rem 2rem" },
-          }}
-        >
+          }}>
           <Grid
             item
             xs={12}
             md={6}
-            className={classes.priority}
-          >
+            className={classes.priority}>
             <Item>
               <Box>
                 <Typography variant="h4">SPECIALITY CLUBS</Typography>
@@ -67,8 +64,7 @@ export default function Priorities() {
             item
             xs={12}
             md={6}
-            className={classes.priority}
-          >
+            className={classes.priority}>
             <Item>
               <Box>
                 <Typography variant="h4">GLOBAL CAUSES</Typography>
@@ -85,8 +81,7 @@ export default function Priorities() {
             item
             xs={12}
             md={6}
-            className={classes.priority}
-          >
+            className={classes.priority}>
             <Item>
               <Box>
                 <Typography variant="h4">SUPPORTING OUR FOUNDATION</Typography>
@@ -103,8 +98,7 @@ export default function Priorities() {
             item
             xs={12}
             md={6}
-            className={classes.priority}
-          >
+            className={classes.priority}>
             <Item>
               <Box>
                 <Typography variant="h4">SERVICE JOURNEY</Typography>
@@ -113,7 +107,6 @@ export default function Priorities() {
                 empowering the service of Lions around the world . As we enter
                 the second year of the campaign, we want to keep your momentum
                 going by encouraging everyone to give what they can. Toghether,
-                
               </Box>
             </Item>
           </Grid>

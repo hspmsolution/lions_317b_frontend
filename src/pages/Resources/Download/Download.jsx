@@ -43,8 +43,7 @@ export default function Download() {
               backgroundPosition: "100% 0",
             },
           },
-        }}
-      >
+        }}>
         <CustomizedBreadcrumbs
           label={"Resources"}
           subLabel={"Downloads"}
@@ -55,24 +54,20 @@ export default function Download() {
             justifyContent: "space-evenly",
             flexWrap: "wrap",
             padding: { xs: "3rem 0.5rem", sm: "3rem 2rem", lg: "3rem 2rem" },
-          }}
-        >
+          }}>
           <Box sx={{ flexGrow: 1 }}>
             <Grid
               container
-              spacing={5}
-            >
+              spacing={5}>
               <Grid
                 item
                 xs={12}
-                md={6}
-              >
+                md={6}>
                 <Item
                   sx={{
                     boxShadow:
                       "rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px",
-                  }}
-                >
+                  }}>
                   <Box>
                     <Typography
                       variant="h4"
@@ -80,8 +75,7 @@ export default function Download() {
                         textAlign: "center",
                         mb: "1rem",
                         color: "rgba(29, 60, 122, 1)",
-                      }}
-                    >
+                      }}>
                       District Resources
                     </Typography>
                     <ResourcesTable rows={rows} />
@@ -91,14 +85,12 @@ export default function Download() {
               <Grid
                 item
                 xs={12}
-                md={6}
-              >
+                md={6}>
                 <Item
                   sx={{
                     boxShadow:
                       "rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px",
-                  }}
-                >
+                  }}>
                   <Box>
                     <Typography
                       variant="h4"
@@ -106,8 +98,7 @@ export default function Download() {
                         textAlign: "center",
                         mb: "1rem",
                         color: "rgba(29, 60, 122, 1)",
-                      }}
-                    >
+                      }}>
                       International Resources
                     </Typography>
                     <ResourcesTable rows={rows} />

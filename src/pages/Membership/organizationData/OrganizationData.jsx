@@ -83,8 +83,7 @@ export default function OrganizationData() {
               backgroundPosition: "100% 0",
             },
           },
-        }}
-      >
+        }}>
         <CustomizedBreadcrumbs
           label={"Membership"}
           subLabel={"Organization Data"}
@@ -93,8 +92,7 @@ export default function OrganizationData() {
           sx={{
             padding: { xs: "3rem 0.5rem", sm: "3rem 2rem", lg: "3rem 2rem" },
           }}
-          className={classes.muiTableContainer}
-        >
+          className={classes.muiTableContainer}>
           <CacheProvider value={muiCache}>
             <ThemeProvider theme={createTheme()}>
               <MUIDataTable

@@ -7,23 +7,33 @@ import { API_URL } from "../../api";
 export default function ActivityCard({ item }) {
   const classes = useStyle();
 
-    return (
-        <Card variant="outlined" sx={{ maxWidth: '450px', minWidth: '250px', minheight: '320px' }}>
-            <Box
-                sx={{ flexBasis: 120, borderRadius: 'sm', height: '200px' }}
-            >
-                <img
-                    src={`${API_URL+ item?.image_path}`}
-                    srcSet={`${API_URL+ item?.image_path}`}
-                    alt={item.activityTitle}
-                    className={classes.activityImage}
-                />
-                <Chip icon={<CalendarTodayIcon />} label={item?.date?.slice(0,10)} className={classes.dateChip} />
-            </Box>
-            <Box sx={{ padding: '1rem' }}>
-                <Typography variant='h6' className={classes.activityTitle}>{item.activityTitle}</Typography>
-                <Typography className={classes.activityDesc}>{item.description}</Typography>
-            </Box>
-        </Card>
-    )
+  return (
+    <Card
+      variant="outlined"
+      sx={{ maxWidth: "450px", minWidth: "250px", minheight: "320px" }}>
+      <Box sx={{ flexBasis: 120, borderRadius: "sm", height: "200px" }}>
+        <img
+          src={`${API_URL + item?.image_path}`}
+          srcSet={`${API_URL + item?.image_path}`}
+          alt={item.activityTitle}
+          className={classes.activityImage}
+        />
+        <Chip
+          icon={<CalendarTodayIcon />}
+          label={item?.date?.slice(0, 10)}
+          className={classes.dateChip}
+        />
+      </Box>
+      <Box sx={{ padding: "1rem" }}>
+        <Typography
+          variant="h6"
+          className={classes.activityTitle}>
+          {item.activityTitle}
+        </Typography>
+        <Typography className={classes.activityDesc}>
+          {item.description}
+        </Typography>
+      </Box>
+    </Card>
+  );
 }

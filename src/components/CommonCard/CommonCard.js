@@ -1,12 +1,10 @@
 import React from "react";
-import { Box, } from "@mui/material";
+import { Box } from "@mui/material";
 import useStyles from "./Style";
 import LinkIcon from "@mui/icons-material/Link";
 
 export default function CommonCard(props) {
   const classes = useStyles();
-
-  
 
   console.log(props.newsPaperLink);
 
@@ -19,9 +17,7 @@ export default function CommonCard(props) {
           justifyContent: "center",
           textAlign: "center",
           borderRadius: "1rem",
-        }}
-      >
-        {/* <Item> */}
+        }}>
         <img
           src={props.image}
           srcSet={props.srcSet}
@@ -32,8 +28,7 @@ export default function CommonCard(props) {
         <p
           className={
             props.type === "activities" ? "" : `${classes.description}`
-          }
-        >
+          }>
           {props.description}
         </p>
         {props.date ? <p className={classes.activityDate}>{props.date}</p> : ""}
@@ -43,14 +38,12 @@ export default function CommonCard(props) {
             href={`${props.newsPaperLink}`}
             rel="noreferrer"
             target="_blank"
-            style={{ color: "white" }}
-          >
+            style={{ color: "white" }}>
             <LinkIcon />
           </a>
         ) : (
           ""
         )}
-        {/* </Item> */}
       </Box>
     </>
   );

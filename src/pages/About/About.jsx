@@ -25,7 +25,6 @@ const About = () => {
                 flexDirection: "column",
                 alignItems: "center",
                 textAlign: "center",
-                // margin: "2rem 0",
               }}>
               <Avatar
                 src={"/assets/dist_img/goa-gov.jpg"}
@@ -110,7 +109,7 @@ const About = () => {
                 “Lions Socio-Recreational Centre” Clubhouse in 1986.
                 <br />
                 <br />
-               <strong> A true Lions family indeed!</strong>
+                <strong> A true Lions family indeed!</strong>
                 <br />
                 <br />
               </p>

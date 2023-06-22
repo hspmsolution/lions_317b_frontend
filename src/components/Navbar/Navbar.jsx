@@ -8,10 +8,8 @@ import Drawer from "@mui/material/Drawer";
 import IconButton from "@mui/material/IconButton";
 import List from "@mui/material/List";
 import ListItem from "@mui/material/ListItem";
-import Paper from "@mui/material/Paper";
 import MenuIcon from "@mui/icons-material/Menu";
 import Toolbar from "@mui/material/Toolbar";
-import Typography from "@mui/material/Typography";
 import Button from "@mui/material/Button";
 import { Avatar } from "@mui/material";
 import useStyles from "./Styles";
@@ -81,17 +79,6 @@ function Navbar(props) {
     <Box
       onClick={handleDrawerToggle}
       sx={{ textAlign: "center" }}>
-      {/* <Avatar
-        alt="Remy Sharp"
-        src={"/assets/img/logo2.png"}
-        sx={{
-          width: 56,
-          height: 56,
-          margin: "5px auto",
-        }}
-        className={classes.clubLogo}
-      /> */}
-
       <Box
         sx={{
           display: {

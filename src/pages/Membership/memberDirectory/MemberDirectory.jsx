@@ -33,8 +33,7 @@ export default function MemberDirectory() {
               backgroundPosition: "100% 0",
             },
           },
-        }}
-      >
+        }}>
         <CustomizedBreadcrumbs
           label={"Membership"}
           subLabel={"Member Directory"}
@@ -43,20 +42,17 @@ export default function MemberDirectory() {
           sx={{
             padding: { xs: "3rem 0.5rem", sm: "3rem 2rem", lg: "3rem 2rem" },
           }}
-          className={classes.profileContainer}
-        >
+          className={classes.profileContainer}>
           <Grid
             container
-            spacing={2}
-          >
+            spacing={2}>
             {Members?.map((member, index) => (
               <Grid
                 item
                 xs={12}
                 md={4}
                 lg={4}
-                key={index}
-              >
+                key={index}>
                 <ProfileCard
                   fullName={member.fullName}
                   title={member.title}

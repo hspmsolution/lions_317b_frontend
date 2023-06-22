@@ -17,8 +17,7 @@ function Slider() {
         </div>
         <ImageSlider
           effectDelay={500}
-          autoPlayDelay={2000}
-        >
+          autoPlayDelay={2000}>
           {images?.map((path, index) => (
             <Slide key={index}>
               <div className="slideOverlay">

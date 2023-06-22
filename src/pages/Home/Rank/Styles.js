@@ -15,6 +15,6 @@ export default makeStyles((theme) => ({
     color: "#999",
     letterSpacing: "-0.005em",
     wordSpacing: "1px",
-    letterSpacing: "none",
+    // letterSpacing: "none",
   },
 }));

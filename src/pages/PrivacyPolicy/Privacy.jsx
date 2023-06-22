@@ -19,20 +19,17 @@ function Privacy() {
           },
         },
         minHeight: "100vh",
-      }}
-    >
+      }}>
       <CustomizedBreadcrumbs label={"Privacy Policies"} />
       <Container
         sx={{
           padding: "3rem 2rem",
-        }}
-      >
+        }}>
         <Paper
           elevation={3}
           sx={{
             padding: "2rem",
-          }}
-        >
+          }}>
           <Typography>
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias sed
             quisquam accusantium, explicabo nostrum eaque sapiente, ipsa quis

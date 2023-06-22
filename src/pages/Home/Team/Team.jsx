@@ -85,29 +85,24 @@ function Team() {
         backgroundAttachment: "fixed",
         pb: "2rem",
       }}
-      className="teamsContainer"
-    >
+      className="teamsContainer">
       <Container>
         <Typography
           variant="h2"
-          className="team-h"
-        >
+          className="team-h">
           Our District Team
         </Typography>
         <Grid
           container
-          className="main"
-        >
+          className="main">
           {teamData.map((member, index) => {
             return (
               <Grid
                 item
-                key={index}
-              >
+                key={index}>
                 <Paper
                   elevation={3}
-                  className="profile-card"
-                >
+                  className="profile-card">
                   <div className="img">
                     <img
                       alt=""

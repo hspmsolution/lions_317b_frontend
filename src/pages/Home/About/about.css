@@ -1,8 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Aboreto&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@300&display=swap");
 
-/*asasassas*/
-
 .card-header {
   height: 200px;
   width: 100%;
@@ -14,13 +12,8 @@
   border-radius: 3rem 3rem 0 0;
 }
 
-/*asaddad*/
-
 .about-cnr {
   margin-top: 0;
-  /* background-color: #232a34; */
-  /*background: rgb(0, 0, 0) */
-  /*background: linear-gradient(180deg, rgba(0, 0, 0, 1) 0%, rgba(17, 46, 87, 1) 98%);*/
 
   background: linear-gradient(
     180deg,
@@ -31,17 +24,12 @@
 }
 
 .about-card {
-  /*padding: 1rem;*/
   background-color: rgba(222, 213, 213, 0.227);
   border-radius: 3rem;
   box-shadow: 0 4px 20px #00000089;
   color: #fff;
-  /*position: relative;*/
   width: 100%;
   min-height: 1px;
-  /*padding: auto;*/
-  /*display: flex;*/
-  /*align-items: center;*/
 }
 
 .about-dist img {
@@ -52,12 +40,7 @@
   position: absolute;
   border: 8px solid #08028d;
   border-radius: 50%;
-  /*margin: 0 auto;*/
   top: -25%;
-
-  /*margin: 0 auto;*/
-
-  /*margin: 4rem;*/
 }
 
 .about-dist {
@@ -126,7 +109,6 @@
 .playIcon,
 .pauseIcon {
   display: inline-block;
-  /* margin: 15px; */
   transition: all 0.7s ease-in-out;
   color: white;
   font-size: 38px;
@@ -184,7 +166,6 @@
     font-size: 12px;
   }
 
-  /*    cmcxc*/
   .about-dist img {
     top: -52%;
     height: 150px;

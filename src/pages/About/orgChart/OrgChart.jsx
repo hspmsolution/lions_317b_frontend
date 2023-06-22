@@ -80,7 +80,6 @@ export default function OrgChart() {
                   flexWrap: "wrap",
                   gap: "3rem",
                   justifyContent: "center",
-                  // backgroundColor: "rgb(0 0 0 / 3%)",
                   borderRadius: "0 0 1rem 1rem",
                 }}>
                 {region.zones?.map((zone, i) => (

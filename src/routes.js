@@ -38,7 +38,7 @@ import Download from "./pages/Resources/Download/Download";
 import ContactUS from "./pages/contact/Contact";
 import Privacy from "./pages/PrivacyPolicy/Privacy";
 import Terms from "./pages/Terms/Terms";
-import { element } from "prop-types";
+// import { element } from "prop-types";
 
 export default function Router() {
   const isAdmin = useSelector((state) => state.auth.admin);
