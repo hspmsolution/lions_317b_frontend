@@ -8,7 +8,7 @@ function District() {
       <div className="aboutGov">
         <CustomizedBreadcrumbs
           label={"About"}
-          subLabel={"About District 317F"}
+          subLabel={"About District317 B"}
         />
         <Box
           sx={{

@@ -26,20 +26,17 @@ function DGTeam() {
             backgroundImage: 'url("/assets/img/aboutbg03.png")',
             backgroundSize: "cover",
             padding: { xs: "3rem 0.5rem", sm: "3rem 2rem", lg: "3rem 2rem" },
-          }}
-        >
+          }}>
           <Grid
             item
             xs={12}
-            className="gov"
-          >
+            className="gov">
             <Item
               sx={{ padding: { xs: "1rem", sm: "3rem" } }}
-              className="item aboutGovContainer"
-            >
+              className="item aboutGovContainer">
               <Avatar
                 alt="Remy Sharp"
-                src={"/assets/dist_img/01_BSN.jpeg"}
+                src={"/assets/dist_img/goa-gov.jpg"}
                 sx={{ width: "300px", height: "220px", display: "flex" }}
                 className="about-image"
                 variant="rounded"
@@ -47,50 +44,56 @@ function DGTeam() {
               <Typography
                 variant="h4"
                 gutterBottom
-                className="itemTitle"
-              >
-                B S Nagaraj, PMJF
+                className="itemTitle">
+                PMJF LION JOSE FRANCISCO ERLE DE SOUSA e BRITO
               </Typography>
-              <Typography variant="h5">District Governor</Typography>
+              <Typography variant="h5">
+                Lions Clubs International District Governor 2023-24 (District
+                317 B)
+              </Typography>
               Dear Members and Sevayatris,
               <br />
               <br />
-              Hearty welcome to this website, welcome from 6600 plus members,
-              welcome from a Lions District that is spread in three Revenue
-              Districts Pune, Nashik, and Ahmednagar in Maharashtra District in
-              India. The District that is serving society with utmost empathy
-              and passion with the help of strong 136 strong clubs! This website
-              attempts to focus on four important stakeholders. Firstly, for the
-              World at large, we shall introduce it to the noble activities that
-              the District is carrying on in various fields. Activities that are
-              prescribed by Lions International such as Diabetes, Hunger,
-              Environment, Vision and Childhood Cancer. Also, in the field of
-              SARITA the District programme. Clean Rivers, Adopting a girl child
-              for education, Roti Bank (Annchhatra), I am Corona Warrior, Teach
-              Value Education and Afforestation! Secondly, the website will
-              cater to the needs of Presidents and his team to motivate their
-              clubs as regards to growth in Services, Membership and Leadership.
-              Third stake holder that is Cabinet member will be pleased to see
-              the dashboard depicting dynamic scores of Top Ten Clubs at any
-              point of time and summarised information. District Lion Members
-              can explore events that took place, future events, About District
-              leadership, various resources to enrich his experience as a Lion.
-              In all great work by our Website host HSPM Solutions! Keep an eye
-              on this Website you will find it exciting and informative! It will
-              motivate to “Sow Service Seeds and Unite in Kindness and
-              Diversity”! Ln CA Abhay Shastri, District Governor
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere ab
+              sint animi molestias voluptate ipsum distinctio? Quasi nam facilis
+              blanditiis veritatis earum, fugiat tempora, nihil voluptatum enim
+              beatae, pariatur dolore! Nemo magnam totam ratione, perferendis
+              repudiandae vitae minus labore, velit possimus, ipsam suscipit.
+              Odit eaque quibusdam doloremque deserunt commodi tenetur
+              aspernatur! Incidunt optio totam veniam cupiditate nulla molestias
+              velit sequi. Inventore, atque, corrupti officia provident iste,
+              natus perferendis delectus hic at a excepturi et? Quis numquam
+              necessitatibus labore dignissimos et ad aspernatur, aut vero earum
+              vitae omnis eveniet consequatur ratione? Soluta in labore harum
+              deserunt cumque sunt, nisi, magnam, laboriosam cupiditate
+              consequatur eius esse aspernatur obcaecati totam minima modi
+              dignissimos sint? Praesentium accusantium ratione iure commodi
+              error quasi amet in? Nobis fugit culpa vero mollitia soluta modi
+              est, facilis quas odit fuga, unde aut consequatur ea iste porro!
+              Ipsam, nesciunt inventore. Sunt nemo cumque odit cupiditate quia
+              dicta. Eaque, quisquam. Non quas natus voluptates voluptate modi
+              inventore! Quo quod sapiente commodi, quia obcaecati provident
+              eligendi nam dicta explicabo eaque natus maiores quam quasi rem ab
+              quaerat aspernatur excepturi! Debitis, veritatis? Ex quasi et
+              neque aliquam veritatis accusamus beatae quia pariatur dolor
+              minus, vel illum sint cumque eveniet est tempore delectus quo
+              provident eum vitae facere dolores! Ut animi modi illo! Sapiente,
+              reprehenderit aperiam nostrum ab reiciendis aspernatur quibusdam
+              provident amet! Laudantium dignissimos quibusdam molestias
+              temporibus eos harum consectetur perspiciatis praesentium odit
+              vero culpa similique adipisci blanditiis, excepturi nemo! Quas,
+              pariatur! Vel repellendus velit voluptatum rerum unde numquam
+              harum ad doloribus maiores eligendi facere quae, dolore ex
             </Item>
           </Grid>
           <Grid
             item
             xs={12}
             md={5}
-            className="vcGov1"
-          >
+            className="vcGov1">
             <Item
               sx={{ padding: { xs: "1rem", sm: "3rem" } }}
-              className="item aboutGovContainer"
-            >
+              className="item aboutGovContainer">
               <Avatar
                 alt="Remy Sharp"
                 src={"/assets/dist_img/03_C M Narayana Swamy.jpeg"}
@@ -101,55 +104,57 @@ function DGTeam() {
               <Typography
                 variant="h4"
                 gutterBottom
-                className="itemTitle"
-              >
+                className="itemTitle">
                 C M Narayana Swamy, MJF
               </Typography>
               <Typography
                 variant="h5"
-                gutterBottom
-              >
+                gutterBottom>
                 1st Vice District Governor
               </Typography>
               Dear Lion Friends,
               <br />
               <br />
-              At the out set let me Congratulate you for being Elected /
-              Appointed or given responsibility of various Position/ Portfolio
-              in our District / club , I am sure every Lion member will be
-              excited to contribute towards our moto " We Serve " through time ,
-              talent & treasure under the able Leadership of Our District
-              Governor MJF CA Ln Abhay ji Shastri. Yes we all are aware about
-              today's Scinario of covid 19 World Wide , in this circumstances it
-              is expected from us to contribute towards society as a Members of
-              World's largest Volunteer Organization through International &
-              District Program to serve the needy , It is said "where there is
-              need there is Lion". I personally feel that it's an opportunity to
-              make an impact as an Organization , Club, & individual to be a
-              great contributor in this situation of World Pandemic . I am sure
-              we all will make an effort & help fellow citizens to uplift them
-              from this situation so that our image as best Organization in the
-              humanitarian service will be enhanced . Also it will help in more
-              people joining our Organization to serve needy in the best of
-              there capacity & ability . I also like to appeal you all to follow
-              the guide lines given by respective Government during this
-              pandemic & even in future to play our role as Good Citizens & to
-              set an great example for the society. Let's sow the seeds of
-              services for human welfare as Lion Members for the betterment of
-              our society we live in. All the best & do well in your life.
-              Regards, MJF Ln Hemant Naik. FVDG.Dist 3234 D2.
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere ab
+              sint animi molestias voluptate ipsum distinctio? Quasi nam facilis
+              blanditiis veritatis earum, fugiat tempora, nihil voluptatum enim
+              beatae, pariatur dolore! Nemo magnam totam ratione, perferendis
+              repudiandae vitae minus labore, velit possimus, ipsam suscipit.
+              Odit eaque quibusdam doloremque deserunt commodi tenetur
+              aspernatur! Incidunt optio totam veniam cupiditate nulla molestias
+              velit sequi. Inventore, atque, corrupti officia provident iste,
+              natus perferendis delectus hic at a excepturi et? Quis numquam
+              necessitatibus labore dignissimos et ad aspernatur, aut vero earum
+              vitae omnis eveniet consequatur ratione? Soluta in labore harum
+              deserunt cumque sunt, nisi, magnam, laboriosam cupiditate
+              consequatur eius esse aspernatur obcaecati totam minima modi
+              dignissimos sint? Praesentium accusantium ratione iure commodi
+              error quasi amet in? Nobis fugit culpa vero mollitia soluta modi
+              est, facilis quas odit fuga, unde aut consequatur ea iste porro!
+              Ipsam, nesciunt inventore. Sunt nemo cumque odit cupiditate quia
+              dicta. Eaque, quisquam. Non quas natus voluptates voluptate modi
+              inventore! Quo quod sapiente commodi, quia obcaecati provident
+              eligendi nam dicta explicabo eaque natus maiores quam quasi rem ab
+              quaerat aspernatur excepturi! Debitis, veritatis? Ex quasi et
+              neque aliquam veritatis accusamus beatae quia pariatur dolor
+              minus, vel illum sint cumque eveniet est tempore delectus quo
+              provident eum vitae facere dolores! Ut animi modi illo! Sapiente,
+              reprehenderit aperiam nostrum ab reiciendis aspernatur quibusdam
+              provident amet! Laudantium dignissimos quibusdam molestias
+              temporibus eos harum consectetur perspiciatis praesentium odit
+              vero culpa similique adipisci blanditiis, excepturi nemo! Quas,
+              pariatur! Vel repellendus velit voluptatum rerum unde numquam
+              harum ad doloribus maiores eligendi facere quae, dolore ex
             </Item>
           </Grid>
           <Grid
             item
             xs={12}
             md={5}
-            className="vcGov2"
-          >
+            className="vcGov2">
             <Item
               sx={{ padding: { xs: "1rem", sm: "3rem" } }}
-              className="item aboutGovContainer"
-            >
+              className="item aboutGovContainer">
               <Avatar
                 alt="Remy Sharp"
                 src={"/assets/dist_img/04_Akash Suvarna.JPG"}
@@ -160,43 +165,47 @@ function DGTeam() {
               <Typography
                 variant="h4"
                 gutterBottom
-                className="itemTitle"
-              >
+                className="itemTitle">
                 Akash A Suvarna, PMJF
               </Typography>
               <Typography
                 variant="h5"
-                gutterBottom
-              >
+                gutterBottom>
                 2nd Vice District Governor
               </Typography>
               Dear Ever Serving Leaders,
               <br />
               <br />
-              At the out set let me Congratulate you for being Elected /
-              Appointed or given responsibility of various Position/ Portfolio
-              in our District / club , I am sure every Lion member will be
-              excited to contribute towards our moto " We Serve " through time ,
-              talent & treasure under the able Leadership of Our District
-              Governor MJF CA Ln Abhay ji Shastri. Yes we all are aware about
-              today's Scinario of covid 19 World Wide , in this circumstances it
-              is expected from us to contribute towards society as a Members of
-              World's largest Volunteer Organization through International &
-              District Program to serve the needy , It is said "where there is
-              need there is Lion". I personally feel that it's an opportunity to
-              make an impact as an Organization , Club, & individual to be a
-              great contributor in this situation of World Pandemic . I am sure
-              we all will make an effort & help fellow citizens to uplift them
-              from this situation so that our image as best Organization in the
-              humanitarian service will be enhanced . Also it will help in more
-              people joining our Organization to serve needy in the best of
-              there capacity & ability . I also like to appeal you all to follow
-              the guide lines given by respective Government during this
-              pandemic & even in future to play our role as Good Citizens & to
-              set an great example for the society. Let's sow the seeds of
-              services for human welfare as Lion Members for the betterment of
-              our society we live in. All the best & do well in your life.
-              Regards, MJF Ln Hemant Naik. FVDG.Dist 3234 D2.
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere ab
+              sint animi molestias voluptate ipsum distinctio? Quasi nam facilis
+              blanditiis veritatis earum, fugiat tempora, nihil voluptatum enim
+              beatae, pariatur dolore! Nemo magnam totam ratione, perferendis
+              repudiandae vitae minus labore, velit possimus, ipsam suscipit.
+              Odit eaque quibusdam doloremque deserunt commodi tenetur
+              aspernatur! Incidunt optio totam veniam cupiditate nulla molestias
+              velit sequi. Inventore, atque, corrupti officia provident iste,
+              natus perferendis delectus hic at a excepturi et? Quis numquam
+              necessitatibus labore dignissimos et ad aspernatur, aut vero earum
+              vitae omnis eveniet consequatur ratione? Soluta in labore harum
+              deserunt cumque sunt, nisi, magnam, laboriosam cupiditate
+              consequatur eius esse aspernatur obcaecati totam minima modi
+              dignissimos sint? Praesentium accusantium ratione iure commodi
+              error quasi amet in? Nobis fugit culpa vero mollitia soluta modi
+              est, facilis quas odit fuga, unde aut consequatur ea iste porro!
+              Ipsam, nesciunt inventore. Sunt nemo cumque odit cupiditate quia
+              dicta. Eaque, quisquam. Non quas natus voluptates voluptate modi
+              inventore! Quo quod sapiente commodi, quia obcaecati provident
+              eligendi nam dicta explicabo eaque natus maiores quam quasi rem ab
+              quaerat aspernatur excepturi! Debitis, veritatis? Ex quasi et
+              neque aliquam veritatis accusamus beatae quia pariatur dolor
+              minus, vel illum sint cumque eveniet est tempore delectus quo
+              provident eum vitae facere dolores! Ut animi modi illo! Sapiente,
+              reprehenderit aperiam nostrum ab reiciendis aspernatur quibusdam
+              provident amet! Laudantium dignissimos quibusdam molestias
+              temporibus eos harum consectetur perspiciatis praesentium odit
+              vero culpa similique adipisci blanditiis, excepturi nemo! Quas,
+              pariatur! Vel repellendus velit voluptatum rerum unde numquam
+              harum ad doloribus maiores eligendi facere quae, dolore ex
             </Item>
           </Grid>
         </Grid>

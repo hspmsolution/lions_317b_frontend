@@ -109,15 +109,15 @@ export default function Router() {
           },
           {
             path: "/membership/businessdirectory",
-            element:<BusinessDirectory />,
-            // element: isAdmin ? (
-            //   <BusinessDirectory />
-            // ) : (
-            //   <Navigate
-            //     to="/loginReq"
-            //     replace
-            //   />
-            // ),
+            // element:<BusinessDirectory />,
+            element: isAdmin ? (
+              <BusinessDirectory />
+            ) : (
+              <Navigate
+                to="/loginReq"
+                replace
+              />
+            ),
           },
           {
             path: "/membership/downloadmemberdata",

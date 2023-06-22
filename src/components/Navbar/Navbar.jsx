@@ -61,21 +61,21 @@ function Navbar(props) {
     setMobileOpen((prevState) => !prevState);
   };
 
-  // const memberLogin = () => {
-  //   {
-  //     isAdmin ? navigate("/dashboard/profile") : navigate("/login");
-  //   }
-  // };
-
-  const memberLogin = (e) => {
-    e.preventDefault();
-    const url = isAdmin ? "/dashboard/profile" : "/login";
-    const link = document.createElement("a");
-    link.href = url;
-    link.target = "_blank";
-    link.rel = "noopener noreferrer";
-    link.click();
+  const memberLogin = () => {
+    {
+      isAdmin ? navigate("/dashboard/profile") : navigate("/login");
+    }
   };
+
+  // const memberLogin = (e) => {
+  //   e.preventDefault();
+  //   const url = isAdmin ? "/dashboard/profile" : "/login";
+  //   const link = document.createElement("a");
+  //   link.href = url;
+  //   link.target = "_blank";
+  //   link.rel = "noopener noreferrer";
+  //   link.click();
+  // };
 
   const drawer = (
     <Box
@@ -238,23 +238,31 @@ function Navbar(props) {
               },
             }}>
             <Button
+              component={Link}
+              to={isAdmin ? "/dashboard/profile" : "/login"}
+              target="_blank"
               size="medium"
               sx={{
-                color: "#151515",
+                color: "#4b4b4b",
                 "&:hover": {
+                  color: "white",
                   backgroundColor: "rgba(29, 60, 122, 0.85)",
                 },
               }}
               className={classes.loginButton}
-              onClick={memberLogin}>
+              // onClick={memberLogin}
+            >
               {isAdmin ? "My Profile" : "Login"}
             </Button>
             <Button
+              component={Link}
+              //  to={}
+              target="_blank"
               size="medium"
               sx={{
-                color: "#151515",
-
+                color: "#4b4b4b",
                 "&:hover": {
+                  color: "white",
                   backgroundColor: "rgba(29, 60, 122, 0.85)",
                 },
               }}

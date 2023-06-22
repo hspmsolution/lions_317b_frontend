@@ -28,7 +28,7 @@ const About = () => {
                 // margin: "2rem 0",
               }}>
               <Avatar
-                src={"/assets/dist_img/dg.jpeg"}
+                src={"/assets/dist_img/goa-gov.jpg"}
                 alt="our district governer"
                 sx={{ mt: "1rem", width: "300px", height: "220px" }}
                 className="about-image"
@@ -37,9 +37,12 @@ const About = () => {
               <Typography
                 variant="h4"
                 className="itemTitle">
-                ERLE BRITO
+                PMJF LION JOSE FRANCISCO ERLE DE SOUSA e BRITO{" "}
               </Typography>
-              <Typography variant="h5">District Governor</Typography>
+              <Typography variant="h5">
+                Lions Clubs International District Governor 2023-24 (District
+                317 B)
+              </Typography>
             </div>
             <div className="dist-governer">
               <p style={{ textAlign: "justify" }}>
@@ -47,68 +50,67 @@ const About = () => {
                   {" "}
                   Dear Members and Sevayatris,
                   <br />
-                  Greetings from District 317F!
+                  Greetings from District 317 B!
                 </b>
                 <br />
-                <br />A Progressive Melvin Jones Fellow, District Governor{" "}
-                <strong>B S Nagaraj </strong>
-                was born in the year <strong>1954</strong> in a philanthropic
-                family. He completed his education in <strong>Hubli</strong>{" "}
-                with graduation in Economics and began his career as a{" "}
-                <strong>Marketing Executive</strong>.
+                <br />
+                Born on 5th December, a Civil Engineer by education and
+                businessman by profession. Is an International Leadership &
+                Motivational Trainer – Has been a visiting faculty in Leadership
+                and Management training at various Professional Institutes,
+                Management Institutions and Companies. An Able Compere and
+                Master of Ceremonies, who is much sought after for his event
+                management skills.
                 <br />
                 <br />
-                In 1980, he quit his job and became a{" "}
-                <strong>First-Generation Entrepreneur</strong> by starting his
-                own company - <strong>Shriraj Engineers Pvt</strong>. Limited,
-                mainly dealing in Industrial Pumps, Valves, etc. His company is
-                an authorized distributor and service center for a renowned
-                organization in the Pump Industry – KSB Limited. He has been
-                awarded ‘<strong>The Best Dealer</strong>’ by KSB during the
-                years 1985, 2004, 2005 and 2006. In 2017, he was awarded a{" "}
-                <strong>Silver Plaque</strong> for successfully completing{" "}
-                <strong>25 years</strong> of fruitful association with
-                <strong> KSB Limited</strong>. <br />
-                <br />
-                His journey in Lionism began in 1978, when he joined the Lions
-                Club of Belgaum Tilakwadi, then District 324 D2 and now 317 B.
-                In 1990, his destiny brought him to Bangalore and joined very
-                prestigious Club - Lions Club of Bangalore Jayamahal. After
-                serving in all Club level positions, he moved on to the District
-                Cabinet in the year 2002-03. He held various positions like,
-                Zone Chairperson, Region Chairperson, District Chairperson,
-                Global Leadership Team Coordinator for 3 years, Global
-                Membership Coordinator, District Cabinet Treasurer and District
-                Cabinet Secretary for Two terms. <br />
-                <br />
-                In the election held during April 2021, he was elected as Second
-                Vice District Governor and was thereafter elevated to serve as
-                First Vice District Governor in 2022. Apart from this he has
-                also served as the Host Committee Chairperson for Region Meets,
-                Cabinet Presentation and District Conventions.
+                Has been a keen exponent of Quizzing and General Knowledge
+                Competitions till date and has been an active “Quiz-Master” at
+                various fora including on Television. Is a keen Pro-Hobbyist
+                Photographer with special interest in Birding and Wildlife
+                Photography, having had his photographs on Wildlife, Travel and
+                Landscapes published in various renowned publications. Is also a
+                Certified Trainer in CPR (Cardio-Pulmonary Resuscitation) and
+                First Aid Emergency Response.
                 <br />
                 <br />
-                He has been recognized by the various awards at District,
-                Multiple and International levels, including 3 International
-                Presidents Medals, 11 International President’s Appreciation
-                Certificates etc. He has graduated from the Faculty Development
-                Institute and has actively involved himself in imparting the
-                knowledge to the younger Lions.
+                36 Years of Service, having joined Lionism in 1986 as Charter
+                President of Leo Club of Candolim and transferred to parent
+                Lions Club in 1991. Has served in all capacities at Club level
+                before becoming President in 1998-99, when the Club was adjudged
+                as Best Club in the District. Served as Cabinet Secretary (Club
+                Visits) 1999-2000, Zone Chairperson in 2000-2001 and District
+                Chairperson in various portfolios over two decades. Unique
+                privilege of serving as District Chairperson for Leadership
+                Development for Three Consecutive Terms from 2003 to 2006.
                 <br />
                 <br />
-                In addition to Lions activities, Nagaraj is life member of All
-                India Plumbing Association, member of Hockey Association,
-                Bowring Institute etc. He was also member of Philatelic Bureau
-                of India. His hobbies are Travelling, collecting Stamps & Coins,
-                and enjoys listening to classical Music.
+                Has been adjudged 100% President and Best President, Best
+                Cabinet Secretary, Best Zone Chairperson and Best District
+                Chairperson in the District and Multiple. Is the Proud Recipient
+                of Five International Presidents Leadership Medals, Fifteen
+                International Presidents Certificates of Appreciation, Ten
+                District Governors Leadership & Appreciation Awards, Two Club
+                Extension Awards and Guiding Lion Awards besides holding the
+                Senior Master Key Award. Has completed Lions Leadership Training
+                at all levels and also training towards Leadership & Management
+                Skill Development in his Professional Lifetime.
                 <br />
                 <br />
-                He is married to Shaila mjf, who is also a member of Lions Club
-                of Bangalore Samarpan Lioness. The couple are blessed with son
-                Santosh Kumar who has completed his Masters in Mechanical
-                Engineering and presently working in Germany, and daughter
-                Sangeetha, who is pursuing her Masters in Marketing & Strategy
-                in UK.
+                Married to PMJF Lion Glenda, a past National-level sportsperson,
+                also a former Leo and Past 100% President of the Club. Elder
+                Son, Leo Emir, a national level sprinter, is the serving Leo
+                District 317B Vice President and charter president of Leo Club
+                of Candolim III, who shares his birthday on 13th January, with
+                Lions Clubs Founder, Melvin Jones. Younger Son, Leo Gareth is an
+                alumnus of the World famous Krishnamurti Foundation’s, Rishi
+                Valley School, Madanapalle. His Father, Lion Francisco was a
+                Charter Member and Mother, Lion Melba was a Past 100% President,
+                all serving the Lions Club of Candolim. The Brito family donated
+                the land on which was built the first ClubHouse in Goa, the
+                “Lions Socio-Recreational Centre” Clubhouse in 1986.
+                <br />
+                <br />
+               <strong> A true Lions family indeed!</strong>
                 <br />
                 <br />
               </p>
