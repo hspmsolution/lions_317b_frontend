@@ -10,7 +10,13 @@ const teamData = [
     designation: "District Governor",
   },
   {
-    src: "/assets/dist_img/",
+    src: "/assets/dist_img/06_Sugalla.jpeg",
+    name: "Sugalla Yellamali",
+    sub_design: "",
+    designation: "Immediate Past District Governor",
+  },
+  {
+    src: "/assets/dist_img/15_manoj.jpeg",
     name: "Manoj Manek",
     sub_design: "MJF",
     designation: "First Vice District Governor",
@@ -22,33 +28,9 @@ const teamData = [
     designation: "Second Vice District Governor",
   },
   {
-    src: "/assets/dist_img/",
-    name: "Sudesh Borkar",
-    sub_design: "",
-    designation: "Second Vice District Governor",
-  },
-  {
-    src: "/assets/dist_img/",
-    name: "Vivekananda Nadkarni",
-    sub_design: "",
-    designation: "Second Vice District Governor",
-  },
-  {
-    src: "/assets/dist_img/06_Sugalla.jpeg",
-    name: "Sugalla Yellamali",
-    sub_design: "",
-    designation: "Immediate Past District Governor",
-  },
-  {
     src: "/assets/dist_img/07_Adhwinikumar.jpeg",
     name: "Adhwinikumar B Karpe",
     sub_design: "   ",
-    designation: "District Cabinet Secretary",
-  },
-  {
-    src: "/assets/dist_img/08_Connor.jpeg",
-    name: "Connor Hamilton",
-    sub_design: "",
     designation: "Cabinet Secretary",
   },
   {
@@ -64,11 +46,24 @@ const teamData = [
     designation: "Global Leadership Team",
   },
   {
+    src: "/assets/dist_img/Sameer.jpeg",
+    name: "Sameer Surlakar",
+    sub_design: "",
+    designation: "Global Membership Team",
+  },
+  {
     src: "/assets/dist_img/11_Bharati.jpeg",
     name: "Bharati Vadavi",
     sub_design: "",
     designation: "Global Service Team",
   },
+  {
+    src: "/assets/dist_img/14_Illyas.jpeg",
+    name: "Illyas Rajabali",
+    sub_design: "",
+    designation: "Global Extension Team",
+  },
+
   {
     src: "/assets/dist_img/12_Vinod.jpeg",
     name: "Vinod Jain",
@@ -82,7 +77,6 @@ const teamData = [
     sub_design: " ",
     designation: "Assistant Cabinet Secretary",
   },
-  
 ];
 
 function Team() {

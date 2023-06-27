@@ -8,7 +8,7 @@ function District() {
       <div className="aboutGov">
         <CustomizedBreadcrumbs
           label={"About"}
-          subLabel={"About District317 B"}
+          subLabel={"About District 317-B"}
         />
         <Box
           sx={{
@@ -25,10 +25,10 @@ function District() {
                   variant="h3"
                   gutterBottom
                   className="itemTitle">
-                  WELCOME TO OUR WEBSITE OF VIBRANT LIONS CLUBS DISTRICT 3234-D2
+                  WELCOME TO OUR WEBSITE OF VIBRANT LIONS CLUBS DISTRICT 317-B
                 </Typography>
               </Box>
-              Dear Members and Sevayatris, Greetings from District D3234D2!
+              Dear Members and Sevayatris, Greetings from District 317-B!
               <br />
               <br />
               Hearty welcome to this website, welcome from 6600 plus members,
