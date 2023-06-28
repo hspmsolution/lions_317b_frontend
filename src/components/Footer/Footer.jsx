@@ -27,6 +27,7 @@ import {
   faEnvelope,
   faLocationDot,
 } from "@fortawesome/free-solid-svg-icons";
+import { superadmin_url } from "../../api";
 
 const quickLinks = [
   {
@@ -208,7 +209,7 @@ function Footer() {
           <Typography variant="subtitle2">
             Copyright 2023 © All rights reserved. | Designed & Developed by{" "}
             <a
-              href="https://lions-superadmin.up.railway.app/"
+              href={superadmin_url}
               target="_blank"
               rel="noreferrer">
               <FontAwesomeIcon icon={faCube} /> <b>HSPM Solutions LLP.</b>
