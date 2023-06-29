@@ -71,7 +71,7 @@ export default function OrgChart() {
                     fontSize: { xs: "0.7rem", md: "1rem" },
                     fontWeight: "bold",
                   }}>
-                  Region Chairperson: {region.chairPerson}
+                  Region Chairperson: {region.region_chairPerson}
                 </Typography>
               </AccordionSummary>
               <AccordionDetails
