@@ -35,7 +35,7 @@ export default function ZoneTable({ zone }) {
                 }}>
                 {zone.name}
                 <Typography variant="h5">
-                  Zone Chairperson{zone.chairPerson}
+                  {zone.zone_chairPerson}
                 </Typography>
               </TableCell>
             </TableRow>
