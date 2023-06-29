@@ -83,7 +83,7 @@ const Login = () => {
     <>
       <Box
         sx={{
-          backgroundImage: 'url("/assets/img/login01.png")',
+          backgroundImage: 'url("https://lions317b.org/api/static/assets/1688065103558-loginbg.png")',
           backgroundSize: "cover",
           display: "flex",
           minHeight: "100vh",

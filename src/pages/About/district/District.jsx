@@ -12,7 +12,7 @@ function District() {
         />
         <Box
           sx={{
-            backgroundImage: 'url("/assets/img/aboutbg03.png")',
+            backgroundImage: 'url("https://lions317b.org/api/static/assets/1688064493288-aboutbg.png")',
             backgroundSize: "cover",
             padding: { xs: "3rem 0.5rem", sm: "3rem 2rem", lg: "3rem 2rem" },
           }}>

@@ -8,7 +8,7 @@ const About = () => {
         <div className="card-header"></div>
         <div className="about-dist">
           <img
-            src={"/assets/img/logo2.jpg"}
+            src={"https://lions317b.org/api/static/assets/1688062752819-logo2.jpg"}
             alt=""
           />
           <h1 className="about-dist-h">About District 317-B</h1>

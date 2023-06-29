@@ -40,7 +40,7 @@ export default function News() {
     <>
       <Box
         sx={{
-          backgroundImage: "url('/assets/img/newbg02.png')",
+          backgroundImage: "url('https://lions317b.org/api/static/assets/1688063886568-background.png')",
           backgroundAttachment: "fixed",
           animation: " animatedBackground 20s linear infinite;",
           "@keyframes animatedBackground": {

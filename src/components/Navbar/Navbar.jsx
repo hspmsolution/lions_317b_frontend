@@ -168,7 +168,7 @@ function Navbar(props) {
             <Link to={"/"}>
               <Avatar
                 alt="Remy Sharp"
-                src="/assets/img/logo.png"
+                src="https://lions317b.org/api/static/assets/1688061539156-logo.png"
                 sx={{
                   width: { xs: 50, md: 80 },
                   height: { xs: 50, md: 80 },
@@ -179,7 +179,7 @@ function Navbar(props) {
             <Link to={"/"}>
               <Avatar
                 alt="Remy Sharp"
-                src="/assets/img/logo2.png"
+                src="https://lions317b.org/api/static/assets/1688062360350-logo2.png"
                 sx={{
                   width: { xs: 50, md: 80 },
                   height: { xs: 50, md: 80 },
