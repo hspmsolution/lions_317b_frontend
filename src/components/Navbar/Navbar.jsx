@@ -225,9 +225,7 @@ function Navbar(props) {
               },
             }}>
             <Button
-              component={Link}
-              to={isAdmin ? "/dashboard/profile" : "/login"}
-              target="_blank"
+              onClick={()=>{navigate("/login")}}
               size="medium"
               sx={{
                 color: "#4b4b4b",

@@ -208,10 +208,7 @@ function Footer() {
         <Container sx={{ textAlign: "center", mb: "1.5rem" }}>
           <Typography variant="subtitle2">
             Copyright 2023 © All rights reserved. | Designed & Developed by{" "}
-            <a
-              href={superadmin_url}
-              target="_blank"
-              rel="noreferrer">
+            <a href={superadmin_url}>
               <FontAwesomeIcon icon={faCube} /> <b>HSPM Solutions LLP.</b>
             </a>
           </Typography>
