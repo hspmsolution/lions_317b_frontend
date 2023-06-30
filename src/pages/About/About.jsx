@@ -14,7 +14,7 @@ const About = () => {
         <Box
           sx={{
             // margin: "1rem",
-            backgroundImage: 'url("/assets/img/aboutbg03.png")',
+            backgroundImage: 'url("https://lions317b.org/api/static/assets/1688064493288-aboutbg.png")',
             backgroundSize: "cover",
             padding: { xs: "3rem 0.5rem", sm: "3rem 2rem", lg: "3rem 2rem" },
           }}>
@@ -27,7 +27,7 @@ const About = () => {
                 textAlign: "center",
               }}>
               <Avatar
-                src={"/assets/dist_img/goa-gov.jpg"}
+                src={"https://lions317b.org/api/static/assets/1688062877612-01-erle.jpg"}
                 alt="our district governer"
                 sx={{ mt: "1rem", width: "300px", height: "220px" }}
                 className="about-image"

@@ -23,7 +23,8 @@ function DGTeam() {
           spacing={5}
           sx={{
             justifyContent: "center",
-            backgroundImage: 'url("/assets/img/aboutbg03.png")',
+            backgroundImage:
+              'url("https://lions317b.org/api/static/assets/1688064493288-aboutbg.png")',
             backgroundSize: "cover",
             padding: { xs: "3rem 0.5rem", sm: "3rem 2rem", lg: "3rem 2rem" },
           }}>
@@ -36,7 +37,9 @@ function DGTeam() {
               className="item aboutGovContainer">
               <Avatar
                 alt="Remy Sharp"
-                src={"/assets/dist_img/goa-gov.jpg"}
+                src={
+                  "https://lions317b.org/api/static/assets/1688062877612-01-erle.jpg"
+                }
                 sx={{ width: "300px", height: "220px", display: "flex" }}
                 className="about-image"
                 variant="rounded"
@@ -128,7 +131,9 @@ function DGTeam() {
               className="item aboutGovContainer">
               <Avatar
                 alt="Remy Sharp"
-                src={"/assets/dist_img/15_manoj.jpeg"}
+                src={
+                  "https://lions317b.org/api/static/assets/1688063064447-03-manoj.jpeg"
+                }
                 sx={{ width: "300px", height: "220px", display: "flex" }}
                 className="about-image"
                 variant="rounded"
@@ -193,7 +198,9 @@ function DGTeam() {
               className="item aboutGovContainer">
               <Avatar
                 alt="Remy Sharp"
-                src={"/assets/dist_img/03_Jai.jpeg"}
+                src={
+                  "https://lions317b.org/api/static/assets/1688063097222-04-jai.jpeg"
+                }
                 sx={{ width: "300px", height: "220px", display: "flex" }}
                 className="about-image"
                 variant="rounded"

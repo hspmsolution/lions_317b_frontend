@@ -146,7 +146,9 @@ function Footer() {
           <Box className="footorXS">
             <Avatar
               alt="Remy Sharp"
-              src={"/assets/img/logo2.png"}
+              src={
+                "https://lions317b.org/api/static/assets/1688062360350-logo2.png"
+              }
               sx={{
                 width: { xs: "130px", lg: "180px" },
                 height: { xs: "130px", lg: "180px" },
