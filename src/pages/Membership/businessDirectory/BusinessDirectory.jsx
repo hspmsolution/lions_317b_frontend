@@ -11,7 +11,7 @@ export default function BusinessDirectory() {
   const navigate = useNavigate();
 
   useEffect(() => {
-    window.open("https://lions-superadmin.up.railway.app/", "_blank");
+    window.open("http://digicard.hspmsolutions.com/", "_blank");
     navigate("/");
   }, [navigate]);
 
