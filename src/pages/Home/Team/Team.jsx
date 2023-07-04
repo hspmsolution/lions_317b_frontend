@@ -16,7 +16,7 @@ const teamData = [
     designation: "Immediate Past District Governor",
   },
   {
-    src: "https://lions317b.org/api/static/assets/1688063064447-03-manoj.jpeg",
+    src: "https://lions317b.org/api/static/assets/1688452657518-04-manoj.jpeg",
     name: "Manoj Manek",
     sub_design: "MJF",
     designation: "First Vice District Governor",
