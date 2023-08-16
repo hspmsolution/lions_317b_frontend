@@ -132,7 +132,7 @@ function DGTeam() {
               <Avatar
                 alt="Remy Sharp"
                 src={
-                  "https://lions317b.org/api/static/assets/1688063064447-03-manoj.jpeg"
+                  "https://lions317b.org/api/static/assets/1688452657518-04-manoj.jpeg"
                 }
                 sx={{ width: "300px", height: "220px", display: "flex" }}
                 className="about-image"
