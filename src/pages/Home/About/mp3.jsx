@@ -15,7 +15,7 @@ class Mp3 extends Component {
   // Create state
   state = {
     // Get audio file in a variable
-    audio: new Audio("assets/mp3/RiveR_Solo.mp3"),
+    audio: new Audio("assets/mp3/Michael-Jackson-Heal-The-World-(Gospeljingle.com).mp3"),
 
     // Set initial state of song
     isPlaying: false,

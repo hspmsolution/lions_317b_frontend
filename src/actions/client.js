@@ -10,6 +10,7 @@ import {
   SLIDER_IMAGES,
   GALLARY_IMAGES,
   DISTRICT_DATA,
+  RESOURCE_DATA
 } from "../constants/actionTypes";
 
 export const activityStats = () => async (dispatch) => {
@@ -21,9 +22,10 @@ export const activityStats = () => async (dispatch) => {
   }
 };
 
-export const events = () => async (dispatch) => {
+export const events = (newPage) => async (dispatch) => {
   try {
-    const { data, status } = await api.events();
+    newPage= newPage || 1
+    const { data, status } = await api.events(newPage);
     dispatch({ type: EVENTS, payload: data });
   } catch (error) {
     console.log(error);
@@ -109,6 +111,16 @@ export const downloadMemberData =
     try {
       const { data } = await api.districtData();
       dispatch({ type: DISTRICT_DATA, payload: data });
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  export const downloadResources = () => async (dispatch) => {
+    try {
+      const { data } = await api.downloadResources();
+      console.log(data);
+      dispatch({ type: RESOURCE_DATA, payload: data });
     } catch (error) {
       console.log(error);
     }

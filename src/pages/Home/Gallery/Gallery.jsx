@@ -8,6 +8,10 @@ import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
 
 const Gallery = () => {
+
+  const images = useSelector((state) => state.client.galleryImages);
+  const slidesToShow = images.length >= 3 ? 3 : images.length;
+
   const settings = {
     className: "center",
     centerMode: true,
@@ -16,7 +20,7 @@ const Gallery = () => {
     speed: 500,
     focusOnSelect: true,
     slidesToScroll: 1,
-    slidesToShow: 3,
+    slidesToShow: slidesToShow,
     arrows: true,
     autoplay: true,
     autoplaySpeed: 2000,
@@ -31,7 +35,7 @@ const Gallery = () => {
     ],
   };
 
-  const images = useSelector((state) => state.client.galleryImages);
+
   return (
     <>
       <div className="carouselContainer">
