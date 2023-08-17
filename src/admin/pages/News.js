@@ -1,5 +1,11 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { styled } from "@mui/material/styles";
+import Button from "@mui/material/Button";
+import Dialog from "@mui/material/Dialog";
+import DialogActions from "@mui/material/DialogActions";
+import DialogContent from "@mui/material/DialogContent";
+import DialogContentText from "@mui/material/DialogContentText";
+import DialogTitle from "@mui/material/DialogTitle";
 
 import {
   Table,
@@ -17,7 +23,7 @@ import { tableCellClasses } from "@mui/material/TableCell";
 
 import { Edit, Delete } from "@mui/icons-material";
 import { useDispatch, useSelector } from "react-redux";
-import { getReportedNews } from "../../actions/news";
+import { getReportedNews, deleteReportedNews } from "../../actions/news";
 
 const StyledTableCell = styled(TableCell)(({ theme }) => ({
   [`&.${tableCellClasses.head}`]: {
@@ -46,6 +52,19 @@ const News = () => {
     dispatch(getReportedNews());
   }, []);
 
+  // Delete Dialog
+
+  const [openDel, setOpenDel] = React.useState(false);
+  const [selectId, setSelectId] = useState(0);
+  const handleClickOpenDel = (id) => {
+    setOpenDel(true);
+    setSelectId(id);
+  };
+
+  const handleCloseDel = () => {
+    setOpenDel(false);
+    setSelectId(0);
+  };
   return (
     <Box bgcolor="white" p={3} borderRadius={4}>
       <Typography variant="h6" gutterBottom>
@@ -60,7 +79,7 @@ const News = () => {
               <StyledTableCell>Description</StyledTableCell>
               <StyledTableCell>Paper Link</StyledTableCell>
               <StyledTableCell>Date</StyledTableCell>
-              {/* <StyledTableCell>Action</StyledTableCell> */}
+              <StyledTableCell>Action</StyledTableCell>
             </StyledTableRow>
           </TableHead>
           <TableBody>
@@ -85,20 +104,56 @@ const News = () => {
                   </a>
                 </StyledTableCell>
 
-                <StyledTableCell>{row.date.slice(0, 10)}</StyledTableCell>
-                {/* <StyledTableCell>
-                  <IconButton aria-label="edit" color="primary">
+                <StyledTableCell>{row.date?.slice(0, 10)}</StyledTableCell>
+                <StyledTableCell>
+                  {/* <IconButton
+                    aria-label="edit"
+                    color="primary">
                     <Edit />
-                  </IconButton>
-                  <IconButton aria-label="delete" color="error">
+                  </IconButton> */}
+                  <IconButton
+                    aria-label="delete"
+                    color="error"
+                    onClick={() => {
+                      handleClickOpenDel(row.newsId);
+                    }}
+                  >
                     <Delete />
                   </IconButton>
-                </StyledTableCell> */}
+                </StyledTableCell>
               </StyledTableRow>
             ))}
           </TableBody>
         </Table>
       </TableContainer>
+
+      {/* Delete Dialog */}
+      <Dialog
+        open={openDel}
+        onClose={handleCloseDel}
+        aria-labelledby="alert-dialog-title"
+        aria-describedby="alert-dialog-description"
+      >
+        <DialogTitle id="alert-dialog-title">Delete</DialogTitle>
+        <DialogContent>
+          <DialogContentText id="alert-dialog-description">
+            Are you sure you want to delete? This action cannot be reversed.
+          </DialogContentText>
+        </DialogContent>
+        <DialogActions>
+          <Button onClick={handleCloseDel}>Cancel</Button>
+          <Button
+            onClick={() => {
+              dispatch(deleteReportedNews(selectId));
+              handleCloseDel();
+            }}
+            autoFocus
+            color="error"
+          >
+            Delete
+          </Button>
+        </DialogActions>
+      </Dialog>
     </Box>
   );
 };

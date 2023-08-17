@@ -13,9 +13,10 @@ export default function Activities() {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const activities = useSelector((state) => state.client.events);
+  console.log(activities,"activities");
   React.useEffect(() => {
     dispatch(events());
-  }, [dispatch]);
+  }, []);
 
   return (
     <>
@@ -37,7 +38,7 @@ export default function Activities() {
             padding: { xs: "0", md: "2rem 3rem", lg: " 2rem 5rem" },
             marginTop: "0",
           }}>
-          {activities.recent?.slice(0, 6).map((item, index) => {
+          {activities.past?.slice(0, 6).map((item, index) => {
             return (
               <>
                 <Grid

@@ -28,7 +28,7 @@ export default function NavSection({ ...other }) {
   const role = useSelector((state) => state.auth.role);
   const [navConfig, setNavConfig] = useState([]);
 
-  useEffect(()=>{
+  useEffect(() => {
     const config = [
       {
         title: "dashboard",
@@ -44,6 +44,7 @@ export default function NavSection({ ...other }) {
         subItems: [
           (role?.includes("Club Treasurer") ||
             role?.includes("Club Secretary") ||
+            role?.includes("Club Administrator") ||
             role?.includes("Club President")) && {
             title: "Report New Activity",
             path: "/dashboard/activity",
@@ -56,15 +57,34 @@ export default function NavSection({ ...other }) {
           },
         ].filter(Boolean),
       },
+      // Admin Rerport
+      // (role?.includes("Club Treasurer") ||
+      //   role?.includes("Club Secretary") ||
+      //   role?.includes("Club President")) && {
+      //   title: "Admin Reporting",
+      //   path: "/dashboard/admin",
+      //   icon: icon("ic_admin"),
+      //   isClick: false,
+      // },
 
       (role?.includes("Club Treasurer") ||
         role?.includes("Club Secretary") ||
+        role?.includes("Club Administrator") ||
         role?.includes("Club President")) && {
-        title: "Admin Reporting",
-        path: "/dashboard/admin",
-        icon: icon("ic_admin"),
+        title: "Admin Reports",
+        path: null,
+        icon: icon("ic_activity"),
         isClick: false,
+        subItems: [
+          {
+            title: "Add Admin Report",
+            path: "/dashboard/admin",
+            icon: icon("ic_admin"),
+          },
+        ].filter(Boolean),
       },
+
+      // ///////
 
       {
         title: "News Reporting",
@@ -90,13 +110,17 @@ export default function NavSection({ ...other }) {
         icon: icon("ic_region"),
         isClick: false,
       },
+      // {
+      //   title: "All Admin Reporting",
+      //   path: "/dashboard/alladminreport",
+      //   icon: icon("ic_activity"),
+      //   isClick: false,
+      // },
+      //
     ].filter(Boolean);
 
     setNavConfig(config);
-
-  },[role])
-  
-
+  }, [role]);
 
   const handleClick = (title) => {
     setNavConfig((prevState) =>
@@ -108,7 +132,9 @@ export default function NavSection({ ...other }) {
 
   return (
     <Box {...other}>
-      <List disablePadding sx={{ p: 1 }}>
+      <List
+        disablePadding
+        sx={{ p: 1, color: "white" }}>
         {navConfig.map((item) => (
           <>
             <NavItem
@@ -119,9 +145,14 @@ export default function NavSection({ ...other }) {
               }}
             />
             {item.subItems && item.isClick && (
-              <List disablePadding sx={{ pl: 3 }}>
+              <List
+                disablePadding
+                sx={{ pl: 3 }}>
                 {item.subItems.map((subItem) => (
-                  <NavItem key={subItem.title} item={subItem} />
+                  <NavItem
+                    key={subItem.title}
+                    item={subItem}
+                  />
                 ))}
               </List>
             )}
@@ -154,11 +185,13 @@ function NavItem({ item, onClick }) {
             fontWeight: "fontWeightBold",
           },
         }
-      }
-    >
+      }>
       <StyledNavItemIcon>{icon && icon}</StyledNavItemIcon>
 
-      <ListItemText disableTypography primary={title} />
+      <ListItemText
+        disableTypography
+        primary={title}
+      />
       {subItems && (isClick ? <CloseIcon /> : <AddIcon />)}
       {info && info}
     </StyledNavItem>
