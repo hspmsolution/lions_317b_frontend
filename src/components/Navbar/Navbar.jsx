@@ -240,20 +240,20 @@ function Navbar(props) {
               {isAdmin ? "My Profile" : "Login"}
             </Button>
             <Button
-              component={Link}
-              //  to={}
-              target="_blank"
-              size="medium"
-              sx={{
-                color: "#4b4b4b",
-                "&:hover": {
-                  color: "white",
-                  backgroundColor: "rgba(29, 60, 122, 0.85)",
-                },
-              }}
-              className={classes.loginButton}>
-              My LCI
-            </Button>
+            href="https://account.lionsclubs.org/account/login?returnUrl=%2Fconnect%2Fauthorize%2Fcallback%3Fclient_id%3Dlci-home-app%26redirect_uri%3Dhttps%253A%252F%252Fmyapps.lionsclubs.org%252Fauth-callback%26response_type%3Did_token%2520token%26scope%3Dopenid%2520profile%2520lci-userapi%2520lci-mobileapi%2520lci-reporting%26state%3Daf66166248ad43ef83b1b03061f580d7%26nonce%3Da0c87692e26641f39278bf8b66824998"
+            className={classes.loginButton}
+            target="_blank"
+            size="medium"
+            sx={{
+              color: "#4b4b4b",
+              "&:hover": {
+                color: "white",
+                backgroundColor: "rgba(29, 60, 122, 0.85)",
+              },
+            }}
+          >
+            My LCI
+          </Button>
           </Box>
         </Toolbar>
       </AppBar>

@@ -86,6 +86,10 @@ export default function Router() {
           { path: "/about/organizationchart", element: <OrgChart /> },
           { path: "/activities", element: <Activities /> },
           {
+            path: "/organizationdata",
+            element: <OrganizationData />,
+          },
+          {
             path: "/membership/organizationdata",
             element: isAdmin ? (
               <OrganizationData />

@@ -65,7 +65,7 @@ export default function ZoneTable({ zone }) {
                       component="th"
                       scope="row">
                       <Link
-                        onClick={() => navigate("/organizationdata")}
+                        onClick={() => navigate(`/organizationdata?clubid=${club.id}`)}
                         style={{ color: "#000" }}>
                         {club.name}
                       </Link>

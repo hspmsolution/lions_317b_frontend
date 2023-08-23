@@ -5,9 +5,25 @@ import TableContainer from "@mui/material/TableContainer";
 import TableHead from "@mui/material/TableHead";
 import TableRow from "@mui/material/TableRow";
 import Paper from "@mui/material/Paper";
+import { API_URL } from "../../../api";
 import PictureAsPdfIcon from "@mui/icons-material/PictureAsPdf";
+import { Link } from "@mui/material";
+import { makeStyles } from "@mui/styles";
+
+const useStyles= makeStyles(() => ({
+    clubName: {
+        cursor: 'pointer',
+        textDecoration: 'none'
+    }
+}))
 
 export default function ResourcesTable({ rows }) {
+  const handleClick = (path) => {
+    window.open(`${API_URL}${path}`, "_blank");
+  };
+
+  const classes = useStyles();
+
   return (
     <TableContainer component={Paper}>
       <Table aria-label="simple table">
@@ -18,22 +34,24 @@ export default function ResourcesTable({ rows }) {
           </TableRow>
         </TableHead>
         <TableBody sx={{ height: "350px", overflowY: "scroll" }}>
-          {rows.map((row) => (
+          {rows?.map((row) => (
             <TableRow
-              key={row.name}
+              key={row.title}
               sx={{ "&:last-child td, &:last-child th": { border: 0 } }}>
               <TableCell
                 component="th"
                 scope="row">
-                {row.name}
+                {row.title}
               </TableCell>
               <TableCell align="right">
-                <PictureAsPdfIcon />
+                <Link className={classes.clubName}>
+                  <PictureAsPdfIcon onClick={() => handleClick(row.path)} />
+                </Link>
               </TableCell>
             </TableRow>
           ))}
         </TableBody>
       </Table>
     </TableContainer>
-  );
+  ); 
 }
