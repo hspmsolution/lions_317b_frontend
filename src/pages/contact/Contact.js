@@ -10,11 +10,11 @@ const ContactForm = () => {
     return { name, designation, phone };
   }
 
-  const rows = [
-    createData("B S Nagaraj", "DG", 9844033835),
-    createData("V K Rajesh", "DCS", 9972245375),
-    createData("R K Hegde", "DCT", 9448012200),
-  ];
+const rows = [
+    createData("Erle Brito", "District Governor", "+91 98237 87447"),
+    createData("Sachin Kale", "District Information Technology Chairperson", "+91 98237 87447"),
+    createData("Adhwinikumar B Karpe", "Cabinet Secretary", "+91 84110 41640"),
+  ];
 
   const classes = useStyles();
   const [firstName, setFirstName] = useState("");

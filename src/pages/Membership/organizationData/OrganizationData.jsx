@@ -5,11 +5,12 @@ import { ThemeProvider } from "@mui/material/styles";
 import { createTheme } from "@mui/material/styles";
 import { CacheProvider } from "@emotion/react";
 import createCache from "@emotion/cache";
+import { useLocation } from "react-router-dom";
 import { Container } from "@mui/material";
 import { Box } from "@mui/material";
 import CustomizedBreadcrumbs from "../../../components/Breadcrumb/Breadcrumb";
 import useStyles from "./Styles";
-import { getMembers } from "../../../actions/member";
+import { allMembers } from "../../../actions/member";
 const muiCache = createCache({
   key: "mui-datatables",
   prepend: true,
@@ -50,18 +51,23 @@ export default function OrganizationData() {
   };
   const Members = () => {
     const dispatch = useDispatch();
-    const membersD = useSelector((state) => state.clubMembers.memberDirectory);
+    const location = useLocation();
+
+    const queryParams = new URLSearchParams(location.search);
+    const clubId = parseInt(queryParams.get("clubid"));
+
+    const membersD = useSelector((state) => state.clubMembers.allMembers);
 
     useEffect(() => {
-      dispatch(getMembers());
+      dispatch(allMembers(clubId));
     }, [dispatch]);
 
-    const data = membersD.map((member, index) => [
+    const data = membersD?.map((member, index) => [
       index + 1,
       member.title,
-      member.fullName,
+      member.firstName + " " + member.lastName,
       member.clubName,
-      member.Occupation,
+      member.occupation,
     ]);
 
     return data;
@@ -71,7 +77,8 @@ export default function OrganizationData() {
     <div className="memberTable">
       <Box
         sx={{
-          backgroundImage: "url('https://lions317b.org/api/static/assets/1688063886568-background.png')",
+          backgroundImage:
+            "url('https://lions317b.org/api/static/assets/1688063886568-background.png')",
           backgroundAttachment: "fixed",
           animation: " animatedBackground 20s linear infinite;",
           "@keyframes animatedBackground": {
@@ -83,16 +90,13 @@ export default function OrganizationData() {
               backgroundPosition: "100% 0",
             },
           },
-        }}>
+        }}
+      >
         <CustomizedBreadcrumbs
           label={"Membership"}
           subLabel={"Organization Data"}
         />
-        <Container
-          sx={{
-            padding: { xs: "3rem 0.5rem", sm: "3rem 2rem", lg: "3rem 2rem" },
-          }}
-          className={classes.muiTableContainer}>
+        <Container sx={{ pb: "5rem" }} className={classes.muiTableContainer}>
           <CacheProvider value={muiCache}>
             <ThemeProvider theme={createTheme()}>
               <MUIDataTable
