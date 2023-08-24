@@ -19,6 +19,7 @@ import { faWhatsapp } from "@fortawesome/free-brands-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Link } from "react-router-dom";
 import { faPhone } from "@fortawesome/free-solid-svg-icons";
+import LocationOnIcon from '@mui/icons-material/LocationOn';
 
 export default function ProfileCard(props) {
   const { fullName, title, clubName, phone, image } = props;
@@ -115,8 +116,18 @@ export default function ProfileCard(props) {
                   primary={phone}
                 />
               </ListItem>
+              <ListItem sx={{ py: 0 }}>
+                <ListItemIcon sx={{ minWidth: "35px" }}>
+                  <LocationOnIcon sx={{ color: "#15AAFF" }} />
+                </ListItemIcon>
+                <ListItemText
+                  sx={{ textAlign: "justify" }}
+                  id="switch-list-label-setting"
+                  primary={"House No 837, Casa Dos Reis Candolim Beach, North Goa"}
+                />
+              </ListItem>
 
-              <ListItem
+              {/* <ListItem
                 disablePadding
                 sx={{ justifyContent: "center", pt: "1.5rem", pb: "0rem" }}>
                 <Box className={classes.socialIcons}>
@@ -129,7 +140,7 @@ export default function ProfileCard(props) {
                     </Link>
                   ))}
                 </Box>
-              </ListItem>
+              </ListItem> */}
             </List>
           </Paper>
         </Box>

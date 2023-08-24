@@ -54,7 +54,11 @@ const quickLinks = [
 const contact = [
   {
     icon: <PhoneIcon />,
-    value: "123456789",
+    value: "Ashwinikumar Karpe: - +91 89991 358 35",
+  },
+  {
+    icon: <PhoneIcon />,
+    value: "Sachin Kale: - +91 98231 696 52",
   },
   {
     icon: <FontAwesomeIcon icon={faEnvelope} />,
@@ -62,8 +66,8 @@ const contact = [
   },
   {
     icon: <FontAwesomeIcon icon={faLocationDot} />,
-    value: "Address",
-  },
+    value: "House No 837, Casa Dos Reis, Candolim Beach, North Goa",
+  },
 ];
 const socialIcos = [
   {

@@ -69,6 +69,8 @@ export const newsReporting = (formData) =>
 export const getClubMembers = () => API.get("member/clubmembers");
 export const getAllmembers = (clubid) =>
   API.get(`member/allmembers?clubid=${clubid}`);
+export const clubsData=()=>API.get("clubs/clubs-data");
+export const clubDetails=()=>API.get("clubs/club-details");
 export const getZone = () => API.get("clubs/zone");
 export const getRegion = () => API.get("clubs/region");
 export const regionActivity = () => API.get("activity/region/allactivities");
