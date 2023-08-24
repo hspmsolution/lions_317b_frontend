@@ -57,6 +57,30 @@ export default function NavSection({ ...other }) {
           },
         ].filter(Boolean),
       },
+      (role?.includes("Club President")) && {
+        title: "Club Details",
+        path: null,
+        icon: icon("ic_activity"),
+        isClick: false,
+        subItems: [
+         {
+            title: "Add Club Details",
+            path: "/dashboard/clubdetails",
+            icon: icon("ic_arrow"),
+          },
+          {
+            title: "Reported Club Details",
+            path: "/dashboard/reportedclubdetails",
+            icon: icon("ic_arrow"),
+          },
+          {
+            title: "Club Gallery",
+            path: "/dashboard/clubgallery",
+            icon: icon("ic_arrow"),
+          },
+        ].filter(Boolean),
+      },
+
       // Admin Rerport
       // (role?.includes("Club Treasurer") ||
       //   role?.includes("Club Secretary") ||

@@ -42,7 +42,7 @@ export default function EDirectory() {
           const club = clubsAll[tableMeta.rowIndex];
           return (
             <Link
-              to={`/club?${club.clubId}`}
+              to={`/club?id=${club.clubId}`}
               style={{
                 color: "black",
                 textDecoration: "none", 

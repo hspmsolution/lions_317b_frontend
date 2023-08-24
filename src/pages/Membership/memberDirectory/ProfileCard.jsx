@@ -22,7 +22,7 @@ import { faPhone } from "@fortawesome/free-solid-svg-icons";
 import LocationOnIcon from '@mui/icons-material/LocationOn';
 
 export default function ProfileCard(props) {
-  const { fullName, title, clubName, phone, image } = props;
+  const { fullName, title, clubName, phone, image,address } = props;
   const classes = useStyles();
   const socialIcos = [
     {
@@ -123,7 +123,7 @@ export default function ProfileCard(props) {
                 <ListItemText
                   sx={{ textAlign: "justify" }}
                   id="switch-list-label-setting"
-                  primary={"House No 837, Casa Dos Reis Candolim Beach, North Goa"}
+                  primary={address}
                 />
               </ListItem>
 

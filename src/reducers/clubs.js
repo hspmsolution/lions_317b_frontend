@@ -1,6 +1,6 @@
 import { REGION_DATA, ZONE_DATA ,CLUBS_DATA,CLUB_DETAILS} from "../constants/actionTypes";
 
-const clubsReducer = (state = { zone: [], region: [] ,clubsData:[], clubDetails:[]}, action) => {
+const clubsReducer = (state = { zone: [], region: [] ,clubsData:[], clubDetails:{pst:[],club:{}}}, action) => {
   switch (action.type) {
     case ZONE_DATA:
       return { ...state, zone: action.payload };

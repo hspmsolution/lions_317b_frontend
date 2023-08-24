@@ -18,6 +18,9 @@ import Treasurer from "./admin/pages/Treasurer";
 import News from "./admin/pages/News";
 import ZonalView from "./admin/pages/ZonalView";
 import RegionalView from "./admin/pages/RegionalView";
+import AddClubDetails from "./admin/pages/ClubDetails";
+import ClubGallery from "./admin/pages/ClubGallery";
+import ReportedClubDetails from "./admin/pages/ReportedClubDetails";
 
 import Home from "./pages/Home/Home";
 import UserLayout from "./components/UserLayout";
@@ -174,6 +177,9 @@ export default function Router() {
                 { path: "news", element: <NewsReporting /> },
                 { path: "admin", element: <AdminReport /> },
                 { path: "pastactivity", element: <PastActivity /> },
+                { path: "reportedclubdetails", element: <ReportedClubDetails/> },
+                { path: "clubdetails", element: <AddClubDetails/> },
+                { path: "clubgallery", element: <ClubGallery/> },
 
                 role.includes("Club Treasurer") && {
                   path: "manage-expense",
