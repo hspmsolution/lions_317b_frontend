@@ -97,6 +97,7 @@ export default function MemberDirectory() {
                   clubName={member.clubName}
                   phone={member.phone}
                   image={member.profilePicture}
+                  address={member.address1}
                 />
               </Grid>
             ))}

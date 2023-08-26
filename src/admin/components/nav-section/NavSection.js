@@ -57,7 +57,10 @@ export default function NavSection({ ...other }) {
           },
         ].filter(Boolean),
       },
-      (role?.includes("Club President")) && {
+      (role?.includes("Club President") ||
+      role?.includes("Club Secretary") ||
+      role?.includes("Club Administrator") ||
+      role?.includes("District Governor")) && {
         title: "Club Details",
         path: null,
         icon: icon("ic_activity"),

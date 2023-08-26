@@ -74,8 +74,8 @@ export default function Activities() {
                       className={classes.activityImage}
                       alt="Activity"
                     />
-                    <h3>{item.heading}Heading</h3>
-                    <p>{item.description}Description</p>
+                    <h3>{item.activityTitle}</h3>
+                    <p>{item.description}</p>
                     <p className={classes.activityDate}>
                       {item?.date?.slice(0, 10)}
                     </p>

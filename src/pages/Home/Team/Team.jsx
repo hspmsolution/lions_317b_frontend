@@ -23,13 +23,13 @@ const teamData = [
   },
   {
     src: "https://lions317b.org/api/static/assets/1688063097222-04-jai.jpeg",
-    name: "Jai Amol Naik",
+    name: "JaiAmol Naik",
     sub_design: "MJF",
     designation: "Second Vice District Governor",
   },
   {
     src: "https://lions317b.org/api/static/assets/1688063143562-05-adhwinikumar.jpeg",
-    name: "Adhwinikumar B Karpe",
+    name: "Ashwinikumar Karpe",
     sub_design: "   ",
     designation: "Cabinet Secretary",
   },
@@ -40,8 +40,8 @@ const teamData = [
     designation: "Cabinet Treasurer",
   },
   {
-    src: "https://lions317b.org/api/static/assets/1688063253552-07-mahesh.jpeg",
-    name: "Mahesh Darbar",
+    src: "https://lions317b.org/api/static/assets/1692950592781-rahulverenkar.jpg",
+    name: "Rahul Shet Verenkar",
     sub_design: "",
     designation: "Global Leadership Team",
   },
@@ -73,7 +73,7 @@ const teamData = [
 
   {
     src: "https://lions317b.org/api/static/assets/1688063532307-12-ndemi.jpeg",
-    name: "NDEMI OTIENO",
+    name: "RAJENDRAPRASAD PATEL",
     sub_design: " ",
     designation: "Assistant Cabinet Secretary",
   },

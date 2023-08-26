@@ -119,13 +119,19 @@ export default function News() {
                       {item?.date?.slice(0, 10)}
                     </p>
 
-                    <a
-                      href={item.newsPaperLink}
-                      rel="noreferrer"
-                      target="_blank"
-                      style={{ color: "white" }}>
-                      <LinkIcon />
-                    </a>
+                    <p className={classes.link}>
+                      {item.newsPaperLink ? (
+                        <a
+                          href={`${item.newsPaperLink}`}
+                          rel="noreferrer"
+                          target="_blank"
+                          style={{ color: "#000" }}>
+                          <LinkIcon />
+                        </a>
+                      ) : (
+                        ""
+                      )}
+                    </p>
                   </Box>
                 </Grid>
               </>

@@ -62,7 +62,7 @@ const contact = [
   },
   {
     icon: <FontAwesomeIcon icon={faEnvelope} />,
-    value: "example@gmail.com",
+    value: "lionsdistrict317b@gmail.com",
   },
   {
     icon: <FontAwesomeIcon icon={faLocationDot} />,
@@ -72,7 +72,7 @@ const contact = [
 const socialIcos = [
   {
     icon: <FontAwesomeIcon icon={faFacebookF} />,
-    link: "https://www.facebook.com/LionsClubsDistrict317F/",
+    link: "https://www.facebook.com/profile.php?id=61550327861925&mibextid=ZbWKwL",
   },
   {
     icon: <FontAwesomeIcon icon={faTwitter} />,
@@ -80,7 +80,7 @@ const socialIcos = [
   },
   {
     icon: <FontAwesomeIcon icon={faInstagram} />,
-    link: "https://www.instagram.com/lions_district_317f/?r=nametag",
+    link: "https://instagram.com/lions317b?igshid=NTc4MTIwNjQ2YQ==",
   },
   {
     icon: <FontAwesomeIcon icon={faYoutube} />,
