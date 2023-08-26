@@ -35,6 +35,7 @@ const myNav = [
     title: "Membership",
     menuItems: [
       // "Organization Data",
+      "E Directory",
       "Member Directory",
       "Business Directory",
       "Download Member Data",

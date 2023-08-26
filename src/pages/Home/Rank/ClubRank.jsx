@@ -14,16 +14,7 @@ import { topClubs } from "../../../actions/client";
 import TimelineDot from "@mui/lab/TimelineDot";
 import "./rank.css";
 
-const clubRankings = [
-  { name: "PUNE AGRASEN", points: 297 },
-  { name: "POONA SARASBAUG", points: 222 },
-  { name: "PUNE PRABHAT", points: 219 },
-  { name: "NASHIK ROYALS", points: 200 },
-  { name: "POONA", points: 198 },
-  { name: "POONA CENTRAL", points: 166 },
-  { name: "TALEGAON", points: 150 },
-  { name: "KOPERGAON", points: 144 },
-];
+
 
 // const styles = {
 //   six: {
@@ -117,7 +108,7 @@ export default function OppositeContentTimeline() {
                   Activity Reporting
                 </Typography>
               </Box>
-              {clubs.slice(0, clubs.length / 2).map((ranking, index) => (
+              {clubs?.topActivityClubs?.map((ranking, index) => (
                 <>
                   <TimelineItem>
                     <TimelineSeparator>
@@ -159,7 +150,7 @@ export default function OppositeContentTimeline() {
                         variant="h6"
                         component="span"
                         color="white">
-                        {ranking.adminstars}
+                        {ranking.activityStar}
                       </Typography>
                       <Typography color="white">{ranking.clubName}</Typography>
                     </TimelineContent>
@@ -185,7 +176,7 @@ export default function OppositeContentTimeline() {
                   Admin Reporting
                 </Typography>
               </Box>
-              {clubs.slice(clubs.length / 2).map((ranking, index) => (
+              {clubs?.topClubs?.map((ranking, index) => (
                 <>
                   <TimelineItem>
                     <TimelineSeparator>

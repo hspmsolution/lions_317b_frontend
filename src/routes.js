@@ -18,6 +18,9 @@ import Treasurer from "./admin/pages/Treasurer";
 import News from "./admin/pages/News";
 import ZonalView from "./admin/pages/ZonalView";
 import RegionalView from "./admin/pages/RegionalView";
+import AddClubDetails from "./admin/pages/ClubDetails";
+import ClubGallery from "./admin/pages/ClubGallery";
+import ReportedClubDetails from "./admin/pages/ReportedClubDetails";
 
 import Home from "./pages/Home/Home";
 import UserLayout from "./components/UserLayout";
@@ -28,6 +31,7 @@ import OrgChart from "./pages/About/orgChart/OrgChart";
 import Activities from "./pages/Activities/Activities";
 import OrganizationData from "./pages/Membership/organizationData/OrganizationData";
 import MemberDirectory from "./pages/Membership/memberDirectory/MemberDirectory";
+import EDirectory from "./pages/Membership/EDirectory/eDirectory";
 import BusinessDirectory from "./pages/Membership/businessDirectory/BusinessDirectory";
 import MemberData from "./pages/Membership/MemberData/MemberData";
 import NewsResource from "./pages/Resources/News/News";
@@ -38,6 +42,7 @@ import Download from "./pages/Resources/Download/Download";
 import ContactUS from "./pages/contact/Contact";
 import Privacy from "./pages/PrivacyPolicy/Privacy";
 import Terms from "./pages/Terms/Terms";
+import ClubDetails from "./pages/Membership/ClubDetails/ClubDetails";
 // import { element } from "prop-types";
 
 export default function Router() {
@@ -85,9 +90,21 @@ export default function Router() {
           { path: "/about/aboutdistrict317B", element: <District /> },
           { path: "/about/organizationchart", element: <OrgChart /> },
           { path: "/activities", element: <Activities /> },
+          {path:"/club",element:<ClubDetails/>},
           {
             path: "/organizationdata",
             element: <OrganizationData />,
+          },
+          {
+            path: "/membership/edirectory",
+            element: isAdmin ? (
+              <EDirectory />
+            ) : (
+              <Navigate
+                to="/loginReq"
+                replace
+              />
+            ),
           },
           {
             path: "/membership/organizationdata",
@@ -149,7 +166,9 @@ export default function Router() {
 
       ...(role?.includes("Club Treasurer") ||
       role?.includes("Club Secretary") ||
-      role?.includes("Club President")
+      role?.includes("Club President") ||
+      role?.includes("Club Administrator") ||
+      role?.includes("District Governor") 
         ? [
             {
               path: "/dashboard",
@@ -160,6 +179,9 @@ export default function Router() {
                 { path: "news", element: <NewsReporting /> },
                 { path: "admin", element: <AdminReport /> },
                 { path: "pastactivity", element: <PastActivity /> },
+                { path: "reportedclubdetails", element: <ReportedClubDetails/> },
+                { path: "clubdetails", element: <AddClubDetails/> },
+                { path: "clubgallery", element: <ClubGallery/> },
 
                 role.includes("Club Treasurer") && {
                   path: "manage-expense",

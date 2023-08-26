@@ -222,7 +222,7 @@ function DGTeam() {
                 Dear Ever Serving Leaders,
                 <br />
                 <br />
-                Lion JaiAmol Naik, a Progressive Melvin Jones Fellow is a
+                Lion Jaiamol Naik, a Progressive Melvin Jones Fellow is a
                 graduate in Physics from Bombay University and a Bachelor of
                 Computer Science from International University in Missouri, USA.
                 He started his career as a Computer Systems Trainer at Hindustan
