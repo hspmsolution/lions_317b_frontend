@@ -131,7 +131,7 @@ function ResponsiveDialog({
           <TableContainer component={Paper}>
             <Table aria-label="simple table">
               <TableBody>
-              <TableRow
+                <TableRow
                   sx={{ "&:last-child td, &:last-child th": { border: 0 } }}
                 >
                   <TableCell>
@@ -237,11 +237,10 @@ function BasicCard({
         <Box
           sx={{
             width: "100%",
-            height: "16rem",
+            height: "18rem",
             mb: { xs: "1.5rem", lg: "4rem" },
           }}
         >
-
           <CommonCard
             image={bgImage}
             image2={bgImage2}
