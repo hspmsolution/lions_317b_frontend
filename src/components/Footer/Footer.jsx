@@ -58,7 +58,7 @@ const contact = [
   },
   {
     icon: <PhoneIcon />,
-    value: "Sachin Kale: - +91 98231 696 52",
+    value: "Sachin Kale: - +91 9823169652",
   },
   {
     icon: <FontAwesomeIcon icon={faEnvelope} />,

@@ -12,7 +12,7 @@ const ContactForm = () => {
 
 const rows = [
     createData("Erle Brito", "District Governor", "+91 98237 87447"),
-    createData("Sachin Kale", "District Information Technology Chairperson", "+91 98237 87447"),
+    createData("Sachin Kale", "District Information Technology Chairperson", "+91 9823169652"),
     createData("Adhwinikumar B Karpe", "Cabinet Secretary", "+91 84110 41640"),
   ];
 
