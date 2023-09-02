@@ -1,49 +1,80 @@
 import React from "react";
-import { Box } from "@mui/material";
+import { Box, Paper } from "@mui/material";
+import { styled } from "@mui/material/styles";
 import useStyles from "./Style";
 import LinkIcon from "@mui/icons-material/Link";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+import Slider from "react-slick";
+import { API_URL } from "../../api";
 
 export default function CommonCard(props) {
   const classes = useStyles();
+
+  const Item = styled(Paper)(({ theme }) => ({
+    backgroundColor: theme.palette.mode === "dark" ? "#1A2027" : "#fff",
+    ...theme.typography.body2,
+    padding: theme.spacing(1),
+    textAlign: "center",
+    color: theme.palette.text.secondary,
+  }));
 
   console.log(props.newsPaperLink);
 
   return (
     <>
-      <Box
-        position={"relative"}
-        sx={{
-          flexGrow: 1,
-          justifyContent: "center",
-          textAlign: "center",
-          borderRadius: "1rem",
-        }}>
-        <img
-          src={props.image}
-          srcSet={props.srcSet}
-          alt={props.alt}
-          className={classes.activityImage}
-        />
-        <h3 style={{ textAlign: "center" }}>{props.heading}</h3>
-        <p
-          className={
-            props.type === "activities" ? "" : `${classes.description}`
-          }>
-          {props.description}
-        </p>
-        {props.date ? <p className={classes.activityDate}>{props.date}</p> : ""}
-        {/*  <p className={classes.activityDate}>{props.date}</p> */}
-        {props.type === "news" ? (
-          <a
-            href={`${props.newsPaperLink}`}
-            rel="noreferrer"
-            target="_blank"
-            style={{ color: "white" }}>
-            <LinkIcon />
-          </a>
-        ) : (
-          ""
-        )}
+      <Box sx={{ flexGrow: 1 }}>
+        <Item sx={{ position: "relative" }}>
+          {/* <img
+            src={props.image}
+            srcSet={props.srcSet}
+            alt={props.alt}
+            className={classes.activityImage}
+          /> */}{" "}
+          <div className="slider02">
+            <Slider
+              autoplay={true}
+              infinite={true}
+              dots={true}
+              speed={500}
+              slidesToShow={1}
+              slidesToScroll={1}
+              arrows={false}
+            >
+              <div>
+                <img
+                  src={API_URL + props.image}
+                  className={classes.activityImage}
+                  alt="slider"
+                />
+              </div>
+              {props.image2 && (
+                <div>
+                  <img
+                    src={API_URL + props.image2}
+                    className={classes.activityImage}
+                    alt="slider"
+                  />
+                </div>
+              )}
+            </Slider>
+          </div>
+          <h3>{props.heading}</h3>
+          <p>{props.description}</p>
+          <p className={classes.activityDate}>{props.date}</p>
+          {props.type === "news" ? (
+            <a
+              href={`${props.newsPaperLink}`}
+              rel="noreferrer"
+              target="_blank"
+              style={{ color: "#000" }}
+            >
+              <LinkIcon />
+            </a>
+          ) : (
+            ""
+          )}
+        </Item>
       </Box>
     </>
   );

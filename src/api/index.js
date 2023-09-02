@@ -18,8 +18,8 @@ if (ROOT_URL.includes(".up.railway.app")) {
   superadmin_url = "https://lions317b.org/superadmin";
 } else {
   // Default to local development URL
-  API_URL = "http://localhost:5000/api";
-  superadmin_url = "http://localhost:5000/superadmin";
+ API_URL = "http://localhost:5000/api";
+    superadmin_url = "http://localhost:5000/superadmin";
 }
 
 const API = axios.create({ baseURL: API_URL });
