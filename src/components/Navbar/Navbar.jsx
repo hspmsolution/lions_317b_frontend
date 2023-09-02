@@ -16,6 +16,7 @@ import useStyles from "./Styles";
 import PopupMenu from "./PopupMenu";
 import { Link, useNavigate } from "react-router-dom";
 import { useSelector } from "react-redux";
+import SideNav from "../../admin/layouts/dashboard/nav";
 
 const drawerWidth = 240;
 
@@ -52,12 +53,14 @@ const myNav = [
 function Navbar(props) {
   const { window } = props;
   const [mobileOpen, setMobileOpen] = React.useState(false);
+  const [open, setOpen] = React.useState(false);
   const classes = useStyles();
   const navigate = useNavigate();
   const isAdmin = useSelector((state) => state.auth.admin);
 
   const handleDrawerToggle = () => {
     setMobileOpen((prevState) => !prevState);
+    setOpen(true);
   };
 
   const memberLogin = () => {
@@ -77,63 +80,64 @@ function Navbar(props) {
   // };
 
   const drawer = (
-    <Box
-      onClick={handleDrawerToggle}
-      sx={{ textAlign: "center" }}>
-      <Box
-        sx={{
-          display: {
-            // xs: "none",
-            sm: "flex",
-            gap: "1rem",
-            padding: "1rem 0",
-          },
-        }}>
-        <Button
-          size="medium"
-          sx={{
-            color: "#151515",
-            "&:hover": {
-              backgroundColor: "rgba(29, 60, 122, 0.85)",
-            },
-          }}
-          className={classes.loginButton}
-          onClick={memberLogin}>
-          {isAdmin ? "My Profile" : "Login"}
-        </Button>
-        <Button
-          size="medium"
-          sx={{
-            color: "#151515",
+<></>
+    // <Box
+    //   onClick={handleDrawerToggle}
+    //   sx={{ textAlign: "center" }}>
+    //   <Box
+    //     sx={{
+    //       display: {
+    //         // xs: "none",
+    //         sm: "flex",
+    //         gap: "1rem",
+    //         padding: "1rem 0",
+    //       },
+    //     }}>
+    //     <Button
+    //       size="medium"
+    //       sx={{
+    //         color: "#151515",
+    //         "&:hover": {
+    //           backgroundColor: "rgba(29, 60, 122, 0.85)",
+    //         },
+    //       }}
+    //       className={classes.loginButton}
+    //       onClick={memberLogin}>
+    //       {isAdmin ? "My Profile" : "Login"}
+    //     </Button>
+    //     <Button
+    //       size="medium"
+    //       sx={{
+    //         color: "#151515",
 
-            "&:hover": {
-              backgroundColor: "rgba(29, 60, 122, 0.85)",
-            },
-          }}
-          className={classes.loginButton}>
-          My LCI
-        </Button>
-      </Box>
+    //         "&:hover": {
+    //           backgroundColor: "rgba(29, 60, 122, 0.85)",
+    //         },
+    //       }}
+    //       className={classes.loginButton}>
+    //       My LCI
+    //     </Button>
+    //   </Box>
 
-      <Divider variant="middle" />
-      <List>
-        {myNav.map((item, index) => (
-          <ListItem
-            key={index}
-            disablePadding>
-            <Button
-              key={index}
-              sx={{ color: "#565656" }}
-              className={classes.drawerButton}>
-              <PopupMenu
-                title={item.title}
-                menuItems={item.menuItems}
-              />
-            </Button>
-          </ListItem>
-        ))}
-      </List>
-    </Box>
+    //   <Divider variant="middle" />
+    //   <List>
+    //     {myNav.map((item, index) => (
+    //       <ListItem
+    //         key={index}
+    //         disablePadding>
+    //         <Button
+    //           key={index}
+    //           sx={{ color: "#565656" }}
+    //           className={classes.drawerButton}>
+    //           <PopupMenu
+    //             title={item.title}
+    //             menuItems={item.menuItems}
+    //           />
+    //         </Button>
+    //       </ListItem>
+    //     ))}
+    //   </List>
+    // </Box>
   );
 
   const container =
@@ -259,7 +263,8 @@ function Navbar(props) {
         </Toolbar>
       </AppBar>
       <Box component="nav">
-        <Drawer
+      <SideNav openNav={open} onCloseNav={() => setOpen(false)} ishomeNav={true} />
+        {/* <Drawer
           container={container}
           variant="temporary"
           open={mobileOpen}
@@ -275,7 +280,7 @@ function Navbar(props) {
             },
           }}>
           {drawer}
-        </Drawer>
+        </Drawer> */}
       </Box>
       <Box
         component="main"

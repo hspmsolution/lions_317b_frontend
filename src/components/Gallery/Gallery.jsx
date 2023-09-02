@@ -58,7 +58,7 @@ export default function Gallery(props) {
                       "rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px",
                   }}>
                   <CommonCard
-                    image={`${API_URL + item.image}`}
+                    image={`${item.image}`}
                     heading={item.title}
                     description={item.description}
                     date={item.date}
