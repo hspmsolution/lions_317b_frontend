@@ -11,6 +11,7 @@ import { useTheme } from "@mui/material/styles";
 import Chip from "@mui/material/Chip";
 import Select from "@mui/material/Select";
 import FormControl from "@mui/material/FormControl";
+import CircularProgress from "@mui/material/CircularProgress";
 import InputLabel from "@mui/material/InputLabel";
 import OutlinedInput from "@mui/material/OutlinedInput";
 import { API_URL } from "../../api";
@@ -122,6 +123,7 @@ export default function NewActivity({ pastActivityData, isEdit = false }) {
   const subType = useSelector((state) => state.activity.subType);
   const category = useSelector((state) => state.activity.category);
   const placeHolderLabel = useSelector((state) => state.activity.placeHolder);
+  const isLoading = useSelector((state) => state.activity.isLoading);
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
@@ -137,6 +139,12 @@ export default function NewActivity({ pastActivityData, isEdit = false }) {
     }
     // eslint-disable-next-line
   }, []);
+
+  const resetForm = () => {
+    setActivity(activityDetail);
+    setPersonName([]);
+  };
+
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -181,10 +189,9 @@ export default function NewActivity({ pastActivityData, isEdit = false }) {
       formData.append("activityId", activity.activityId);
       dispatch(editActivity(formData,navigate));
     } else {
-      dispatch(addActivity(formData));
+      dispatch(addActivity(formData, navigate, resetForm));
     }
-    setActivity(activityDetail);
-    setPersonName([]);
+
   };
 
   // Function to handle file read
@@ -670,8 +677,8 @@ export default function NewActivity({ pastActivityData, isEdit = false }) {
 
         <Grid container justifyContent="center" gap={4}>
           <Grid item>
-            <Button type="submit" variant="contained" className={classes.btn}>
-              Submit
+          <Button type="submit" variant="contained" className={classes.btn} disabled={isLoading}>
+              {isLoading ? <CircularProgress size={25} /> : "Submit"}
             </Button>
           </Grid>
           <Grid item>
