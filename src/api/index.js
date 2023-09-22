@@ -18,8 +18,8 @@ if (ROOT_URL.includes(".up.railway.app")) {
   superadmin_url = "https://lions317b.org/superadmin";
 } else {
   // Default to local development URL
- API_URL = "http://localhost:5000/api";
-    superadmin_url = "http://localhost:5000/superadmin";
+  API_URL = "http://localhost:5000/api";
+  superadmin_url = "http://localhost:5000/superadmin";
 }
 
 const API = axios.create({ baseURL: API_URL });
@@ -43,10 +43,12 @@ export const editActivity = (formData) => API.post("activity/update", formData);
 export const getActivity = () => API.get("activity/type");
 export const getClubDirector = () => API.get("activity/clubdirectors");
 export const getSubtype = (type) => API.get(`activity/subtype?type=${type}`);
-export const getCategory = (subtype,type) =>
+export const getCategory = (subtype, type) =>
   API.get(`activity/category?subtype=${subtype}&type=${type}`);
-export const getPlaceHolder = (category,type,subType) =>
-  API.get(`activity/placeholder?category=${category} &type=${type}&subtype=${subType}`);
+export const getPlaceHolder = (category, type, subType) =>
+  API.get(
+    `activity/placeholder?category=${category} &type=${type}&subtype=${subType}`
+  );
 export const getReportedActivity = (clubId) =>
   clubId
     ? API.get(`activity/reportedactivity?clubId=${clubId}`)
@@ -57,7 +59,8 @@ export const getAdminReports = (month) =>
   API.get(`adminreporting/reports?month=${month}`);
 export const getPoints = () => API.get("adminreporting/points");
 export const addReport = (data) => API.post("adminreporting/addreport", data);
-export const clubsReporting = (clubId) => API.get(`adminreporting/clubsreporting?clubId=${clubId}`);
+export const clubsReporting = (clubId) =>
+  API.get(`adminreporting/clubsreporting?clubId=${clubId}`);
 export const updateMember = (formData) =>
   API.post("member/updateprofile", formData);
 export const memberProfile = () => API.get("member/profile");
@@ -69,9 +72,11 @@ export const newsReporting = (formData) =>
 export const getClubMembers = () => API.get("member/clubmembers");
 export const getAllmembers = (clubid) =>
   API.get(`member/allmembers?clubid=${clubid}`);
-export const clubsData=()=>API.get("clubs/clubs-data");
-export const clubDetails=(clubId)=>API.get(`clubs/club-details?clubId=${clubId}`);
-export const addClubAbout=(formData)=>API.post("clubs/add-club-about",formData);
+export const clubsData = () => API.get("clubs/clubs-data");
+export const clubDetails = (clubId) =>
+  API.get(`clubs/club-details?clubId=${clubId}`);
+export const addClubAbout = (formData) =>
+  API.post("clubs/add-club-about", formData);
 export const getZone = () => API.get("clubs/zone");
 export const getRegion = () => API.get("clubs/region");
 export const regionActivity = () => API.get("activity/region/allactivities");
@@ -79,7 +84,6 @@ export const zoneActivity = () => API.get("activity/zone/allactivities");
 export const expense = (formData) => API.post("expenses", formData);
 export const clubStatement = () => API.get("expenses/statement");
 export const activityStats = () => API.get("activity/stats");
-export const events = (newPage) => API.get(`activity/events?page=${newPage}`);
 export const topClubs = () => API.get("adminreporting/topclubs");
 export const slider = () => API.get("assets/slider");
 export const registerActivity = (formData) =>
@@ -95,3 +99,21 @@ export const downloadMemberData = (selectedData) =>
   API.post("clubs/download-member-data", selectedData);
 export const districtData = () => API.get("clubs/districtdata");
 export const downloadResources = () => API.get("assets/downloadResources");
+export const getClubs = () => API.get("clubs/list");
+
+export const events = (filters) => {
+  const { page, club, type, from, to } = filters;
+
+  let apiUrl = "activity/events?";
+  if (page) apiUrl += `page=${page}&`;
+  if (club?.clubId) apiUrl += `clubId=${club.clubId}&`;
+  if (type?.type) apiUrl += `type=${type.type}&`;
+  if (from) apiUrl += `from=${from}&`;
+  if (to) apiUrl += `to=${to}&`;
+
+  if (apiUrl.endsWith("&")) {
+    apiUrl = apiUrl.slice(0, -1);
+  }
+
+  return API.get(apiUrl);
+};

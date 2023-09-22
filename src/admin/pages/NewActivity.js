@@ -98,8 +98,7 @@ const activityDetail = {
   image2: { preview: "", data: "" },
 };
 export default function NewActivity({ pastActivityData, isEdit = false }) {
-  console.log(pastActivityData, isEdit);
-
+  
   if (isEdit) {
     pastActivityData = {
       ...pastActivityData,

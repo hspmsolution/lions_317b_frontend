@@ -1,6 +1,6 @@
 import * as api from "../api";
 
-import { ZONE_DATA, REGION_DATA,CLUBS_DATA,CLUB_DETAILS,CLIENT_MSG} from "../constants/actionTypes";
+import { ZONE_DATA, REGION_DATA,CLUBS_DATA,CLUB_DETAILS,CLIENT_MSG,CLUB_LIST} from "../constants/actionTypes";
 
 
 export const clubsData = () => async (dispatch) => {
@@ -11,7 +11,21 @@ export const clubsData = () => async (dispatch) => {
     console.log(error);
   }
 };
-
+export const getClubs = () => async (dispatch) => {
+  try {
+    const { data } = await api.getClubs();
+    dispatch({ type: CLUB_LIST, payload: data });
+  } catch (error) {
+    dispatch({
+      type: CLIENT_MSG,
+      message: {
+        info: error.response.data?.message,
+        status: error.response.status,
+      },
+    });
+    console.log(error);
+  }
+};
 export const clubDetails = (clubId) => async (dispatch) => {
   try {
     const { data } = await api.clubDetails(clubId);
