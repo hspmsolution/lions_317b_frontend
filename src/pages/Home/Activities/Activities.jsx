@@ -13,9 +13,15 @@ export default function Activities() {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const activities = useSelector((state) => state.client.events);
-  console.log(activities,"activities");
+
   React.useEffect(() => {
-    dispatch(events());
+    dispatch(events({
+      club:"",
+      type:"",
+      from:"",
+      to:"",
+      page:1
+    }));
   }, []);
 
   return (

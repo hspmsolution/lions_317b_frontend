@@ -30,6 +30,7 @@ import TableRow from "@mui/material/TableRow";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
+import Filters from "./Filters";
 
 function ResponsiveDialog({
   activityType,
@@ -272,6 +273,7 @@ export default function Events() {
   const navigate = useNavigate();
   const location = useLocation();
   const activities = useSelector((state) => state.client.events);
+  const filters = useSelector((state) => state.activity.activityFilter);
   const classes = useStyles();
 
   const totalPages = useSelector(
@@ -287,11 +289,13 @@ export default function Events() {
   const handleChangePage = (event, newPage) => {
     queryParams.set("page", newPage);
     navigate(`${location.pathname}?${queryParams.toString()}`);
-    dispatch(events(newPage));
+    filters.page = newPage;
+    dispatch(events(filters));
   };
 
   React.useEffect(() => {
-    dispatch(events(page));
+    filters.page = page;
+    dispatch(events(filters));
   }, []);
 
   return (
@@ -304,6 +308,7 @@ export default function Events() {
         }}
       >
         <CustomizedBreadcrumbs label={"Activities"} />
+        <Filters />
         <Container
           className={classes.activityContainer}
           sx={{ margin: "3rem auto" }}
