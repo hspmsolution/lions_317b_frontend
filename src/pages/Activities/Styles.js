@@ -10,7 +10,7 @@ export default makeStyles(() => ({
   },
   slider: {
     height: "350px",
-    width: "350px",
+    width: "fit-content",
   },
 
   "@media only screen and (min-width: 900px)": {
@@ -18,7 +18,7 @@ export default makeStyles(() => ({
       width: "600px",
     },
     dialogPaper: {
-      height: "350px",
+      height: "fit-content",
     },
   },
   "@media only screen and (max-width: 900px)": {
@@ -26,7 +26,7 @@ export default makeStyles(() => ({
       maxWidth: "500px ",
     },
     dialogPaper: {
-      height: "250px",
+      height: "fit-content",
     },
   },
   dialogTitle: {
@@ -37,4 +37,5 @@ export default makeStyles(() => ({
       gap: "10px",
     },
   },
+  
 }));

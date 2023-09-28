@@ -268,13 +268,14 @@ function BasicCard({
   );
 }
 
-export default function Events() {
+export default function Events(props) {
   const dispatch = useDispatch();
   const navigate = useNavigate();
   const location = useLocation();
   const activities = useSelector((state) => state.client.events);
   const filters = useSelector((state) => state.activity.activityFilter);
   const classes = useStyles();
+  const clubId = props?.clubId;
 
   const totalPages = useSelector(
     (state) => state.client.events?.pagination?.totalPages || 1
@@ -295,6 +296,11 @@ export default function Events() {
 
   React.useEffect(() => {
     filters.page = page;
+    if (clubId) {
+      filters.club = {"clubId": clubId};
+    }else{
+      filters.club = "";
+    }
     dispatch(events(filters));
   }, []);
 
@@ -307,8 +313,12 @@ export default function Events() {
           pb: "2rem",
         }}
       >
-        <CustomizedBreadcrumbs label={"Activities"} />
-        <Filters />
+        {!clubId && (
+          <>
+            <CustomizedBreadcrumbs label={"Activities"} />
+            <Filters />
+          </>
+        )}
         <Container
           className={classes.activityContainer}
           sx={{ margin: "3rem auto" }}

@@ -7,15 +7,18 @@ import {
   REPORTED_ACTIVITY,
   CLUB_DIRECTORS,
   DELETE_ACTIVITY,
-  ACTIVITY_LOADING
+  ACTIVITY_LOADING,
+  PROJECT_DETAILS,
+  DELETE_PROJECT
 
 } from "../constants/actionTypes";
 import * as api from "../api";
 import * as xlsx from "xlsx";
 
-export const getClubDirector = () => async (dispatch) => {
+export const getClubDirector = (query) => async (dispatch) => {
   try {
-    const { data } = await api.getClubDirector();
+    const fetchAll = query?.fetchAll || false;
+    const { data } = await api.getClubDirector(fetchAll);
     dispatch({ type: CLUB_DIRECTORS, payload: data });
   } catch (error) {
     dispatch({
@@ -249,5 +252,58 @@ export const zoneActivity = () => async (dispatch) => {
       },
     });
     console.log(error);
+  }
+};
+
+
+
+export const projectReporting = (formData,resetForm,handleLoading) => async (dispatch) => {
+  try {
+    const { data, status } = await api.projectReporting(formData);
+    dispatch({
+      type: CLIENT_MSG,
+      message: { info: data.successMessage, status },
+    });
+    resetForm();
+    handleLoading();
+  } catch (error) {
+    dispatch({
+      type: CLIENT_MSG,
+      message: {
+        info: error.response.data?.message,
+        status: error.response.status,
+      },
+    });
+    handleLoading();
+    console.log(error);
+  }
+};
+
+export const projectDetails = () => async (dispatch) => {
+  try {
+    const { data } = await api.projectDetails();
+    dispatch({ type: PROJECT_DETAILS, payload: data });
+  } catch (error) {
+    console.log(error);
+  }
+};
+
+export const deleteProject = (id) => async (dispatch) => {
+  try {
+    const { data ,status } = await api.deleteProject(id);
+    dispatch({ type: DELETE_PROJECT, payload: id});
+    dispatch({
+      type: CLIENT_MSG,
+      message: { info: data.successMessage, status },
+    });
+  } catch (error) {
+    console.log(error);
+    dispatch({
+      type: CLIENT_MSG,
+      message: {
+        info: error.response.data?.message,
+        status: error.response.status,
+      },
+    });
   }
 };

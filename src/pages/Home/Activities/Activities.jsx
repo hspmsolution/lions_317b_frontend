@@ -81,7 +81,6 @@ export default function Activities() {
                       alt="Activity"
                     />
                     <h3>{item.activityTitle}</h3>
-                    <p>{item.description}</p>
                     <p className={classes.activityDate}>
                       {item?.date?.slice(0, 10)}
                     </p>

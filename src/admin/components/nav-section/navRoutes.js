@@ -157,11 +157,11 @@ export const config=(role) =>{
         path: "/dashboard/reportedclubdetails",
         icon: icon("ic_arrow"),
       },
-      {
-        title: "Club Gallery",
-        path: "/dashboard/clubgallery",
-        icon: icon("ic_arrow"),
-      },
+      // {
+      //   title: "Club Gallery",
+      //   path: "/dashboard/clubgallery",
+      //   icon: icon("ic_arrow"),
+      // },
     ].filter(Boolean),
   },
 

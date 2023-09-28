@@ -6,6 +6,7 @@ import CustomizedBreadcrumbs from "../../../components/Breadcrumb/Breadcrumb";
 import { useNavigate, useLocation } from "react-router-dom";
 import { clubDetails } from "../../../actions/clubs";
 import "./styles.css";
+import Activities from "../../Activities/Activities";
 
 function ClubDetails() {
   const dispatch = useDispatch();
@@ -75,6 +76,7 @@ function ClubDetails() {
                 </Grid>
               ))}
             </Grid>
+            <Activities clubId={clubId}/>
           </div>
         </Container>
       </Box>

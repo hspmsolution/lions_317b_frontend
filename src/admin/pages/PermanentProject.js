@@ -4,10 +4,10 @@ import Grid from "@mui/material/Grid";
 import Typography from "@mui/material/Typography";
 import TextField from "@mui/material/TextField";
 import { Box, Button, Divider } from "@mui/material";
-import News from "./News";
 import { CLIENT_MSG } from "../../constants/actionTypes";
-import { newsReporting } from "../../actions/news";
+import { projectReporting } from "../../actions/activity";
 import { makeStyles } from "@mui/styles";
+import CircularProgress from "@mui/material/CircularProgress";
 
 const useStyles = makeStyles({
   heading: {
@@ -57,20 +57,20 @@ const useStyles = makeStyles({
 });
 
 const initialData = {
-  newsTitle: "",
-  newsPaperLink: "",
+  projectTitle: "",
   date: "",
   description: "",
   image: { preview: "", data: "" },
 };
-export default function NewsReporting() {
+export default function PermanentProject() {
   const classes = useStyles();
   const dispatch = useDispatch();
   const fileUploadRef = useRef();
-  const [newsData, setNewsData] = useState(initialData);
+  const [projectData, setprojectData] = useState(initialData);
+  const [isLoading, setIsLoading] = useState(false);
 
   const handleChange = (e) => {
-    setNewsData({ ...newsData, [e.target.name]: e.target.value });
+    setprojectData({ ...projectData, [e.target.name]: e.target.value });
   };
 
   // Function to handle file read
@@ -105,21 +105,26 @@ export default function NewsReporting() {
       preview: URL.createObjectURL(event.target.files[0]),
       data: event.target.files[0],
     };
-    setNewsData({ ...newsData, image: img });
+    setprojectData({ ...projectData, image: img });
   };
+
+  const resetForm = () => {
+    setprojectData(initialData);
+    };
+  const handleLoading = () => {
+    setIsLoading(false);
+    };
 
   const submitDetails = (e) => {
     e.preventDefault();
 
     const formData = new FormData();
-    formData.append("newsTitle", newsData.newsTitle);
-    formData.append("newsPaperLink", newsData.newsPaperLink);
-    formData.append("date", newsData.date);
-    formData.append("description", newsData.description);
-    formData.append("image", newsData.image.data);
-
-    dispatch(newsReporting(formData));
-    setNewsData(initialData);
+    formData.append("projectTitle", projectData.projectTitle);
+    formData.append("date", projectData.date);
+    formData.append("description", projectData.description);
+    formData.append("image", projectData.image.data);
+    setIsLoading(true);
+    dispatch(projectReporting(formData,resetForm,handleLoading));
   };
   return (
     <>
@@ -133,7 +138,7 @@ export default function NewsReporting() {
             variant="h6"
             gutterBottom
             className={classes.heading}>
-            News Information
+            Project Information
           </Typography>
           <Grid
             container
@@ -144,7 +149,7 @@ export default function NewsReporting() {
               xs={12}
               lg={6}
               className={classes.title}>
-              <Typography>Title Of News</Typography>
+              <Typography>Title Of project</Typography>
             </Grid>
             <Grid
               item
@@ -152,10 +157,10 @@ export default function NewsReporting() {
               lg={6}>
               <TextField
                 required
-                id="newsTitle"
-                name="newsTitle"
-                value={newsData.newsTitle}
-                label="Enter News Title"
+                id="projectTitle"
+                name="projectTitle"
+                value={projectData.projectTitle}
+                label="Enter project Title"
                 type="text"
                 fullWidth
                 autoComplete="given-name"
@@ -175,7 +180,7 @@ export default function NewsReporting() {
               xs={12}
               lg={6}
               className={classes.title}>
-              <Typography>Date Of News</Typography>
+              <Typography>Date Of project</Typography>
             </Grid>
             <Grid
               item
@@ -185,11 +190,11 @@ export default function NewsReporting() {
                 required
                 id="date"
                 name="date"
-                value={newsData.date}
+                value={projectData.date}
                 label="Select Date"
                 fullWidth
                 variant="standard"
-                type="datetime-local"
+                type="date"
                 InputLabelProps={{
                   shrink: true,
                 }}
@@ -208,36 +213,7 @@ export default function NewsReporting() {
               xs={12}
               lg={6}
               className={classes.title}>
-              <Typography>News Paper Link</Typography>
-            </Grid>
-            <Grid
-              item
-              xs={12}
-              lg={6}>
-              <TextField
-                id="newsPaperLink"
-                name="newsPaperLink"
-                value={newsData.newsPaperLink}
-                type="url"
-                label="Enter URL"
-                fullWidth
-                variant="standard"
-                onChange={handleChange}
-                className={classes.label}
-              />
-            </Grid>
-          </Grid>
-
-          <Grid
-            container
-            spacing={3}
-            className={classes.grid}>
-            <Grid
-              item
-              xs={12}
-              lg={6}
-              className={classes.title}>
-              <Typography>Description of News</Typography>
+              <Typography>Description of project</Typography>
             </Grid>
             <Grid
               item
@@ -247,7 +223,7 @@ export default function NewsReporting() {
                 id="description"
                 name="description"
                 label="Enter Description"
-                value={newsData.description}
+                value={projectData.description}
                 type="text"
                 variant="standard"
                 fullWidth
@@ -267,7 +243,7 @@ export default function NewsReporting() {
               xs={12}
               lg={6}
               className={classes.title}>
-              <Typography>Photographs of News</Typography>
+              <Typography>Photographs of project</Typography>
             </Grid>
             <Grid
               item
@@ -291,12 +267,12 @@ export default function NewsReporting() {
                 onChange={handleFileRead}
                 onClick={() => fileUploadRef.current.click()}
               />
-              {newsData.image.preview && (
+              {projectData.image.preview && (
                 <img
-                  src={newsData.image.preview}
+                  src={projectData.image.preview}
                   width="100"
                   height="100"
-                  alt="news"
+                  alt="project"
                 />
               )}
             </Grid>
@@ -310,7 +286,7 @@ export default function NewsReporting() {
                 type="submit"
                 variant="contained"
                 className={classes.btn}>
-                Submit
+               {isLoading ? <CircularProgress /> : "Submit"}
               </Button>
             </Grid>
             <Grid item>
@@ -326,8 +302,6 @@ export default function NewsReporting() {
           </Grid>
         </Box>
       </form>
-
-      <News></News>
     </>
   );
 }

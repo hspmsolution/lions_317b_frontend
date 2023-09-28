@@ -41,7 +41,7 @@ export const addActivity = (formData) =>
   API.post("activity/addactivity", formData);
 export const editActivity = (formData) => API.post("activity/update", formData);
 export const getActivity = () => API.get("activity/type");
-export const getClubDirector = () => API.get("activity/clubdirectors");
+export const getClubDirector = (fetchAll) => API.get(`activity/clubdirectors?fetchall=${fetchAll}`);
 export const getSubtype = (type) => API.get(`activity/subtype?type=${type}`);
 export const getCategory = (subtype, type) =>
   API.get(`activity/category?subtype=${subtype}&type=${type}`);
@@ -84,6 +84,9 @@ export const zoneActivity = () => API.get("activity/zone/allactivities");
 export const expense = (formData) => API.post("expenses", formData);
 export const clubStatement = () => API.get("expenses/statement");
 export const activityStats = () => API.get("activity/stats");
+export const projectReporting = (formData) => API.post("activity/project", formData);
+export const projectDetails = () => API.get("activity/project-details");
+export const deleteProject = (id) => API.delete(`activity/delete-project?id=${id}`);
 export const topClubs = () => API.get("adminreporting/topclubs");
 export const slider = () => API.get("assets/slider");
 export const registerActivity = (formData) =>
