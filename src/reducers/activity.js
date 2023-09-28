@@ -8,7 +8,9 @@ import {
   DELETE_ACTIVITY,
   ACTIVITY_LOADING,
   ACTIVITY_FILTER,
-  RESET_FILTER
+  RESET_FILTER,
+  PROJECT_DETAILS,
+  DELETE_PROJECT
 } from "../constants/actionTypes";
 
 const filters = {
@@ -28,6 +30,8 @@ const activityReducer = (
     placeHolder: "",
     club_directors: [],
     isLoading: false,
+    projects: [],
+    about:"",
     activityFilter:filters
   },
   action
@@ -67,6 +71,12 @@ const activityReducer = (
     
     case RESET_FILTER:
       return { ...state, activityFilter:filters };
+    
+    case PROJECT_DETAILS:
+      return { ...state, projects: action.payload?.projects, about:action.payload?.about };
+    
+    case DELETE_PROJECT:
+      return { ...state, projects: state.projects.filter(project=>project.id!==action.payload) };
     
     default:
       return state;
