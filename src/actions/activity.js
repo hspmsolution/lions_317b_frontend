@@ -9,7 +9,8 @@ import {
   DELETE_ACTIVITY,
   ACTIVITY_LOADING,
   PROJECT_DETAILS,
-  DELETE_PROJECT
+  DELETE_PROJECT,
+  ALL_AWARDS
 
 } from "../constants/actionTypes";
 import * as api from "../api";
@@ -279,9 +280,9 @@ export const projectReporting = (formData,resetForm,handleLoading) => async (dis
   }
 };
 
-export const projectDetails = () => async (dispatch) => {
+export const projectDetails = (clubId) => async (dispatch) => {
   try {
-    const { data } = await api.projectDetails();
+    const { data } = await api.projectDetails(clubId);
     dispatch({ type: PROJECT_DETAILS, payload: data });
   } catch (error) {
     console.log(error);
@@ -305,5 +306,15 @@ export const deleteProject = (id) => async (dispatch) => {
         status: error.response.status,
       },
     });
+  }
+};
+
+
+export const getAwards = () => async (dispatch) => {
+  try {
+    const { data } = await api.getAwards();
+    dispatch({ type: ALL_AWARDS, payload: data });
+  } catch (error) {
+    console.log(error);
   }
 };

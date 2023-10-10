@@ -85,6 +85,11 @@ export const homeNavConfig=(role) =>{
       isClick: false,
       subItems: [
         {
+        title:"Monthly Awards",
+        path:"/resources/monthlyawards",
+        icon:icon("ic_arrow")
+        },
+        {
           title: "News",
           path: "/resources/news",
           icon: icon("ic_arrow"),

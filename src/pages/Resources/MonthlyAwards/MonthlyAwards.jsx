@@ -1,12 +1,20 @@
+import React, { useEffect } from "react";
 import { Box } from "@mui/material";
-import { useSelector } from "react-redux";
+import { useSelector,useDispatch} from "react-redux";
 import CustomizedBreadcrumbs from "../../../components/Breadcrumb/Breadcrumb";
 import Gallery from "../../../components/Gallery/Gallery";
+import { getAwards } from "../../../actions/activity";
 
 
-export default function GalleryR() {
+export default function MonthlyAwards() {
+  const dispatch = useDispatch();
+  const awards = useSelector((state) => state.activity.awards);
 
-  const images = useSelector((state) => state.client.galleryImages);
+
+  useEffect(()=>{
+    dispatch(getAwards())
+   },[])
+
   return (
     <>
       <Box
@@ -27,9 +35,9 @@ export default function GalleryR() {
         }}>
         <CustomizedBreadcrumbs
           label={"Resources"}
-          subLabel={"Gallery"}
+          subLabel={"Monthly Awards"}
         />
-        <Gallery data={images}/>
+        <Gallery data={awards}/>
       </Box>
     </>
   );

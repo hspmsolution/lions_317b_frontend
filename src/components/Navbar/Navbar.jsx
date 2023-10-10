@@ -44,7 +44,7 @@ const myNav = [
   },
   {
     title: "Resources",
-    menuItems: ["News", "Gallery", "Global Priorities", "Download Resources"],
+    menuItems: ["Monthly Awards","News", "Gallery", "Global Priorities", "Download Resources"],
   },
   // { title: "Login" },
   // { title: "My LCI" },

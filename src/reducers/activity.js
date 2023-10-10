@@ -10,7 +10,8 @@ import {
   ACTIVITY_FILTER,
   RESET_FILTER,
   PROJECT_DETAILS,
-  DELETE_PROJECT
+  DELETE_PROJECT,
+  ALL_AWARDS
 } from "../constants/actionTypes";
 
 const filters = {
@@ -32,7 +33,8 @@ const activityReducer = (
     isLoading: false,
     projects: [],
     about:"",
-    activityFilter:filters
+    activityFilter:filters,
+    awards:[]
   },
   action
 ) => {
@@ -78,6 +80,8 @@ const activityReducer = (
     case DELETE_PROJECT:
       return { ...state, projects: state.projects.filter(project=>project.id!==action.payload) };
     
+    case ALL_AWARDS:
+      return { ...state, awards: action.payload };
     default:
       return state;
   }
