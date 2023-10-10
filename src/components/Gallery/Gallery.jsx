@@ -12,7 +12,8 @@ import { Paper } from "@mui/material";
 
 export default function Gallery(props) {
   const classes = useStyles();
-  const images = useSelector((state) => state.client.galleryImages);
+  const images = props.data
+  
   const [photoIndex, setPhotoIndex] = useState(0);
   const [isOpen, setIsOpen] = useState(false);
 
@@ -61,7 +62,7 @@ export default function Gallery(props) {
                     image={`${item.image}`}
                     heading={item.title}
                     description={item.description}
-                    date={item.date}
+                    date={item.date ? item.date.split('T')[0] : null}
                   />
                 </Paper>
               </Grid>

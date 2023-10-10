@@ -43,6 +43,7 @@ import ContactUS from "./pages/contact/Contact";
 import Privacy from "./pages/PrivacyPolicy/Privacy";
 import Terms from "./pages/Terms/Terms";
 import ClubDetails from "./pages/Membership/ClubDetails/ClubDetails";
+import MonthlyAwards from "./pages/Resources/MonthlyAwards/MonthlyAwards";
 // import { element } from "prop-types";
 
 export default function Router() {
@@ -151,6 +152,7 @@ export default function Router() {
               />
             ),
           },
+          { path: "/resources/monthlyawards", element: <MonthlyAwards /> },
           { path: "/resources/news", element: <NewsResource /> },
           { path: "/resources/gallery", element: <GalleryR /> },
           { path: "/resources/globalpriorities", element: <Priorities /> },

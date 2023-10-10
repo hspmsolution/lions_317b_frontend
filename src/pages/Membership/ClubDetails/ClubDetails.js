@@ -7,6 +7,8 @@ import { useNavigate, useLocation } from "react-router-dom";
 import { clubDetails } from "../../../actions/clubs";
 import "./styles.css";
 import Activities from "../../Activities/Activities";
+import Gallery from "../../../components/Gallery/Gallery";
+import { projectDetails } from "../../../actions/activity";
 
 function ClubDetails() {
   const dispatch = useDispatch();
@@ -17,9 +19,11 @@ function ClubDetails() {
   const clubId = parseInt(queryParams.get("id")) || null;
 
   const clubInfo = useSelector((state) => state.clubs.clubDetails);
+  const projects = useSelector((state) => state.activity.projects);
 
   useEffect(() => {
     dispatch(clubDetails(clubId));
+    dispatch(projectDetails(clubId));
   }, []);
 
   return (
@@ -76,6 +80,12 @@ function ClubDetails() {
                 </Grid>
               ))}
             </Grid>
+            <div className="clubDetails">
+              <h3>
+                <b>Permanent Projects:</b>
+              </h3>
+              <Gallery data={projects}/>
+            </div>  
             <Activities clubId={clubId}/>
           </div>
         </Container>
